@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Azadamard Scouting | Homenetmen Pasadena</title>
-  <meta name="description" content="Homenetmen Pasadena Azadamard Scouting Division. Building leaders since 1977." />
+  <meta
+    name="description"
+    content="Homenetmen Pasadena Azadamard Scouting Division. Building leaders since 1977."
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,7 +15,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html#top">
+      <a class="brand" href="#top">
         <img src="images/homenetmen-logo.webp" class="logo" alt="Homenetmen Scouts Logo" />
         <span class="brand-text">
           <span class="brand-kicker">Homenetmen Pasadena</span>
@@ -21,11 +24,11 @@
       </a>
 
       <nav class="nav">
-        <a href="#about">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="#join">Join</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#join">Join</a>
+<a href="#contact">Contact</a>
+</nav>
     </div>
   </header>
 
@@ -57,7 +60,7 @@
 
           <div class="note">
             <div class="note-title">Location</div>
-            <div class="note-body">2242 E Foothill Blvd, Pasadena</div>
+            <div class="note-body">Jivalagian Youth Center – Pasadena</div>
           </div>
         </div>
       </div>
@@ -71,21 +74,25 @@
 
           <p class="muted">
             Founded in 1977, Homenetmen Pasadena “Azadamard” Scouting has proudly carried forward a tradition
-            of scouting, leadership, and Armenian heritage for generations of youth in our community. Through
-            camping trips, outdoor skills, cultural education, and community service, Azadamard continues to shape
-            confident, responsible young leaders who are proud of their roots and prepared to serve their communities.
+            of scouting, leadership, and Armenian heritage for generations of youth in our community. For nearly
+            five decades, our scouts have gathered to learn the values of teamwork, discipline, service, and respect for
+            nature, while building lifelong friendships and unforgettable memories. Through camping trips, outdoor
+            skills, cultural education, and community service, Azadamard continues to shape confident, responsible
+            young leaders who are proud of their roots and prepared to serve their communities. Guided by dedicated
+            volunteers and the spirit of Homenetmen, our scouting family remains committed to developing strong
+            character, adventurous minds, and a lasting love for scouting.
           </p>
 
           <p class="muted">New Scouts are always welcome.</p>
 
           <div class="cta-row">
             <a class="btn primary" href="#join">Join the Azadamard Family</a>
-            <a class="btn ghost" href="gallery.html">View Gallery</a>
           </div>
         </div>
 
         <div class="card">
           <h3>What we do</h3>
+
           <ul>
             <li>Camping and outdoor skills</li>
             <li>Community service</li>
@@ -96,6 +103,7 @@
           <div class="divider"></div>
 
           <h3>Quick Details</h3>
+
           <p class="muted">
             <strong>When:</strong> Sundays 10:00 AM – 1:00 PM<br />
             <strong>Where:</strong> 2242 E Foothill Blvd, Pasadena<br /><br />
@@ -107,19 +115,42 @@
             Aris (Ages 11+)<br />
             Arenoush (Ages 11+)<br /><br />
 
-            <strong>Yearly Membership:</strong> $200+
+            <strong>Yearly Membership:</strong> $200
           </p>
         </div>
       </div>
     </section>
+<!-- GALLERY -->
 
-    <!-- JOIN -->
+<section id="gallery" class="section">
+
+<div class="container">
+
+<h2>Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="images/gallery1.jpg" alt="Scouting Photo">
+<img src="images/gallery2.jpg" alt="Scouting Photo">
+<img src="images/gallery3.jpg" alt="Scouting Photo">
+<img src="images/gallery4.jpg" alt="Scouting Photo">
+<img src="images/gallery5.jpg" alt="Scouting Photo">
+<img src="images/gallery6.jpg" alt="Scouting Photo">
+<img src="images/gallery7.jpg" alt="Scouting Photo">
+<img src="images/gallery8.jpg" alt="Scouting Photo">
+
+</div>
+
+</div>
+
+</section>
+    <!-- JOIN SECTION -->
     <section id="join" class="section alt">
       <div class="container">
         <h2>Join Azadamard Scouts</h2>
 
         <p class="muted">
-          Fill out the form below and we’ll reach out personally.
+          Interested in joining? Come visit us on a Sunday or submit the form below and we'll contact you.
         </p>
 
         <div class="steps">
@@ -135,7 +166,7 @@
             <div class="step-num">2</div>
             <div>
               <h3>Meet the Leaders</h3>
-              <p class="muted">We’ll introduce you to your scout’s group leader.</p>
+              <p class="muted">We will introduce you to your scout’s group leader.</p>
             </div>
           </div>
 
@@ -143,59 +174,67 @@
             <div class="step-num">3</div>
             <div>
               <h3>Register</h3>
-              <p class="muted">We’ll help you with the next steps.</p>
+              <p class="muted">Complete the sign-up form and join the chapter.</p>
             </div>
           </div>
         </div>
 
-        <!-- FORM (Formspree) -->
         <form class="signup" action="https://formspree.io/f/mqeyzkob" method="POST">
-          <div class="signup-grid">
-            <label>
-              Parent / Guardian Name
-              <input type="text" name="parent_name" required />
-            </label>
 
-            <label>
-              Email
-              <input type="email" name="email" required />
-            </label>
+<div class="signup-grid">
 
-            <label>
-              Phone
-              <input type="tel" name="phone" />
-            </label>
+<label>
+Parent / Guardian Name
+<input type="text" name="parent" required>
+</label>
 
-            <label>
-              Scout Age
-              <input type="number" name="scout_age" />
-            </label>
-          </div>
+<label>
+Email
+<input type="email" name="email" required>
+</label>
 
-          <input type="hidden" name="_subject" value="New Azadamard Scout Inquiry" />
+<label>
+Phone
+<input type="tel" name="phone">
+</label>
 
-          <button class="btn primary" type="submit">Request Info</button>
-        </form>
-      </div>
-    </section>
+<label>
+Scout Age
+<input type="number" name="age">
+</label>
 
-    <!-- SOCIAL -->
-    <section id="social" class="section">
-      <div class="container" style="text-align:center;">
-        <h2>Follow Us</h2>
-        <p class="muted">Stay connected with Azadamard Scouting.</p>
+</div>
 
-        <div class="social-grid" style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:18px;">
-          <a class="social" href="https://www.instagram.com/azadamard_scouts/?hl=en" target="_blank" rel="noopener">Instagram</a>
-          <a class="social" href="https://www.facebook.com/pasadenaazadamard" target="_blank" rel="noopener">Facebook</a>
-        </div>
-      </div>
-    </section>
+<button class="btn primary">Request Info</button>
 
-    <!-- CONTACT -->
+</form>
+
+<!-- SOCIAL -->
+
+<section id="social" class="section">
+
+<div class="container" style="text-align:center;">
+
+<h2>Follow Us</h2>
+<div class="social-grid" style="justify-content:center; display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
+
+<a class="social" href="https://www.instagram.com/azadamard_scouts/?hl=en" target="_blank">
+Instagram
+</a>
+
+<a class="social" href="https://www.facebook.com/pasadenaazadamard" target="_blank">
+Facebook
+</a>
+
+</div>
+
+</div>
+
+</section>
     <section id="contact" class="section alt">
       <div class="container contact">
         <h2>Contact</h2>
+
         <p class="muted">Questions? Reach out and we will get back to you.</p>
 
         <div class="contact-cards">
@@ -224,8 +263,7 @@
   </main>
 
   <script>
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
