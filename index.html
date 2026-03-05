@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Azadamard Scouting | Homenetmen Pasadena</title>
-  <meta
-    name="description"
-    content="Homenetmen Pasadena Azadamard Scouting Division. Building leaders since 1977."
-  />
+  <meta name="description" content="Homenetmen Pasadena Azadamard Scouting Division. Building leaders since 1977." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -24,15 +21,35 @@
       </a>
 
       <nav class="nav">
-<a href="#about">About</a>
-<a href="#gallery">Gallery</a>
-<a href="#join">Join</a>
-<a href="#contact">Contact</a>
-</nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#join">Join</a>
+        <a href="#community">Stay Connected</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main id="top">
+    <!-- JOIN BANNER -->
+    <section class="join-banner">
+      <div class="container join-banner-inner">
+        <div class="join-text">
+          <h2>Interested in Joining Azadamard Scouts?</h2>
+          <p>
+            New families are always welcome. Visit us on a Sunday or register below to learn more about joining our scouting family.
+          </p>
+        </div>
+
+        <div class="join-actions">
+          <a class="btn primary" href="#join">Join Now</a>
+          <a class="btn ghost" href="https://mailchi.mp/6f8df3b61e7a/sms-signup" target="_blank" rel="noopener">
+            Get Announcements
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- HERO -->
     <section class="hero">
       <div class="hero-media" aria-hidden="true"></div>
@@ -92,7 +109,6 @@
 
         <div class="card">
           <h3>What we do</h3>
-
           <ul>
             <li>Camping and outdoor skills</li>
             <li>Community service</li>
@@ -103,7 +119,6 @@
           <div class="divider"></div>
 
           <h3>Quick Details</h3>
-
           <p class="muted">
             <strong>When:</strong> Sundays 10:00 AM – 1:00 PM<br />
             <strong>Where:</strong> 2242 E Foothill Blvd, Pasadena<br /><br />
@@ -120,37 +135,32 @@
         </div>
       </div>
     </section>
-<!-- GALLERY -->
 
-<section id="gallery" class="section">
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Gallery</h2>
 
-<div class="container">
+        <div class="gallery-grid">
+          <img src="images/gallery1.jpg" alt="Scouting photo 1" />
+          <img src="images/gallery2.jpg" alt="Scouting photo 2" />
+          <img src="images/gallery3.jpg" alt="Scouting photo 3" />
+          <img src="images/gallery4.jpg" alt="Scouting photo 4" />
+          <img src="images/gallery5.jpg" alt="Scouting photo 5" />
+          <img src="images/gallery6.jpg" alt="Scouting photo 6" />
+          <img src="images/gallery7.jpg" alt="Scouting photo 7" />
+          <img src="images/gallery8.jpg" alt="Scouting photo 8" />
+        </div>
+      </div>
+    </section>
 
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="images/gallery1.jpg" alt="Scouting Photo">
-<img src="images/gallery2.jpg" alt="Scouting Photo">
-<img src="images/gallery3.jpg" alt="Scouting Photo">
-<img src="images/gallery4.jpg" alt="Scouting Photo">
-<img src="images/gallery5.jpg" alt="Scouting Photo">
-<img src="images/gallery6.jpg" alt="Scouting Photo">
-<img src="images/gallery7.jpg" alt="Scouting Photo">
-<img src="images/gallery8.jpg" alt="Scouting Photo">
-
-</div>
-
-</div>
-
-</section>
-    <!-- JOIN SECTION -->
+    <!-- JOIN -->
     <section id="join" class="section alt">
       <div class="container">
         <h2>Join Azadamard Scouts</h2>
 
         <p class="muted">
-          Interested in joining? Come visit us on a Sunday or submit the form below and we'll contact you.
+          Interested in joining? Come visit us on a Sunday or submit the form below and we’ll contact you.
         </p>
 
         <div class="steps">
@@ -179,62 +189,68 @@
           </div>
         </div>
 
+        <!-- FORM (Formspree) -->
         <form class="signup" action="https://formspree.io/f/mqeyzkob" method="POST">
+          <div class="signup-grid">
+            <label>
+              Parent / Guardian Name
+              <input type="text" name="parent" required />
+            </label>
 
-<div class="signup-grid">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
 
-<label>
-Parent / Guardian Name
-<input type="text" name="parent" required>
-</label>
+            <label>
+              Phone
+              <input type="tel" name="phone" />
+            </label>
 
-<label>
-Email
-<input type="email" name="email" required>
-</label>
+            <label>
+              Scout Age
+              <input type="number" name="age" />
+            </label>
+          </div>
 
-<label>
-Phone
-<input type="tel" name="phone">
-</label>
+          <button class="btn primary" type="submit">Request Info</button>
+        </form>
+      </div>
+    </section>
 
-<label>
-Scout Age
-<input type="number" name="age">
-</label>
+    <!-- STAY CONNECTED -->
+    <section id="community" class="section">
+      <div class="container center">
+        <h2>Stay Connected</h2>
 
-</div>
+        <p class="muted">
+          Join our communication channels to receive updates about meetings, camps, and announcements.
+        </p>
 
-<button class="btn primary">Request Info</button>
+        <div class="social-grid">
+          <a class="social-btn instagram" href="https://www.instagram.com/azadamard_scouts/?hl=en" target="_blank" rel="noopener">
+            Instagram
+          </a>
 
-</form>
+          <a class="social-btn facebook" href="https://www.facebook.com/pasadenaazadamard" target="_blank" rel="noopener">
+            Facebook
+          </a>
 
-<!-- SOCIAL -->
+          <a class="social-btn whatsapp" href="https://chat.whatsapp.com/IBsD6ijPqfcJSOv74SOTvt" target="_blank" rel="noopener">
+            WhatsApp Channel
+          </a>
 
-<section id="social" class="section">
+          <a class="social-btn mailchimp" href="https://mailchi.mp/6f8df3b61e7a/sms-signup" target="_blank" rel="noopener">
+            Email &amp; Text Announcements
+          </a>
+        </div>
+      </div>
+    </section>
 
-<div class="container" style="text-align:center;">
-
-<h2>Follow Us</h2>
-<div class="social-grid" style="justify-content:center; display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
-
-<a class="social" href="https://www.instagram.com/azadamard_scouts/?hl=en" target="_blank">
-Instagram
-</a>
-
-<a class="social" href="https://www.facebook.com/pasadenaazadamard" target="_blank">
-Facebook
-</a>
-
-</div>
-
-</div>
-
-</section>
+    <!-- CONTACT -->
     <section id="contact" class="section alt">
       <div class="container contact">
         <h2>Contact</h2>
-
         <p class="muted">Questions? Reach out and we will get back to you.</p>
 
         <div class="contact-cards">
