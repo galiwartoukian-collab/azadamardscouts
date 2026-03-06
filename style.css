@@ -255,7 +255,26 @@ a:hover{
   transform: translateY(-1px);
   text-decoration:none;
 }
+.hero-buttons a {
+  transition: all 0.25s ease;
+  transform: translateY(0);
+}
 
+/* Hover effect */
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Gold glow for the yellow button */
+.btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(255, 200, 0, 0.6);
+}
+
+/* subtle glow for dark buttons */
+.btn-secondary:hover {
+  box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+}
 .btn:focus-visible{
   outline:none;
   box-shadow:0 0 0 4px var(--focus);
