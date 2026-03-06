@@ -98,6 +98,7 @@ a:hover{
 }
 
 .header-inner{
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -135,21 +136,79 @@ a:hover{
   width:auto;
 }
 
-/* NAV */
-.nav{
+/* HAMBURGER BUTTON */
+.menu-toggle{
   display:flex;
-  gap:6px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:46px;
+  height:46px;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.menu-toggle:hover{
+  border-color:var(--yellow);
+  background:rgba(255,192,0,0.08);
+}
+
+.menu-toggle span{
+  width:22px;
+  height:2px;
+  background:var(--white);
+  display:block;
+  border-radius:999px;
+  transition:all .2s ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+/* DROPDOWN NAV */
+.nav{
+  display:none;
+  position:absolute;
+  top:74px;
+  right:0;
+  width:min(280px, 84vw);
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(0,0,0,0.96);
+  box-shadow:0 18px 40px rgba(0,0,0,0.38);
+  flex-direction:column;
+  gap:8px;
+  z-index:200;
+}
+
+.nav.nav-open{
+  display:flex;
 }
 
 .nav a{
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.25);
+  display:block;
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
   background:rgba(255,255,255,0.03);
   color:var(--text);
   font-weight:800;
-  font-size:0.9rem;
+  font-size:0.95rem;
   transition:all .2s ease;
 }
 
@@ -160,14 +219,52 @@ a:hover{
   text-decoration:none;
 }
 
-.nav a:focus-visible{
+.nav a:focus-visible,
+.menu-toggle:focus-visible{
   outline:none;
   box-shadow:0 0 0 4px var(--focus);
 }
 
 /* MOBILE HAMBURGER MENU */
 .menu-toggle{
-  display:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:46px;
+  height:46px;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.menu-toggle:hover{
+  border-color:var(--yellow);
+  background:rgba(255,192,0,0.08);
+}
+
+.menu-toggle span{
+  width:22px;
+  height:2px;
+  background:var(--white);
+  display:block;
+  border-radius:999px;
+  transition:all .2s ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
 }
 
 /* JOIN BANNER */
@@ -1040,29 +1137,44 @@ a:hover{
   }
 
   .nav{
-    display:none;
-    position:absolute;
-    top:70px;
-    right:0;
-    background:#000;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:10px;
-    flex-direction:column;
-    gap:8px;
-    width:min(220px,80vw);
-    box-shadow:0 15px 35px rgba(0,0,0,.4);
-    z-index:20;
-  }
+    .nav{
+  display:none;
+  position:absolute;
+  top:74px;
+  right:0;
+  width:min(280px,84vw);
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(0,0,0,0.96);
+  box-shadow:0 18px 40px rgba(0,0,0,0.38);
+  flex-direction:column;
+  gap:8px;
+  z-index:200;
+}
 
-  .nav.nav-open{
-    display:flex;
-  }
+.nav.nav-open{
+  display:flex;
+}
 
-  .nav a{
-    width:100%;
-    text-align:left;
-  }
+.nav a{
+  display:block;
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+  font-weight:800;
+  font-size:0.95rem;
+  transition:all .2s ease;
+}
+
+.nav a:hover{
+  border-color:var(--yellow);
+  color:var(--yellow);
+  background:rgba(255,192,0,0.08);
+  text-decoration:none;
 }
 
 @media (max-width:768px){
