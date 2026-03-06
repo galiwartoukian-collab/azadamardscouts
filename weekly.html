@@ -77,21 +77,16 @@
 
   </main>
 
-  <!-- Lightbox Gallery Viewer -->
+ <!-- Lightbox Gallery Viewer -->
+<div id="lightbox" class="lightbox">
+  <button id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
+  <button id="lightboxPrev" class="lightbox-prev" aria-label="Previous">&#10094;</button>
 
-  <div id="lightbox" class="lightbox">
-    <button id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
-    <button id="lightboxPrev" class="lightbox-prev" aria-label="Previous">&#10094;</button>
+  <img id="lightboxImage" src="" alt="Expanded gallery image" />
 
-```
-<img id="lightboxImage" src="" alt="Expanded gallery image" />
+  <button id="lightboxNext" class="lightbox-next" aria-label="Next">&#10095;</button>
 
-<button id="lightboxNext" class="lightbox-next" aria-label="Next">&#10095;</button>
-```
+  <div id="lightboxCounter" class="lightbox-counter">1 / 1</div>
+</div>
 
-  </div>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
+<script src="script.js"></script>
