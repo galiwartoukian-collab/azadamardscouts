@@ -16,6 +16,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
+
       <a class="brand" href="index.html#top">
         <img src="images/brand/logo.webp" class="logo" alt="Homenetmen Scouts Logo" />
         <span class="brand-text">
@@ -38,11 +39,13 @@
         <a href="leaders.html">Leaders</a>
         <a href="index.html#contact">Contact</a>
       </nav>
+
     </div>
   </header>
 
   <main class="section">
     <div class="container">
+
       <div class="page-head">
         <div>
           <h1 style="margin:0 0 6px;">Gallery</h1>
@@ -54,15 +57,59 @@
 
       <p class="muted">Choose a category to view photos.</p>
 
-      <div class="gallery-categories" id="galleryCategories"></div>
+      <div class="gallery-categories">
+        <a class="gallery-card" href="camp.html">
+          <div
+            class="gallery-card-media"
+            style="background-image:url('images/camp/c1.jpg');"
+          ></div>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Camp</div>
+            <div class="gallery-card-sub">Outdoor adventures and memories</div>
+          </div>
+        </a>
+
+        <a class="gallery-card" href="weekly.html">
+          <div
+            class="gallery-card-media"
+            style="background-image:url('images/weekly/w1.jpg');"
+          ></div>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Weekly Activities</div>
+            <div class="gallery-card-sub">Sundays at Azadamard</div>
+          </div>
+        </a>
+
+        <a class="gallery-card" href="events.html">
+          <div
+            class="gallery-card-media"
+            style="background-image:url('images/events/e2.jpg');"
+          ></div>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Events</div>
+            <div class="gallery-card-sub">Community, culture, and fun</div>
+          </div>
+        </a>
+
+        <a class="gallery-card" href="field-trips.html">
+          <div
+            class="gallery-card-media"
+            style="background-image:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65)), url('images/hero/scouts.jpg');"
+          ></div>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">Field Trips</div>
+            <div class="gallery-card-sub">Exploring and learning together</div>
+          </div>
+        </a>
+      </div>
 
       <div class="cta-row" style="margin-top:18px;">
         <a class="btn ghost" href="index.html#top">Back to Home</a>
       </div>
+
     </div>
   </main>
 
-  <script src="gallery-data.js"></script>
   <script src="script.js"></script>
 
 </body>
