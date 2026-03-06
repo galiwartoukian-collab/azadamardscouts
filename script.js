@@ -4,44 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  const menuToggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav");
-  const navLinks = document.querySelectorAll(".nav a");
-
-  if (menuToggle && nav) {
-    menuToggle.addEventListener("click", (event) => {
-      event.stopPropagation();
-      nav.classList.toggle("nav-open");
-
-      const expanded = nav.classList.contains("nav-open");
-      menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-    });
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("nav-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    document.addEventListener("click", (event) => {
-      const clickedToggle = menuToggle.contains(event.target);
-      const clickedNav = nav.contains(event.target);
-
-      if (!clickedToggle && !clickedNav) {
-        nav.classList.remove("nav-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        nav.classList.remove("nav-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
+  /* LIGHTBOX */
   const galleryImages = document.querySelectorAll(".gallery-img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
@@ -117,87 +80,131 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-async function loadNextEvent() {
-  const nextEventEl = document.getElementById("nextEvent");
-  if (!nextEventEl) return;
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxPrev.addEventListener("click", showPrevImage);
+    lightboxNext.addEventListener("click", showNextImage);
 
-  const calendarId = "galiwartoukian@gmail.com";
-  const apiKey = "AIzaSyCEXzb-KFDyiOzauHjCqh5suF5tORp0feQ";
-
-  const now = new Date().toISOString();
-
-  const url =
-    `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events` +
-    `?key=${apiKey}` +
-    `&singleEvents=true` +
-    `&orderBy=startTime` +
-    `&timeMin=${encodeURIComponent(now)}` +
-    `&maxResults=1`;
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    if (!data.items || !data.items.length) {
-      nextEventEl.innerHTML = `
-        <strong>No upcoming events yet</strong><br>
-        Check back soon.
-      `;
-      return;
-    }
-
-    const event = data.items[0];
-    const title = event.summary || "Upcoming Event";
-    const location = event.location || "";
-
-    const startRaw = event.start?.dateTime || event.start?.date;
-    const endRaw = event.end?.dateTime || event.end?.date;
-
-    const startDate = new Date(startRaw);
-    const endDate = endRaw ? new Date(endRaw) : null;
-
-    const dateText = startDate.toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric"
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
     });
 
-    let timeText = "All day";
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("active")) return;
 
-    if (event.start?.dateTime) {
-      const startTime = startDate.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit"
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrevImage();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextImage();
+      }
+    });
+
+    lightboxImage.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].screenX;
+    });
+
+    lightboxImage.addEventListener("touchend", (event) => {
+      touchEndX = event.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (swipeDistance > 50) {
+        showPrevImage();
+      } else if (swipeDistance < -50) {
+        showNextImage();
+      }
+    });
+  }
+
+  /* NEXT EVENT CARD */
+  async function loadNextEvent() {
+    const nextEventEl = document.getElementById("nextEvent");
+    if (!nextEventEl) return;
+
+    const calendarId = "galiwartoukian@gmail.com";
+    const apiKey = "AIzaSyCEXzb-KFDyiOzauHjCqh5suF5tORp0feQ";
+
+    const now = new Date().toISOString();
+
+    const url =
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events` +
+      `?key=${apiKey}` +
+      `&singleEvents=true` +
+      `&orderBy=startTime` +
+      `&timeMin=${encodeURIComponent(now)}` +
+      `&maxResults=1`;
+
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!data.items || !data.items.length) {
+        nextEventEl.innerHTML = `
+          <strong>No upcoming events yet</strong><br>
+          Check back soon.
+        `;
+        return;
+      }
+
+      const event = data.items[0];
+      const title = event.summary || "Upcoming Event";
+      const location = event.location || "";
+
+      const startRaw = event.start?.dateTime || event.start?.date;
+      const endRaw = event.end?.dateTime || event.end?.date;
+
+      const startDate = new Date(startRaw);
+      const endDate = endRaw ? new Date(endRaw) : null;
+
+      const dateText = startDate.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
       });
 
-      const endTime = endDate
-        ? endDate.toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "2-digit"
-          })
-        : "";
+      let timeText = "All day";
 
-      timeText = endTime ? `${startTime} – ${endTime}` : startTime;
+      if (event.start?.dateTime) {
+        const startTime = startDate.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit"
+        });
+
+        const endTime = endDate
+          ? endDate.toLocaleTimeString("en-US", {
+              hour: "numeric",
+              minute: "2-digit"
+            })
+          : "";
+
+        timeText = endTime ? `${startTime} – ${endTime}` : startTime;
+      }
+
+      nextEventEl.innerHTML = `
+        <strong>${title}</strong><br>
+        <span>${dateText}</span><br>
+        <span>${timeText}</span>
+        ${location ? `<br><span>${location}</span>` : ""}
+      `;
+    } catch (error) {
+      console.error("Error loading next event:", error);
+      nextEventEl.innerHTML = `
+        <strong>Unable to load next event</strong><br>
+        Please check the full calendar.
+      `;
     }
-
-    nextEventEl.innerHTML = `
-      <strong>${title}</strong><br>
-      <span>${dateText}</span><br>
-      <span>${timeText}</span>
-      ${location ? `<br><span>${location}</span>` : ""}
-    `;
-  } catch (error) {
-    console.error("Error loading next event:", error);
-    nextEventEl.innerHTML = `
-      <strong>Unable to load next event</strong><br>
-      Please check the full calendar.
-    `;
   }
-}
 
-loadNextEvent();
+  loadNextEvent();
+});
