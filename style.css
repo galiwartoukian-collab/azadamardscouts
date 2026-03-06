@@ -165,7 +165,7 @@ a:hover{
   z-index:0;
   background:
     linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.65)),
-    url("images/scouts.jpg");
+  url("images/hero/scouts.jpg");
   background-size:cover;
   background-position:center;
   transform: scale(1.05);
@@ -534,4 +534,99 @@ a:hover{
   .hero-inner{ padding:95px 0 70px; }
   .hero-logo{ height:160px; }
   .nav{ justify-content:flex-end; }
+}
+/* GALLERY CATEGORY CARDS (Homepage + Gallery Hub) */
+.gallery-categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.gallery-card{
+  display:block;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+  text-decoration:none;
+  color: var(--text);
+  transform: translateY(0);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.gallery-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,192,0,0.55);
+  text-decoration:none;
+}
+
+.gallery-card-media{
+  height:160px;
+  background-size:cover;
+  background-position:center;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.gallery-card-body{
+  padding:14px;
+}
+
+.gallery-card-title{
+  font-weight:900;
+  font-size:1.05rem;
+  margin-bottom:4px;
+}
+
+.gallery-card-sub{
+  color: rgba(255,255,255,0.78);
+  font-weight:600;
+  font-size:0.95rem;
+}
+
+/* Gallery page header row */
+.page-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.breadcrumb{
+  color: rgba(255,255,255,0.70);
+  font-weight:700;
+  font-size:0.95rem;
+}
+
+.breadcrumb a{
+  color: var(--yellow);
+  text-decoration:none;
+}
+
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+/* FAQ */
+
+.faq {
+  max-width: 800px;
+  margin: 30px auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0;
+}
+
+.faq-item summary {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.faq-item p {
+  margin-top: 10px;
+  color: #555;
 }
