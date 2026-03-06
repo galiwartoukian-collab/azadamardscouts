@@ -1562,3 +1562,35 @@ a:hover{
     transition:none;
   }
 }
+.next-event{
+  padding-top:36px;
+}
+
+.next-event-card{
+  max-width:620px;
+  margin:auto;
+  padding:18px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  box-shadow:var(--shadow-md);
+  text-align:center;
+}
+
+.next-event-label{
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.8rem;
+  color:var(--yellow);
+  margin-bottom:10px;
+}
+
+.next-event-card iframe{
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.next-event-footer{
+  margin-top:12px;
+}
