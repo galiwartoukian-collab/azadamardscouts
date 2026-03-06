@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadNextEvent(){
 
   const url =
-  "https://calendar.google.com/calendar/ical/galiwartoukian@gmail.com/public/basic.ics";
+  "https://calendar.google.com/calendar/embed?src=galiwartoukian%40gmail.com&ctz=America%2FLos_Angeles";
 
   const response = await fetch(url);
   const text = await response.text();
