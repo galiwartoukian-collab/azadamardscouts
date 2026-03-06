@@ -95,13 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (event.key === "Escape") {
         closeLightbox();
-      }
-
-      if (event.key === "ArrowLeft") {
+      } else if (event.key === "ArrowLeft") {
         showPrevImage();
-      }
-
-      if (event.key === "ArrowRight") {
+      } else if (event.key === "ArrowRight") {
         showNextImage();
       }
     });
@@ -121,90 +117,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  /* NEXT EVENT CARD */
-  async function loadNextEvent() {
-    const nextEventEl = document.getElementById("nextEvent");
-    if (!nextEventEl) return;
-
-    const calendarId = "galiwartoukian@gmail.com";
-    const apiKey = "AIzaSyCEXzb-KFDyiOzauHjCqh5suF5tORp0feQ";
-
-    const now = new Date().toISOString();
-
-    const url =
-      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events` +
-      `?key=${apiKey}` +
-      `&singleEvents=true` +
-      `&orderBy=startTime` +
-      `&timeMin=${encodeURIComponent(now)}` +
-      `&maxResults=1`;
-
-    try {
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (!data.items || !data.items.length) {
-        nextEventEl.innerHTML = `
-          <strong>No upcoming events yet</strong><br>
-          Check back soon.
-        `;
-        return;
-      }
-
-      const event = data.items[0];
-      const title = event.summary || "Upcoming Event";
-      const location = event.location || "";
-
-      const startRaw = event.start?.dateTime || event.start?.date;
-      const endRaw = event.end?.dateTime || event.end?.date;
-
-      const startDate = new Date(startRaw);
-      const endDate = endRaw ? new Date(endRaw) : null;
-
-      const dateText = startDate.toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric"
-      });
-
-      let timeText = "All day";
-
-      if (event.start?.dateTime) {
-        const startTime = startDate.toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit"
-        });
-
-        const endTime = endDate
-          ? endDate.toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "2-digit"
-            })
-          : "";
-
-        timeText = endTime ? `${startTime} – ${endTime}` : startTime;
-      }
-
-      nextEventEl.innerHTML = `
-        <strong>${title}</strong><br>
-        <span>${dateText}</span><br>
-        <span>${timeText}</span>
-        ${location ? `<br><span>${location}</span>` : ""}
-      `;
-    } catch (error) {
-      console.error("Error loading next event:", error);
-      nextEventEl.innerHTML = `
-        <strong>Unable to load next event</strong><br>
-        Please check the full calendar.
-      `;
-    }
-  }
-
-  loadNextEvent();
 });
