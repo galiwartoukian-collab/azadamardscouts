@@ -43,7 +43,33 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+/* GALLERY CATEGORY COUNTS */
+const galleryCategoriesEl = document.getElementById("galleryCategories");
 
+if (galleryCategoriesEl && typeof galleryData !== "undefined") {
+  const categoryOrder = ["camp", "weekly", "events", "field-trips"];
+
+  galleryCategoriesEl.innerHTML = categoryOrder.map((key) => {
+    const gallery = galleryData[key];
+    const count = gallery.images.length;
+    const subText = count > 0 ? `${count} photo${count === 1 ? "" : "s"}` : "Coming soon";
+
+    const coverStyle =
+      key === "field-trips"
+        ? `background-image:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65)), url('${gallery.cover}');`
+        : `background-image:url('${gallery.cover}');`;
+
+    return `
+      <a class="gallery-card" href="${key}.html">
+        <div class="gallery-card-media" style="${coverStyle}"></div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-title">${gallery.title}</div>
+          <div class="gallery-card-sub">${subText}</div>
+        </div>
+      </a>
+    `;
+  }).join("");
+}
   /* GALLERY LIGHTBOX */
   const galleryImages = document.querySelectorAll(".gallery-img");
   const lightbox = document.getElementById("lightbox");
