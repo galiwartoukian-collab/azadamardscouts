@@ -159,3 +159,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+async function loadNextEvent(){
+
+  const url =
+  "https://calendar.google.com/calendar/ical/galiwartoukian@gmail.com/public/basic.ics";
+
+  const response = await fetch(url);
+  const text = await response.text();
+
+  const events = text.split("BEGIN:VEVENT").slice(1);
+
+  const now = new Date();
+
+  let nextEvent = null;
+
+  events.forEach(event => {
+
+    const dateMatch = event.match(/DTSTART:(\d+)/);
+    const titleMatch = event.match(/SUMMARY:(.*)/);
+
+    if(!dateMatch || !titleMatch) return;
+
+    const dateStr = dateMatch[1];
+    const eventDate =
+      new Date(
+        dateStr.substring(0,4),
+        dateStr.substring(4,6)-1,
+        dateStr.substring(6,8)
+      );
+
+    if(eventDate > now && !nextEvent){
+      nextEvent = {
+        title: titleMatch[1],
+        date: eventDate
+      };
+    }
+
+  });
+
+  if(nextEvent){
+
+    const formatted =
+      nextEvent.date.toLocaleDateString("en-US",
+      {month:"long",day:"numeric",weekday:"long"});
+
+    document.getElementById("nextEvent").innerHTML =
+      `<strong>${nextEvent.title}</strong><br>${formatted}`;
+  }
+
+}
+
+loadNextEvent();
