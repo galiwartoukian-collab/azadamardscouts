@@ -1298,3 +1298,105 @@ a:hover{
   font-weight:800;
   font-size:1rem;
 }
+/* LIBRARY INTRO */
+.library-intro{
+  max-width:900px;
+  margin:0 auto 40px;
+  text-align:center;
+}
+
+.library-intro h2{
+  margin:0 0 10px;
+}
+
+/* GROUP SECTIONS */
+.library-group{
+  margin-top:48px;
+}
+
+.library-group-head{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.library-group-head h3{
+  margin:0 0 6px;
+  font-size:1.4rem;
+}
+
+/* SMALL GRID (for single items like Mogli) */
+.resources-grid-small{
+  max-width:280px;
+  margin:0 auto;
+}
+
+/* RESOURCE CARD THUMBNAIL */
+.resource-thumb{
+  position:relative;
+  aspect-ratio:3 / 4;
+  border-radius:14px;
+  margin-bottom:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding:18px;
+  box-shadow:0 16px 28px rgba(0,0,0,0.28);
+}
+
+/* BOOK TITLE INSIDE THUMBNAIL */
+.resource-thumb-title{
+  font-size:1.2rem;
+  font-weight:900;
+  line-height:1.1;
+  color:#fff;
+  max-width:80%;
+}
+
+/* BADGE (AGE / LEVEL / LANGUAGE) */
+.resource-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.14);
+  color:var(--yellow);
+  font-size:.78rem;
+  font-weight:800;
+}
+
+/* COLOR THEMES FOR BOOK TYPES */
+.resource-thumb-mogli{
+  background:linear-gradient(160deg,#4e3d00 0%,#171100 100%);
+}
+
+.resource-thumb-miasdgh{
+  background:linear-gradient(160deg,#2e2e2f 0%,#111214 100%);
+}
+
+.resource-thumb-yergasdgh{
+  background:linear-gradient(160deg,#3f2c00 0%,#161100 100%);
+}
+
+.resource-thumb-norakeer{
+  background:linear-gradient(160deg,#3c3030 0%,#141212 100%);
+}
+
+.resource-thumb-norendza{
+  background:linear-gradient(160deg,#26313d 0%,#11161b 100%);
+}
+
+.resource-thumb-pengark{
+  background:linear-gradient(160deg,#2e3523 0%,#11140f 100%);
+}
+
+.resource-thumb-updated{
+  background:linear-gradient(160deg,#5a4500 0%,#1c1400 100%);
+}
+
+.resource-thumb-language{
+  background:linear-gradient(160deg,#35282d 0%,#141113 100%);
+}
