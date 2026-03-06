@@ -978,23 +978,24 @@ a:hover{
 /* LEADERS PAGE */
 .leaders-page-hero{
   background:#101010;
-  padding:90px 20px 40px;
+  padding:48px 20px 24px;
   border-bottom:1px solid rgba(255,192,0,0.35);
   text-align:center;
 }
 
 .leaders-page-title{
   color:#fff;
-  font-size:clamp(2rem,4vw,3rem);
+  font-size:clamp(1.9rem,3.5vw,2.6rem);
   font-weight:800;
-  margin:0;
+  margin:6px 0 4px;
 }
 
 .leaders-page-subtitle{
   color:#c9c9c9;
-  max-width:650px;
-  margin:14px auto 0;
-  line-height:1.6;
+  max-width:600px;
+  margin:6px auto 0;
+  line-height:1.5;
+  font-size:0.95rem;
 }
 
 .leaders-kicker{
@@ -1002,10 +1003,9 @@ a:hover{
   text-transform:uppercase;
   letter-spacing:.12em;
   font-weight:700;
-  font-size:.8rem;
-  margin-bottom:8px;
+  font-size:.72rem;
+  margin-bottom:4px;
 }
-
 .leaders-section{
   background:#0d0d0e;
   padding:60px 20px 90px;
@@ -1263,8 +1263,7 @@ a:hover{
 
 .library-intro{
   max-width:860px;
-  margin:0 auto 42px;
-  text-align:center;
+  margin:24px auto 36px;
 }
 
 .library-intro h2{
