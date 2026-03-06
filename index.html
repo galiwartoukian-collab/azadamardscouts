@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,38 +13,43 @@
 </head>
 
 <body>
-  <!-- HEADER -->
+
   <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#top">
-      <img src="images/brand/logo.webp" class="logo" alt="Homenetmen Scouts Logo" />
-      <span class="brand-text">
-        <span class="brand-kicker">Homenetmen Pasadena</span>
-        <span class="brand-title">Azadamard Scouting</span>
-      </span>
-    </a>
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img src="images/brand/logo.webp" class="logo" alt="Homenetmen Scouts Logo" />
+        <span class="brand-text">
+          <span class="brand-kicker">Homenetmen Pasadena</span>
+          <span class="brand-title">Azadamard Scouting</span>
+        </span>
+      </a>
 
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <nav class="nav" id="site-nav">
-      <a href="#about">About</a>
-      <a href="#join">Sign Up</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="#faq">FAQ</a>
-      <a href="#community">Stay Connected</a>
-      <a href="#contact">Contact</a>
-      <a href="leaders.html">Leaders</a>
-      <a href="resources.html">Scouting Resources</a>
-    </nav>
-  </div>
-</header>
+      <nav class="nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#join">Sign Up</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="resources.html">Scouting Resources</a>
+        <a href="leaders.html">Leaders</a>
+        <a href="#faq">FAQ</a>
+        <a href="#community">Stay Connected</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main id="top">
-    <!-- JOIN BANNER -->
+
     <section class="join-banner">
       <div class="container join-banner-inner">
         <div class="join-text">
@@ -65,12 +71,15 @@
       </div>
     </section>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-media" aria-hidden="true"></div>
 
       <div class="container hero-inner">
-        <img class="hero-logo" src="images/brand/logo.webp" alt="Homenetmen Scouts Logo" />
+        <img
+          class="hero-logo"
+          src="images/brand/logo.webp"
+          alt="Homenetmen Scouts Logo"
+        />
 
         <h1>AZADAMARD SCOUTING</h1>
 
@@ -81,8 +90,8 @@
 
         <div class="cta-row">
           <a class="btn primary" href="#join">Request Info</a>
-          <a class="btn primary" href="gallery.html">View Gallery</a>
-          <a class="btn primary" href="leaders.html">Meet the Leaders</a>
+          <a class="btn ghost" href="gallery.html">View Gallery</a>
+          <a class="btn ghost" href="leaders.html">Meet the Leaders</a>
         </div>
 
         <div class="hero-notes">
@@ -99,7 +108,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container split">
         <div>
@@ -152,7 +160,6 @@
       </div>
     </section>
 
-    <!-- JOIN -->
     <section id="join" class="section alt">
       <div class="container">
         <h2>Request Information</h2>
@@ -188,40 +195,39 @@
           </div>
         </div>
 
-<form class="signup" action="https://formspree.io/f/mqeyzkob" method="POST">
-  <div class="signup-grid">
-    <label>
-      Parent / Guardian Name
-      <input type="text" name="parent" required />
-    </label>
+        <form class="signup" action="https://formspree.io/f/mqeyzkob" method="POST">
+          <div class="signup-grid">
+            <label>
+              Parent / Guardian Name
+              <input type="text" name="parent" required />
+            </label>
 
-    <label>
-      Email
-      <input type="email" name="email" required />
-    </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
 
-    <label>
-      Phone
-      <input type="tel" name="phone" />
-    </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" />
+            </label>
 
-    <label>
-      Scout Name
-      <input type="text" name="scout_name" required />
-    </label>
+            <label>
+              Scout Name
+              <input type="text" name="scout_name" required />
+            </label>
 
-    <label>
-      Scout Age
-      <input type="number" name="age" min="4" max="18" />
-    </label>
-  </div>
+            <label>
+              Scout Age
+              <input type="number" name="age" min="4" max="18" />
+            </label>
+          </div>
 
-  <button class="btn primary" type="submit">Request Info</button>
-</form>
+          <button class="btn primary" type="submit">Request Info</button>
+        </form>
       </div>
     </section>
 
-    <!-- GALLERY PREVIEW -->
     <section class="section" id="gallery-preview">
       <div class="container">
         <h2>Gallery</h2>
@@ -279,7 +285,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2>Frequently Asked Questions</h2>
@@ -288,7 +293,9 @@
         <div class="faq">
           <details class="faq-item">
             <summary>What ages can join?</summary>
-            <p>Ages <strong>4 and up</strong>. Scouts are placed in the appropriate group based on age.</p>
+            <p>
+              Ages <strong>4 and up</strong>. Scouts are placed in the appropriate group based on age.
+            </p>
           </details>
 
           <details class="faq-item">
@@ -336,7 +343,6 @@
       </div>
     </section>
 
-    <!-- STAY CONNECTED -->
     <section id="community" class="section">
       <div class="container center">
         <h2>Stay Connected</h2>
@@ -386,7 +392,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section alt">
       <div class="container contact">
         <h2>Contact</h2>
@@ -415,32 +420,9 @@
         </footer>
       </div>
     </section>
+
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
-
-    if (toggle && nav) {
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("nav-open");
-
-        const expanded = nav.classList.contains("nav-open");
-        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-      });
-
-      document.addEventListener("click", (event) => {
-        const clickedToggle = toggle.contains(event.target);
-        const clickedNav = nav.contains(event.target);
-
-        if (!clickedToggle && !clickedNav) {
-          nav.classList.remove("nav-open");
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
