@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* YEAR */
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  /* HAMBURGER MENU */
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
   const navLinks = document.querySelectorAll(".nav a");
@@ -44,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* GALLERY CATEGORY CARDS */
   const galleryCategoriesEl = document.getElementById("galleryCategories");
 
   if (galleryCategoriesEl && typeof galleryData !== "undefined") {
@@ -77,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  /* GALLERY LIGHTBOX */
   const galleryImages = document.querySelectorAll(".gallery-img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
