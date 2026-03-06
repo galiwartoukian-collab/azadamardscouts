@@ -1253,10 +1253,12 @@ a:hover{
   .gallery-grid img,
   .gallery-img,
   .leader-card,
-  .gallery-card{
+  .gallery-card,
+  .resource-card{
     transition:none;
   }
 }
+
 .resources-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
