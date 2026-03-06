@@ -758,54 +758,131 @@ a:hover{
     font-size: 0.85rem;
   }
 }
-/* LEADERS SECTION */
+/* ===== LEADERS SECTION ===== */
 
 .leaders-section {
-  padding: 60px 20px;
-  background: #f8f8f8;
+  background: #111;
+  padding: 90px 20px;
+  border-top: 3px solid #d4a900;
+  border-bottom: 3px solid #d4a900;
+}
+
+/* Heading */
+
+.leaders-heading {
   text-align: center;
+  margin-bottom: 55px;
 }
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 10px;
+.leaders-kicker {
+  color: #d4a900;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
 }
 
-.section-subtitle {
-  color: #666;
-  margin-bottom: 40px;
+.leaders-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
 }
+
+.leaders-subtitle {
+  color: #c9c9c9;
+  max-width: 600px;
+  margin: 14px auto 0;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
 
 .leaders-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+/* Leader Card */
+
 .leader-card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  position: relative;
+}
+.leader-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #d4a900;
+  opacity: .4;
 }
 
 .leader-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  border-color: rgba(212,169,0,.6);
+  box-shadow: 0 14px 28px rgba(0,0,0,.4);
 }
+
+/* Image */
 
 .leader-card img {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  display: block;
 }
 
-.leader-card h3 {
-  margin-top: 15px;
-  font-size: 18px;
+/* Leader Info */
+
+.leader-info {
+  padding: 18px 18px 22px;
+  text-align: center;
 }
 
-.leader-card p {
-  color: #777;
-  font-size: 14px;
+.leader-info h3 {
+  color: #ffffff;
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.leader-info p {
+  color: #d4a900;
+  font-weight: 600;
+  font-size: .95rem;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .leaders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .leaders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-card img {
+    height: 260px;
+  }
+
 }
