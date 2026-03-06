@@ -832,9 +832,9 @@ a:hover{
 
 .leader-card img{
   width:100%;
-  height:300px;
+  height:360px;
   object-fit:cover;
-  object-position:center 35%;
+  object-position:center 80%;
   display:block;
 }
 
@@ -857,19 +857,14 @@ a:hover{
   margin:0;
 }
 
-@media (max-width: 900px){
-  .leaders-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
 @media (max-width: 600px){
   .leaders-grid{
     grid-template-columns:1fr;
   }
 
   .leader-card img{
-    height:260px;
+    height:320px;
+    object-position:center 80%;
   }
 }
 /* MOBILE HAMBURGER MENU */
