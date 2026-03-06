@@ -117,96 +117,87 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightboxPrev.addEventListener("click", showPrevImage);
-    lightboxNext.addEventListener("click", showNextImage);
+async function loadNextEvent() {
+  const nextEventEl = document.getElementById("nextEvent");
+  if (!nextEventEl) return;
 
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
+  const calendarId = "galiwartoukian@gmail.com";
+  const apiKey = "AIzaSyCEXzb-KFDyiOzauHjCqh5suF5tORp0feQ";
 
-    document.addEventListener("keydown", (event) => {
-      if (!lightbox.classList.contains("active")) return;
-
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-
-      if (event.key === "ArrowLeft") {
-        showPrevImage();
-      }
-
-      if (event.key === "ArrowRight") {
-        showNextImage();
-      }
-    });
-
-    lightboxImage.addEventListener("touchstart", (event) => {
-      touchStartX = event.changedTouches[0].screenX;
-    });
-
-    lightboxImage.addEventListener("touchend", (event) => {
-      touchEndX = event.changedTouches[0].screenX;
-      const swipeDistance = touchEndX - touchStartX;
-
-      if (swipeDistance > 50) {
-        showPrevImage();
-      } else if (swipeDistance < -50) {
-        showNextImage();
-      }
-    });
-  }
-});
-async function loadNextEvent(){
+  const now = new Date().toISOString();
 
   const url =
-  "https://calendar.google.com/calendar/embed?src=galiwartoukian%40gmail.com&ctz=America%2FLos_Angeles";
+    `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events` +
+    `?key=${apiKey}` +
+    `&singleEvents=true` +
+    `&orderBy=startTime` +
+    `&timeMin=${encodeURIComponent(now)}` +
+    `&maxResults=1`;
 
-  const response = await fetch(url);
-  const text = await response.text();
+  try {
+    const response = await fetch(url);
 
-  const events = text.split("BEGIN:VEVENT").slice(1);
-
-  const now = new Date();
-
-  let nextEvent = null;
-
-  events.forEach(event => {
-
-    const dateMatch = event.match(/DTSTART:(\d+)/);
-    const titleMatch = event.match(/SUMMARY:(.*)/);
-
-    if(!dateMatch || !titleMatch) return;
-
-    const dateStr = dateMatch[1];
-    const eventDate =
-      new Date(
-        dateStr.substring(0,4),
-        dateStr.substring(4,6)-1,
-        dateStr.substring(6,8)
-      );
-
-    if(eventDate > now && !nextEvent){
-      nextEvent = {
-        title: titleMatch[1],
-        date: eventDate
-      };
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
     }
 
-  });
+    const data = await response.json();
 
-  if(nextEvent){
+    if (!data.items || !data.items.length) {
+      nextEventEl.innerHTML = `
+        <strong>No upcoming events yet</strong><br>
+        Check back soon.
+      `;
+      return;
+    }
 
-    const formatted =
-      nextEvent.date.toLocaleDateString("en-US",
-      {month:"long",day:"numeric",weekday:"long"});
+    const event = data.items[0];
+    const title = event.summary || "Upcoming Event";
+    const location = event.location || "";
 
-    document.getElementById("nextEvent").innerHTML =
-      `<strong>${nextEvent.title}</strong><br>${formatted}`;
+    const startRaw = event.start?.dateTime || event.start?.date;
+    const endRaw = event.end?.dateTime || event.end?.date;
+
+    const startDate = new Date(startRaw);
+    const endDate = endRaw ? new Date(endRaw) : null;
+
+    const dateText = startDate.toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric"
+    });
+
+    let timeText = "All day";
+
+    if (event.start?.dateTime) {
+      const startTime = startDate.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit"
+      });
+
+      const endTime = endDate
+        ? endDate.toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "2-digit"
+          })
+        : "";
+
+      timeText = endTime ? `${startTime} – ${endTime}` : startTime;
+    }
+
+    nextEventEl.innerHTML = `
+      <strong>${title}</strong><br>
+      <span>${dateText}</span><br>
+      <span>${timeText}</span>
+      ${location ? `<br><span>${location}</span>` : ""}
+    `;
+  } catch (error) {
+    console.error("Error loading next event:", error);
+    nextEventEl.innerHTML = `
+      <strong>Unable to load next event</strong><br>
+      Please check the full calendar.
+    `;
   }
-
 }
 
 loadNextEvent();
