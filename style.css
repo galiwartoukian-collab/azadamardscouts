@@ -863,8 +863,11 @@ a:hover{
   }
 
   .leader-card img{
-    height:320px;
+    width:100%;
+    height:360px;
+    object-fit:cover;
     object-position:center 80%;
+    display:block;
   }
 }
 /* MOBILE HAMBURGER MENU */
