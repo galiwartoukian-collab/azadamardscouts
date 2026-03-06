@@ -574,7 +574,7 @@ a:hover{
   height:220px;
   object-fit:cover;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.025);
   box-shadow:var(--shadow-sm);
   transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
@@ -598,7 +598,7 @@ a:hover{
   border-radius:16px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,0.14);
-  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.03));
+  background:linear-gradient(180deg, rgbargba(255,255,255,0.025), rgba(255,255,255,0.32));
   color:var(--text);
   transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   box-shadow:var(--shadow-sm);
