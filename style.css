@@ -8,7 +8,7 @@
   --bg-soft:#101114;
   --bg-deep:#070708;
 
-  --panel:rgba(255,255,255,0.06);
+  --panel:rgba(255,255,255,0.05);
   --panel2:rgba(255,255,255,0.04);
   --panel3:rgba(255,255,255,0.03);
 
@@ -48,11 +48,9 @@ body{
   color:var(--text);
   line-height:1.6;
   background-color:var(--bg);
-  background-image:
-    radial-gradient(circle at top center, rgba(255,192,0,0.035), transparent 22%),
-    radial-gradient(circle at bottom right, rgba(255,255,255,0.02), transparent 18%);
+  background-image:none;
   background-repeat:no-repeat;
-  background-size:1400px 700px, 900px 900px;
+  background-size:auto;
   background-attachment:scroll;
 }
 
@@ -92,7 +90,7 @@ a:hover{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(0,0,0,0.90);
+  background:rgba(0,0,0,0.92);
   border-bottom:3px solid var(--yellow);
   backdrop-filter:blur(10px);
 }
@@ -290,33 +288,6 @@ a:hover{
   box-shadow:0 12px 30px rgba(0,0,0,0.24);
 }
 
-/* JOIN BANNER BUTTON OVERRIDES */
-.join-banner .btn{
-  backdrop-filter:none;
-}
-
-.join-banner .btn.primary{
-  background:#000;
-  color:#fff;
-  border-color:#000;
-  box-shadow:none;
-}
-
-.join-banner .btn.primary:hover{
-  background:#111;
-}
-
-.join-banner .btn.ghost{
-  background:transparent;
-  color:#000;
-  border-color:#000;
-}
-
-.join-banner .btn.ghost:hover{
-  background:rgba(0,0,0,0.08);
-  color:#000;
-}
-
 /* JOIN BANNER */
 .join-banner{
   position:relative;
@@ -330,7 +301,7 @@ a:hover{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg, rgba(255,255,255,0.12), transparent 35%, rgba(0,0,0,0.05));
+  background:linear-gradient(90deg, rgba(255,255,255,0.10), transparent 35%, rgba(0,0,0,0.04));
   pointer-events:none;
 }
 
@@ -360,6 +331,32 @@ a:hover{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+.join-banner .btn{
+  backdrop-filter:none;
+}
+
+.join-banner .btn.primary{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+  box-shadow:none;
+}
+
+.join-banner .btn.primary:hover{
+  background:#111;
+}
+
+.join-banner .btn.ghost{
+  background:transparent;
+  color:#000;
+  border-color:#000;
+}
+
+.join-banner .btn.ghost:hover{
+  background:rgba(0,0,0,0.08);
+  color:#000;
 }
 
 /* HERO */
@@ -452,8 +449,8 @@ a:hover{
 }
 
 .note{
-  background:rgba(0,0,0,0.45);
-  border:1px solid rgba(255,255,255,0.30);
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(255,255,255,0.24);
   border-radius:14px;
   padding:10px 12px;
   backdrop-filter:blur(6px);
@@ -500,12 +497,20 @@ a:hover{
   align-items:start;
 }
 
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+.card,
+.signup,
+.mini,
+.faq-item,
+.gallery-card,
+.step{
+  background:rgba(255,255,255,0.04);
   border:1px solid var(--border);
   border-radius:18px;
-  padding:22px;
   box-shadow:var(--shadow-md);
+}
+
+.card{
+  padding:22px;
 }
 
 .divider{
@@ -526,18 +531,13 @@ a:hover{
   display:flex;
   align-items:flex-start;
   gap:25px;
-  background:rgba(255,255,255,0.025);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:18px;
   padding:26px 30px;
   transition:all 0.25s ease;
-  box-shadow:var(--shadow-sm);
 }
 
 .step:hover{
   border-color:var(--yellow);
   transform:translateY(-2px);
-  box-shadow:var(--shadow-md);
 }
 
 .step-num{
@@ -572,11 +572,7 @@ a:hover{
 /* SIGNUP FORM */
 .signup{
   margin-top:22px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.03));
-  border:1px solid var(--border);
-  border-radius:18px;
   padding:22px;
-  box-shadow:var(--shadow-md);
 }
 
 .signup-grid{
@@ -662,19 +658,14 @@ a:hover{
 
 .gallery-card{
   display:block;
-  border-radius:16px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,0.14);
-  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
   color:var(--text);
   transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-  box-shadow:var(--shadow-sm);
 }
 
 .gallery-card:hover{
   transform:translateY(-3px);
   border-color:rgba(255,192,0,0.55);
-  box-shadow:var(--shadow-md);
   text-decoration:none;
 }
 
@@ -715,6 +706,7 @@ a:hover{
   color:rgba(255,255,255,0.70);
   font-weight:700;
   font-size:0.95rem;
+  margin-bottom:10px;
 }
 
 .breadcrumb a{
@@ -733,11 +725,7 @@ a:hover{
 
 .faq-item{
   margin-bottom:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:16px;
   overflow:hidden;
-  box-shadow:var(--shadow-sm);
 }
 
 .faq-item[open]{
@@ -920,11 +908,8 @@ a:hover{
 }
 
 .mini{
-  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-  border:1px solid var(--border);
-  border-radius:14px;
   padding:16px;
-  box-shadow:var(--shadow-sm);
+  border-radius:14px;
 }
 
 .mini-title{
@@ -997,7 +982,7 @@ a:hover{
 }
 
 .leader-card{
-  background:linear-gradient(180deg, #1a1a1a, #141414);
+  background:#141414;
   border-radius:16px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,0.08);
@@ -1161,36 +1146,37 @@ a:hover{
 }
 
 .resource-thumb-mogli{
-  background:linear-gradient(160deg,#4e3d00 0%,#171100 100%);
+  background:#2a2206;
 }
 
 .resource-thumb-miasdgh{
-  background:linear-gradient(160deg,#2e2e2f 0%,#111214 100%);
+  background:#202123;
 }
 
 .resource-thumb-yergasdgh{
-  background:linear-gradient(160deg,#3f2c00 0%,#161100 100%);
+  background:#2d2207;
 }
 
 .resource-thumb-norakeer{
-  background:linear-gradient(160deg,#3c3030 0%,#141212 100%);
+  background:#2a1f1f;
 }
 
 .resource-thumb-norendza{
-  background:linear-gradient(160deg,#26313d 0%,#11161b 100%);
+  background:#1c2630;
 }
 
 .resource-thumb-pengark{
-  background:linear-gradient(160deg,#2e3523 0%,#11140f 100%);
+  background:#222918;
 }
 
 .resource-thumb-updated{
-  background:linear-gradient(160deg,#5a4500 0%,#1c1400 100%);
+  background:#3a2b06;
 }
 
 .resource-thumb-language{
-  background:linear-gradient(160deg,#35282d 0%,#141113 100%);
+  background:#2a2024;
 }
+
 /* RESOURCES PAGE LAYOUT */
 .resources-page .container{
   width:min(1280px,94vw);
@@ -1229,50 +1215,6 @@ a:hover{
   margin-top:60px;
 }
 
-@media (max-width:900px){
-  .resources-page .container{
-    width:min(1280px,95vw);
-  }
-
-  .resources-page .resources-grid{
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:20px;
-  }
-
-  .resources-page .library-intro,
-  .resources-page .library-group-head{
-    max-width:none;
-  }
-}
-
-@media (max-width:640px){
-  .resources-page .resources-grid{
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .resources-page .resources-grid-small{
-    max-width:none;
-  }
-
-  .resources-page .resource-thumb{
-    aspect-ratio:3 / 4.2;
-  }
-
-  .resources-page .resource-card h4{
-    font-size:0.98rem;
-  }
-
-  .resources-page .resource-meta{
-    font-size:0.86rem;
-  }
-}
-
-@media (max-width:480px){
-  .resources-page .resources-grid{
-    grid-template-columns:1fr;
-  }
-}
 /* RESPONSIVE */
 @media (max-width:980px){
   .leaders-grid{
@@ -1290,6 +1232,22 @@ a:hover{
   .nav-link{
     padding:10px 12px;
     font-size:0.92rem;
+  }
+}
+
+@media (max-width:900px){
+  .resources-page .container{
+    width:min(1280px,95vw);
+  }
+
+  .resources-page .resources-grid{
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:20px;
+  }
+
+  .resources-page .library-intro,
+  .resources-page .library-group-head{
+    max-width:none;
   }
 }
 
@@ -1402,6 +1360,18 @@ a:hover{
   .join-text h2{
     font-size:1.35rem;
   }
+
+  .calendar-toolbar{
+    gap:10px;
+  }
+
+  .calendar-toolbar .btn{
+    width:100%;
+  }
+
+  .calendar-embed iframe{
+    min-height:620px;
+  }
 }
 
 @media (max-width:640px){
@@ -1511,6 +1481,27 @@ a:hover{
     min-width:unset;
     width:100%;
   }
+
+  .resources-page .resources-grid{
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+
+  .resources-page .resources-grid-small{
+    max-width:none;
+  }
+
+  .resources-page .resource-thumb{
+    aspect-ratio:3 / 4.2;
+  }
+
+  .resources-page .resource-card h4{
+    font-size:0.98rem;
+  }
+
+  .resources-page .resource-meta{
+    font-size:0.86rem;
+  }
 }
 
 @media (max-width:480px){
@@ -1569,6 +1560,10 @@ a:hover{
     object-fit:cover;
     object-position:center 80%;
   }
+
+  .resources-page .resources-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 /* REDUCED MOTION */
@@ -1594,7 +1589,4 @@ a:hover{
   .nav-link{
     transition:none;
   }
-}
-.breadcrumb{
-  margin-bottom:10px;
 }
