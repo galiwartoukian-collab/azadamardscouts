@@ -75,7 +75,7 @@
       <p class="study-kicker">Scouting Program</p>
       <h1>Study Cards</h1>
       <p class="study-subtitle">
-        Choose a rank deck and study one flash card at a time.
+        Choose a study deck and work through one card at a time.
       </p>
     </div>
   </section>
@@ -107,13 +107,35 @@
           </span>
         </button>
 
+        <button class="deck-stack" id="openAypGarkDeck" type="button" aria-label="Open Ayp Gark deck">
+          <span class="deck-layer deck-layer-3"></span>
+          <span class="deck-layer deck-layer-2"></span>
+          <span class="deck-layer deck-layer-1"></span>
+          <span class="deck-label">
+            <span class="deck-kicker">Ari / Arenoush</span>
+            <span class="deck-title">Ayp Gark</span>
+            <span class="deck-count">43 Study Cards</span>
+          </span>
+        </button>
+
+        <button class="deck-stack" id="openWeatherDeck" type="button" aria-label="Open Weather deck">
+          <span class="deck-layer deck-layer-3"></span>
+          <span class="deck-layer deck-layer-2"></span>
+          <span class="deck-layer deck-layer-1"></span>
+          <span class="deck-label">
+            <span class="deck-kicker">Reference Deck</span>
+            <span class="deck-title">Weather Knowledge</span>
+            <span class="deck-count">18 Study Cards</span>
+          </span>
+        </button>
+
       </div>
 
       <div id="studyViewer" class="study-viewer hidden">
         <div class="study-viewer-top">
           <button id="backToDecks" class="study-plain-btn" type="button">← Back to Decks</button>
-          <div id="deckName" class="deck-name-label">Norendza</div>
-          <div id="cardCounter" class="card-counter">1 / 30</div>
+          <div id="deckName" class="deck-name-label">Deck Name</div>
+          <div id="cardCounter" class="card-counter">1 / 1</div>
         </div>
 
         <div class="single-card-wrap">
@@ -122,12 +144,12 @@
               <div class="single-flashcard-face single-flashcard-front">
                 <span id="cardCategoryFront" class="card-tag">Category</span>
                 <h2 id="cardQuestion">Question goes here</h2>
-                <p>Click card to reveal answer</p>
+                <p>Click the card to reveal the answer</p>
               </div>
               <div class="single-flashcard-face single-flashcard-back">
                 <span id="cardCategoryBack" class="card-tag">Answer</span>
                 <h2 id="cardAnswer">Answer goes here</h2>
-                <p>Click card to flip back</p>
+                <p>Click the card to flip back</p>
               </div>
             </div>
           </div>
@@ -151,20 +173,26 @@
     { category: "Homenetmen", question: "Where was Homenetmen established?", answer: "Istanbul, Turkey." },
     { category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintlian, and Krikor Hagopian." },
     { category: "Homenetmen", question: "Why do we call each other 'kouyr' and 'yeghpayr'?", answer: "To strengthen the feeling of family within Homenetmen." },
+
     { category: "Structure", question: "What is the difference between a bashdon and an asdijan?", answer: "A bashdon is temporary. An asdijan is permanent." },
     { category: "Structure", question: "What is the highest asdijan a scout can obtain?", answer: "Khmpabed." },
     { category: "Structure", question: "What is the highest bashdon a scout can obtain?", answer: "Shrchanayin Entanour Khmpabed." },
     { category: "Structure", question: "Passing this test counts as what: gark, asdijan, or bashdon?", answer: "Gark." },
     { category: "Structure", question: "Put these in descending order: Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort.", answer: "Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort." },
+
     { category: "Symbols", question: "What is the name of the symbol used for Homenetmen scouts?", answer: "Shoushanatsagheeg." },
     { category: "Symbols", question: "What is the name of the symbol used for all of Homenetmen?", answer: "Vahan." },
+
     { category: "Uniform", question: "Where does the Norendza badge go on the daraz?", answer: "On its assigned Norendza badge placement spot on the uniform." },
     { category: "Uniform", question: "Where does the Pen Gark / Yegrort Gark badge go on the daraz?", answer: "On its assigned Second Rank badge placement spot on the uniform." },
+
     { category: "Salute", question: "Which of these is not a scout salute: Bashdonagan Parev, Klookhi Parev, Kavazaov Parev, Vodkov Parev?", answer: "Vodkov Parev." },
     { category: "Salute", question: "When greeting a scout with a handshake, do you use your right hand?", answer: "No. You use your left hand." },
+
     { category: "Leadership Colors", question: "What color are a Miavori Khmpabed's shoulder loops?", answer: "Orange." },
     { category: "Leadership Colors", question: "What color are a Shrchanayin Khmpabed's shoulder loops?", answer: "Baby blue." },
     { category: "Leadership Colors", question: "What color are a Khmpabed's shoulder loops?", answer: "Green." },
+
     { category: "Armenia", question: "Which country borders Armenia to the north?", answer: "Georgia." },
     { category: "Armenia", question: "Which country borders Armenia to the south?", answer: "Iran." },
     { category: "Armenia", question: "Which country borders Armenia to the east?", answer: "Azerbaijan." },
@@ -173,8 +201,10 @@
     { category: "Diaspora", question: "About how many Armenians live in the Diaspora?", answer: "About 8,000,000." },
     { category: "Diaspora", question: "What does 'Spyurk' or 'Diaspora' mean?", answer: "People who live outside of their homeland." },
     { category: "Armenia", question: "Which of these mountains is in present-day Armenia: Ararat, Massis, Arakadz, or Sis?", answer: "Arakadz." },
+
     { category: "Compass", question: "What are the eight directions of the compass?", answer: "North, Northeast, East, Southeast, South, Southwest, West, Northwest." },
     { category: "Compass", question: "Complete the analogy: Arevelk is to East as ______ is to West.", answer: "Arevmoodk." },
+
     { category: "Tracking", question: "What does 'hedakhoozel' mean?", answer: "To track or to trail." }
   ];
 
@@ -216,13 +246,95 @@
     { category: "Camp", question: "If the opposing group steals the flags during the night game, what must they do?", answer: "They must keep the flags until the opening flag ceremony and return them before the ceremony." }
   ];
 
+  const aypGarkCards = [
+    { category: "Garks", question: "What are the five garks in order for Ari/Arenoush scouts?", answer: "Norendza, Pen Gark, Ayp Gark, Vgayal, Araratian." },
+    { category: "Garks", question: "Where is the Norendza badge worn on the daraz?", answer: "On the left pocket." },
+    { category: "Garks", question: "Where is the Pen Gark badge worn on the daraz?", answer: "On the left sleeve under the chapter patches." },
+    { category: "Garks", question: "Where is the Ayp Gark badge worn on the daraz?", answer: "On the left side above the pocket." },
+    { category: "Garks", question: "What is the Vgayal gark and where is it worn?", answer: "It is a regional leadership gark and is worn as a star pin on the left pocket flap." },
+    { category: "Garks", question: "What is the Araratian gark and who runs that program?", answer: "It is the highest gark, run by Central / Getronagan, and connected to the four-year jamboree." },
+
+    { category: "History", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintilian, and Krikor Hagopian." },
+    { category: "History", question: "On what date was Homenetmen founded?", answer: "November 16, 1918." },
+    { category: "History", question: "In what city was the founding meeting of Homenetmen held?", answer: "Constantinople / Istanbul." },
+    { category: "History", question: "What dream of Shavarsh Kristian helped inspire the founding of Homenetmen?", answer: "To unite Armenian athletic teams under one umbrella organization and create an Armenian Olympics." },
+
+    { category: "Mottos", question: "What is the Homenetmen motto?", answer: "Elevate yourself and others with you." },
+    { category: "Mottos", question: "What is the scouting motto?", answer: "Always prepared." },
+    { category: "Identity", question: "What is the difference between Azk and Hayrenik?", answer: "Hayrenik is our homeland / country where we live. Azk is us and our culture." },
+
+    { category: "Ceremonies", question: "Name five of the thirteen scout ceremonies.", answer: "Examples: Medz Ganch, Kayleegee Khosdoum, Yertoum, Bahagoutyan Transfer, Hertabah Transfer, Troshagee Ceremony, Badges and Gark Awarding Ceremony." },
+    { category: "Ceremonies", question: "What is the purpose of Medz Ganch?", answer: "To bring scouts together in the morning and welcome the Akella while teaching respect and listening to leaders." },
+    { category: "Ceremonies", question: "What happens during the Vohmagee Khoump Transfer ceremony?", answer: "When Kayleegs/Ardzvigs turn 11 they transfer to Ari/Arenoush, often symbolized by jumping over a rope during a flag ceremony." },
+    { category: "Ceremonies", question: "What happens during a Bahagoutyan transfer?", answer: "The scout on duty and the incoming scout salute, pass the stick, and salute again to confirm the shift change." },
+    { category: "Ceremonies", question: "What happens during a Hertabah transfer?", answer: "The new Hertabah salutes the Kerakouyn Gazm, then salutes the current Hertabah, switches positions, and salutes again to confirm the new role." },
+
+    { category: "Flag", question: "What do the colors of the Armenian flag represent?", answer: "Red is our blood, blue is our waters, and orange is our wheat." },
+    { category: "Flag", question: "How does a scout salute the flag, and when?", answer: "During flag ceremony while the flag is going up, coming down, and being folded. K/A use 2 fingers and A/A use 3 fingers." },
+    { category: "Flag", question: "Who may salute the flag during a flag ceremony?", answer: "Only a scout in full uniform. Otherwise the person stands in badrasd." },
+    { category: "Flag", question: "What happens to the flag when someone passes away?", answer: "It is first raised all the way, then lowered to half-mast." },
+    { category: "Flag", question: "If all flagpoles are the same height, what is the correct order of flags?", answer: "The country you are in first, then other nations alphabetically, then state flags, and lastly the organization flag." },
+
+    { category: "Agenda", question: "What two things should every agenda begin with?", answer: "A goal and a purpose." },
+    { category: "Agenda", question: "In your group hierarchy, what is the order for sending and approving an agenda?", answer: "Arachnorts prepare it, send to Pogh Khmpabed, then Khmpabed, then Kerakouyn Gazm, then corrections are made and finalized." },
+
+    { category: "Leadership", question: "What are the duties of a Pogh Arachnort?", answer: "Help with meetings and agendas, teach the group, handle educationals, be an example, help lead the group, and make calls if needed." },
+    { category: "Leadership", question: "What are the duties of an Arachnort?", answer: "Lead group meetings, pass along information, prepare agendas with Pogh Arachnorts, protect the group's badeev, be fair, and help scouts grow." },
+    { category: "Leadership", question: "What are the duties of a Vareech Arachnort?", answer: "Watch over multiple groups, make sure Arachnorts and Pogh Arachnorts do their jobs, help with agendas, and support scouts fairly." },
+    { category: "Leadership", question: "What are the duties of a Pogh Khmpabed / Khmpabed?", answer: "Set an example, plan camps and events, protect scouts, attend meetings, pass along information, know the scouts well, and prepare them to one day take over." },
+
+    { category: "Reports", question: "What are the five sections of a summary report (deghegakeer)?", answer: "Marzagan, Garkabahagan, Entanour, Haraperagan, Engeragan." },
+
+    { category: "Requirements", question: "What are the requirements to earn Ayp Gark?", answer: "Have Pen Gark for 6 months, be at least 14 years old, be known as a model scout, know Pen Gark material, and have attended at least 10 days of camp." },
+    { category: "Leadership Structure", question: "What are the two types of ranks in Homenetmen leadership?", answer: "Astijan and Bashdon." },
+    { category: "Leadership Structure", question: "Which positions are astijan and which are bashdon?", answer: "Astijan: Pogh Arachnort, Arachnort, Vareech Arachnort, Pogh Khmpabed, Khmpabed. Bashdon: Miavori, Pogh Masnajoughi Khmpabed, Masnajoughi Khmpabed, Shrchanayin Pogh Khmpabed, Shrchanayin Khmpabed, Shrchanayin Entanour Khmpabed." },
+    { category: "Arshav", question: "What should you do if you get lost on an arshav?", answer: "Stay calm, do not leave your spot, yell or whistle or make a fire signal, and leave signs or notes if needed." },
+    { category: "Arshav", question: "What should the group do first if a scout is separated?", answer: "The group should not split up, should work together, and go to the highest point to look around for signals." },
+    { category: "Compass", question: "What is the difference between true north and magnetic north?", answer: "True north is north according to the earth's axis. Magnetic north is where a compass points based on the earth's magnetic field." },
+    { category: "Compass", question: "How many degrees difference is there between true north and magnetic north?", answer: "About 10 to 15 degrees." },
+    { category: "Exercise", question: "Describe the scoutagan kayl.", answer: "It consists of 20 walking steps and 20 running steps, repeated during morning exercise before breakfast." },
+    { category: "Camp", question: "How do you purify water in camp?", answer: "Let dirt settle, pour into another container, then boil for 15 minutes. You can also use purifying tablets or a water purifier." },
+    { category: "Camp", question: "What are the main camp-selection rules?", answer: "Use dry land, avoid humid areas and swamps, choose a shady place, and stay away from other campgrounds." },
+    { category: "Ropes", question: "What are the main rules for caring for ropes?", answer: "Wash in cold water, tie the ends, and dry under shade in a non-humid place." },
+    { category: "Ropes", question: "How much stronger is manila rope than sisal rope?", answer: "About 2 times stronger." },
+    { category: "Ropes", question: "Name three materials ropes can be made from.", answer: "Examples: cotton, paper, leaves, plastic, manila, sisal, metal." }
+  ];
+
+  const weatherCards = [
+    { category: "Fog", question: "What is radiation fog?", answer: "Fog formed when land cools at night and the air above it condenses." },
+    { category: "Fog", question: "What is ground fog?", answer: "A shallow fog layer close to the ground that obscures less than 60% of the sky." },
+    { category: "Fog", question: "What is advection fog?", answer: "Fog that forms when warm moist air moves over a cooler surface." },
+    { category: "Fog", question: "What is evaporation or steam fog?", answer: "Fog formed when cold air moves over warmer water causing evaporation and condensation." },
+    { category: "Fog", question: "What is ice fog?", answer: "Fog composed of tiny ice crystals that form in extremely cold temperatures." },
+    { category: "Fog", question: "What is freezing fog?", answer: "Fog made of supercooled droplets that freeze when they touch surfaces." },
+    { category: "Fog", question: "What is precipitation fog?", answer: "Fog that forms when precipitation falls into drier air and evaporates into it." },
+    { category: "Fog", question: "What is hail fog?", answer: "Localized fog that can form near hail accumulations because of cooling and moisture near the surface." },
+    { category: "Fog", question: "What is upslope fog?", answer: "Fog created when moist air moves up a mountain slope and cools." },
+
+    { category: "Clouds", question: "What are Cirrus clouds?", answer: "Thin, wispy clouds made of ice crystals high in the sky." },
+    { category: "Clouds", question: "What are Cirrostratus clouds?", answer: "Thin veil-like clouds that often create halos around the sun or moon." },
+    { category: "Clouds", question: "What are Cirrocumulus clouds?", answer: "Small white patches or ripples of clouds high in the sky." },
+    { category: "Clouds", question: "What are Altostratus clouds?", answer: "Gray or bluish cloud layers that cover much of the sky." },
+    { category: "Clouds", question: "What are Altocumulus clouds?", answer: "Rounded cloud masses or rolls that appear in patches." },
+    { category: "Clouds", question: "What are Nimbostratus clouds?", answer: "Dark clouds that bring steady rain or snow." },
+    { category: "Clouds", question: "What are Cumulus clouds?", answer: "Large white puffy clouds with flat bases and towering tops." },
+    { category: "Clouds", question: "What are Stratus clouds?", answer: "Low gray clouds that cover the sky like a blanket." },
+    { category: "Clouds", question: "What are Cumulonimbus clouds?", answer: "Tall thunderstorm clouds that produce lightning, rain, hail, and sometimes tornadoes." },
+    { category: "Clouds", question: "What are Stratocumulus clouds?", answer: "Low clouds that appear in large gray patches or rolls." }
+  ];
+
   const decks = {
-    Norendza: norendzaCards,
-    "Pen Gark": penGarkCards
+    "Norendza": norendzaCards,
+    "Pen Gark": penGarkCards,
+    "Ayp Gark": aypGarkCards,
+    "Weather Knowledge": weatherCards
   };
 
   const openNorendzaDeck = document.getElementById("openNorendzaDeck");
   const openPenGarkDeck = document.getElementById("openPenGarkDeck");
+  const openAypGarkDeck = document.getElementById("openAypGarkDeck");
+  const openWeatherDeck = document.getElementById("openWeatherDeck");
+
   const deckSelection = document.getElementById("deckSelection");
   const studyViewer = document.getElementById("studyViewer");
   const backToDecks = document.getElementById("backToDecks");
@@ -275,6 +387,8 @@
 
   openNorendzaDeck.addEventListener("click", () => openDeck("Norendza"));
   openPenGarkDeck.addEventListener("click", () => openDeck("Pen Gark"));
+  openAypGarkDeck.addEventListener("click", () => openDeck("Ayp Gark"));
+  openWeatherDeck.addEventListener("click", () => openDeck("Weather Knowledge"));
 
   backToDecks.addEventListener("click", () => {
     studyViewer.classList.add("hidden");
