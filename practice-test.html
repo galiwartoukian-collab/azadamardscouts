@@ -72,70 +72,69 @@
 
 <main>
   <section class="study-hero">
-  <div class="container">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="study.html">Study</a> / Practice Tests
+      </div>
 
-    <div class="breadcrumb">
-      <a href="study.html">Study</a> / Practice Tests
+      <p class="study-kicker">Scouting Program</p>
+      <h1>Practice Tests</h1>
+      <p class="study-subtitle">
+        Choose a practice test. Each test pulls 20 randomized questions from its question bank.
+      </p>
     </div>
-
-    <p class="study-kicker">Scouting Program</p>
-    <h1>Practice Tests</h1>
-    <p class="study-subtitle">
-      Choose a practice test. Each test pulls 20 randomized questions from its question bank.
-    </p>
-  </div>
-</section>
+  </section>
 
   <section class="study-section">
     <div class="container">
 
- <div id="testStartArea" class="test-start-grid">
+      <div id="testStartArea" class="test-start-grid">
 
-  <div class="test-card">
-    <span class="card-tag">Norendza</span>
-    <h2>Norendza Practice Test</h2>
-    <p class="test-copy">
-      20 random multiple-choice questions. Score yourself at the end and review what you missed.
-    </p>
+        <div class="test-card">
+          <span class="card-tag">Norendza</span>
+          <h2>Norendza Practice Test</h2>
+          <p class="test-copy">
+            20 random multiple-choice questions. Score yourself at the end and review what you missed.
+          </p>
 
-    <div class="test-meta">
-      <div><strong>Question Bank:</strong> 60 questions</div>
-      <div><strong>Test Length:</strong> 20 questions</div>
-    </div>
+          <div class="test-meta">
+            <div><strong>Question Bank:</strong> 60 questions</div>
+            <div><strong>Test Length:</strong> 20 questions</div>
+          </div>
 
-    <button id="startNorendzaTestBtn" class="study-btn primary" type="button">
-      Start Norendza Test
-    </button>
-  </div>
+          <button id="startNorendzaTestBtn" class="study-btn primary" type="button">
+            Start Norendza Test
+          </button>
+        </div>
 
-  <div class="test-card">
-    <span class="card-tag">Pen Gark</span>
-    <h2>Pen Gark Practice Test</h2>
-    <p class="test-copy">
-      20 random multiple-choice questions from the Pen Gark question bank.
-    </p>
+        <div class="test-card">
+          <span class="card-tag">Pen Gark</span>
+          <h2>Pen Gark Practice Test</h2>
+          <p class="test-copy">
+            20 random multiple-choice questions from the Pen Gark question bank.
+          </p>
 
-    <div class="test-meta">
-      <div><strong>Question Bank:</strong> 75 questions</div>
-      <div><strong>Test Length:</strong> 20 questions</div>
-    </div>
+          <div class="test-meta">
+            <div><strong>Question Bank:</strong> 75 questions</div>
+            <div><strong>Test Length:</strong> 20 questions</div>
+          </div>
 
-    <button id="startPenGarkTestBtn" class="study-btn primary" type="button">
-      Start Pen Gark Test
-    </button>
-  </div>
+          <button id="startPenGarkTestBtn" class="study-btn primary" type="button">
+            Start Pen Gark Test
+          </button>
+        </div>
 
-</div>
+      </div>
 
       <div id="testApp" class="test-app hidden">
         <div class="test-topbar">
-  <div class="test-topbar-actions">
-    <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
-    <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
-  </div>
+          <div class="test-topbar-actions">
+            <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
+            <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
+          </div>
 
-  <div id="questionCounter" class="card-counter">Question 1 / 20</div>
-</div>
+          <div id="questionCounter" class="card-counter">Question 1 / 20</div>
+        </div>
 
         <div class="test-card">
           <span id="questionCategory" class="card-tag">Category</span>
@@ -143,14 +142,11 @@
 
           <div id="answerOptions" class="answer-options"></div>
 
-         <div class="test-topbar">
-  <div class="test-topbar-actions">
-    <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
-    <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
-  </div>
-
-  <div id="questionCounter" class="card-counter">Question 1 / 20</div>
-</div>
+          <div class="test-actions">
+            <button id="prevQuestionBtn" class="study-btn ghost" type="button">Previous</button>
+            <button id="nextQuestionBtn" class="study-btn primary" type="button">Next</button>
+            <button id="submitTestBtn" class="study-btn primary hidden" type="button">Submit Test</button>
+          </div>
         </div>
       </div>
 
@@ -162,9 +158,9 @@
         <div id="resultsBreakdown" class="results-breakdown"></div>
 
         <div class="test-actions">
-  <button id="restartTestBtn" class="study-btn primary" type="button">Take Another Test</button>
-  <button id="backToTestHomeBtn" class="study-btn ghost" type="button">Test Home</button>
-</div>
+          <button id="restartTestBtn" class="study-btn primary" type="button">Take Another Test</button>
+          <button id="backToTestHomeBtn" class="study-btn ghost" type="button">Test Home</button>
+        </div>
       </div>
 
     </div>
@@ -249,105 +245,109 @@
     { category: "Representation", question: "Scouts should represent their chapter with:", choices: ["Pride and respect", "Competition", "Silence", "Fear"], answer: 0 },
     { category: "Purpose", question: "The purpose of scouting is ultimately to:", choices: ["Serve the Armenian nation and community", "Travel", "Win competitions", "Become famous"], answer: 0 }
   ];
-const penGarkTestBank = [
-  { category: "History", question: "Who wrote the Armenian national anthem?", choices: ["Komitas", "Mikael Nalbandian", "Hovhannes Toumanian", "Garegin Nzhdeh"], answer: 1 },
-  { category: "History", question: "In what year was the Armenian national anthem written?", choices: ["1859", "1918", "1875", "1920"], answer: 0 },
-  { category: "History", question: "What is the name of the Armenian national anthem?", choices: ["Hayastan", "Mer Hayrenik", "Yeraz", "Azad Hayastan"], answer: 1 },
-  { category: "History", question: "Which treaty gave Kars, Ardahan, and Batum to the Ottoman Empire?", choices: ["Treaty of Lausanne", "Treaty of Sèvres", "Treaty of Brest-Litovsk", "Treaty of Berlin"], answer: 2 },
-  { category: "History", question: "In what year was the Treaty of Brest-Litovsk signed?", choices: ["1915", "1917", "1918", "1920"], answer: 2 },
-  { category: "History", question: "Which battles helped Armenians defeat the Turks in 1918?", choices: ["Sardarabad, Gharakilise, Bash Aparan", "Van, Kars, Erzurum", "Ararat, Lori, Gyumri", "Ani, Kars, Van"], answer: 0 },
-  { category: "History", question: "When is Armenian Independence Day from the First Republic?", choices: ["April 24", "May 28", "July 5", "September 21"], answer: 1 },
-  { category: "History", question: "Who commanded Armenian forces during the Sardarabad battles?", choices: ["Aram Manoukian", "General Nazarbekian", "Andranik", "Garegin Nzhdeh"], answer: 1 },
-  { category: "History", question: "Who became Armenia’s first prime minister in 1918?", choices: ["Aram Manoukian", "Hovhannes Kajaznuni", "Dro", "Simon Vratsian"], answer: 1 },
-  { category: "History", question: "Which treaty expanded Armenia’s territory to 162,000 square kilometers?", choices: ["Treaty of Lausanne", "Treaty of Berlin", "Treaty of Sèvres", "Treaty of Moscow"], answer: 2 },
 
-  { category: "Geography", question: "Historic Armenia covered approximately how many square kilometers?", choices: ["100,000", "300,000", "500,000", "800,000"], answer: 1 },
-  { category: "Geography", question: "Armenia is located in which region?", choices: ["Eastern Europe", "Western Asia", "Central Asia", "Middle East"], answer: 1 },
-  { category: "Geography", question: "Armenia is often described as a land of:", choices: ["Forests", "Rivers", "Mountains", "Plains"], answer: 2 },
-  { category: "Geography", question: "Which mountain is the tallest in Historic Armenia?", choices: ["Aragats", "Massis (Ararat)", "Nemrut", "Sipan"], answer: 1 },
-  { category: "Geography", question: "What is the height of Big Massis?", choices: ["4095 m", "4434 m", "5156 m", "3965 m"], answer: 2 },
-  { category: "Geography", question: "What is the height of Small Massis?", choices: ["3965 m", "4095 m", "4434 m", "5156 m"], answer: 0 },
-  { category: "Geography", question: "What is Armenia’s second tallest peak?", choices: ["Aragats", "Sipan", "Nemrut", "Ararat"], answer: 0 },
-  { category: "Geography", question: "What lake is located within present-day Armenia?", choices: ["Urmia", "Van", "Sevan", "Caspian"], answer: 2 },
-  { category: "Geography", question: "Which lake is known for the Ishkhan fish?", choices: ["Urmia", "Van", "Sevan", "Aral"], answer: 2 },
-  { category: "Geography", question: "Which rivers originate in the Armenian highlands?", choices: ["Nile and Congo", "Euphrates and Tigris", "Danube and Rhine", "Amazon and Orinoco"], answer: 1 },
+  const penGarkTestBank = [
+    { category: "History", question: "Who wrote the Armenian national anthem?", choices: ["Komitas", "Mikael Nalbandian", "Hovhannes Toumanian", "Garegin Nzhdeh"], answer: 1 },
+    { category: "History", question: "In what year was the Armenian national anthem written?", choices: ["1859", "1918", "1875", "1920"], answer: 0 },
+    { category: "History", question: "What is the name of the Armenian national anthem?", choices: ["Hayastan", "Mer Hayrenik", "Yeraz", "Azad Hayastan"], answer: 1 },
+    { category: "History", question: "Which treaty gave Kars, Ardahan, and Batum to the Ottoman Empire?", choices: ["Treaty of Lausanne", "Treaty of Sèvres", "Treaty of Brest-Litovsk", "Treaty of Berlin"], answer: 2 },
+    { category: "History", question: "In what year was the Treaty of Brest-Litovsk signed?", choices: ["1915", "1917", "1918", "1920"], answer: 2 },
+    { category: "History", question: "Which battles helped Armenians defeat the Turks in 1918?", choices: ["Sardarabad, Gharakilise, Bash Aparan", "Van, Kars, Erzurum", "Ararat, Lori, Gyumri", "Ani, Kars, Van"], answer: 0 },
+    { category: "History", question: "When is Armenian Independence Day from the First Republic?", choices: ["April 24", "May 28", "July 5", "September 21"], answer: 1 },
+    { category: "History", question: "Who commanded Armenian forces during the Sardarabad battles?", choices: ["Aram Manoukian", "General Nazarbekian", "Andranik", "Garegin Nzhdeh"], answer: 1 },
+    { category: "History", question: "Who became Armenia’s first prime minister in 1918?", choices: ["Aram Manoukian", "Hovhannes Kajaznuni", "Dro", "Simon Vratsian"], answer: 1 },
+    { category: "History", question: "Which treaty expanded Armenia’s territory to 162,000 square kilometers?", choices: ["Treaty of Lausanne", "Treaty of Berlin", "Treaty of Sèvres", "Treaty of Moscow"], answer: 2 },
 
-  { category: "Scouting", question: "Who began the scouting movement?", choices: ["Lord Baden-Powell", "Winston Churchill", "Ernest Shackleton", "Robert Falcon Scott"], answer: 0 },
-  { category: "Scouting", question: "When was the first scouting camp held?", choices: ["1905", "1907", "1910", "1918"], answer: 1 },
-  { category: "Scouting", question: "Where was the first scouting camp held?", choices: ["Brownsea Island", "London", "Paris", "Dublin"], answer: 0 },
-  { category: "Scouting", question: "Which of these is a key teaching of Baden-Powell?", choices: ["Practical experience", "Isolation", "Competition", "Obedience"], answer: 0 },
-  { category: "Scouting", question: "What does Homenetmen scouting aim to develop?", choices: ["Physical strength only", "Character and service", "Military discipline", "Political leadership"], answer: 1 },
-  { category: "Scouting", question: "What is one goal of Homenetmen scouting?", choices: ["Create model citizens", "Win competitions", "Build wealth", "Train soldiers"], answer: 0 },
+    { category: "Geography", question: "Historic Armenia covered approximately how many square kilometers?", choices: ["100,000", "300,000", "500,000", "800,000"], answer: 1 },
+    { category: "Geography", question: "Armenia is located in which region?", choices: ["Eastern Europe", "Western Asia", "Central Asia", "Middle East"], answer: 1 },
+    { category: "Geography", question: "Armenia is often described as a land of:", choices: ["Forests", "Rivers", "Mountains", "Plains"], answer: 2 },
+    { category: "Geography", question: "Which mountain is the tallest in Historic Armenia?", choices: ["Aragats", "Massis (Ararat)", "Nemrut", "Sipan"], answer: 1 },
+    { category: "Geography", question: "What is the height of Big Massis?", choices: ["4095 m", "4434 m", "5156 m", "3965 m"], answer: 2 },
+    { category: "Geography", question: "What is the height of Small Massis?", choices: ["3965 m", "4095 m", "4434 m", "5156 m"], answer: 0 },
+    { category: "Geography", question: "What is Armenia’s second tallest peak?", choices: ["Aragats", "Sipan", "Nemrut", "Ararat"], answer: 0 },
+    { category: "Geography", question: "What lake is located within present-day Armenia?", choices: ["Urmia", "Van", "Sevan", "Caspian"], answer: 2 },
+    { category: "Geography", question: "Which lake is known for the Ishkhan fish?", choices: ["Urmia", "Van", "Sevan", "Aral"], answer: 2 },
+    { category: "Geography", question: "Which rivers originate in the Armenian highlands?", choices: ["Nile and Congo", "Euphrates and Tigris", "Danube and Rhine", "Amazon and Orinoco"], answer: 1 },
 
-  { category: "Camp", question: "When pitching a tent, the ground should be:", choices: ["Wet", "Rocky", "Flat and dry", "Sloped"], answer: 2 },
-  { category: "Camp", question: "Before setting up a tent you should:", choices: ["Light a fire", "Clear rocks and thorns", "Add water", "Build a fence"], answer: 1 },
-  { category: "Camp", question: "What should you check for before pitching a tent?", choices: ["Animals or insect nests", "Rivers", "Roads", "Trees"], answer: 0 },
-  { category: "Camp", question: "Why should scouts respect animals and plants?", choices: ["Because of scouting laws", "To protect nature", "Because of camp rules", "All of the above"], answer: 3 },
+    { category: "Scouting", question: "Who began the scouting movement?", choices: ["Lord Baden-Powell", "Winston Churchill", "Ernest Shackleton", "Robert Falcon Scott"], answer: 0 },
+    { category: "Scouting", question: "When was the first scouting camp held?", choices: ["1905", "1907", "1910", "1918"], answer: 1 },
+    { category: "Scouting", question: "Where was the first scouting camp held?", choices: ["Brownsea Island", "London", "Paris", "Dublin"], answer: 0 },
+    { category: "Scouting", question: "Which of these is a key teaching of Baden-Powell?", choices: ["Practical experience", "Isolation", "Competition", "Obedience"], answer: 0 },
+    { category: "Scouting", question: "What does Homenetmen scouting aim to develop?", choices: ["Physical strength only", "Character and service", "Military discipline", "Political leadership"], answer: 1 },
+    { category: "Scouting", question: "What is one goal of Homenetmen scouting?", choices: ["Create model citizens", "Win competitions", "Build wealth", "Train soldiers"], answer: 0 },
 
-  { category: "Tools", question: "What is a small axe mainly used for?", choices: ["Cutting large trees", "Day-to-day camp work", "Digging", "Cooking"], answer: 1 },
-  { category: "Tools", question: "What is a large axe used for?", choices: ["Cooking", "Splitting small sticks", "Cutting large logs", "Carrying wood"], answer: 2 },
-  { category: "Tools", question: "When using a knife, the blade should move:", choices: ["Toward your body", "Away from your body", "Sideways", "Downward"], answer: 1 },
-  { category: "Tools", question: "What should you do after using a knife?", choices: ["Leave it out", "Clean and cover it", "Sharpen it", "Break it"], answer: 1 },
-  { category: "Tools", question: "How should you sharpen a knife?", choices: ["Run both sides along a stone", "Use water only", "Use sand", "Hit it with a hammer"], answer: 0 },
+    { category: "Camp", question: "When pitching a tent, the ground should be:", choices: ["Wet", "Rocky", "Flat and dry", "Sloped"], answer: 2 },
+    { category: "Camp", question: "Before setting up a tent you should:", choices: ["Light a fire", "Clear rocks and thorns", "Add water", "Build a fence"], answer: 1 },
+    { category: "Camp", question: "What should you check for before pitching a tent?", choices: ["Animals or insect nests", "Rivers", "Roads", "Trees"], answer: 0 },
+    { category: "Camp", question: "Why should scouts respect animals and plants?", choices: ["Because of scouting laws", "To protect nature", "Because of camp rules", "All of the above"], answer: 3 },
 
-  { category: "Fire", question: "Which wood burns well and lasts long?", choices: ["Oak", "Elm", "Walnut", "All of the above"], answer: 3 },
-  { category: "Fire", question: "Which wood burns quickly?", choices: ["Cedar", "Fir", "Willow", "All of the above"], answer: 3 },
-  { category: "Fire", question: "What are common ways to start a fire?", choices: ["Matches", "Lighter", "Flint and steel", "All of the above"], answer: 3 },
-  { category: "Fire", question: "What is friction used for?", choices: ["Cooking", "Starting a fire", "Cleaning tools", "Heating water"], answer: 1 },
+    { category: "Tools", question: "What is a small axe mainly used for?", choices: ["Cutting large trees", "Day-to-day camp work", "Digging", "Cooking"], answer: 1 },
+    { category: "Tools", question: "What is a large axe used for?", choices: ["Cooking", "Splitting small sticks", "Cutting large logs", "Carrying wood"], answer: 2 },
+    { category: "Tools", question: "When using a knife, the blade should move:", choices: ["Toward your body", "Away from your body", "Sideways", "Downward"], answer: 1 },
+    { category: "Tools", question: "What should you do after using a knife?", choices: ["Leave it out", "Clean and cover it", "Sharpen it", "Break it"], answer: 1 },
+    { category: "Tools", question: "How should you sharpen a knife?", choices: ["Run both sides along a stone", "Use water only", "Use sand", "Hit it with a hammer"], answer: 0 },
 
-  { category: "Camp Cooking", question: "How do you stabilize a tripod over a fire?", choices: ["Tie rope", "Place rocks or wet dirt around the legs", "Use sticks", "Dig a hole"], answer: 1 },
+    { category: "Fire", question: "Which wood burns well and lasts long?", choices: ["Oak", "Elm", "Walnut", "All of the above"], answer: 3 },
+    { category: "Fire", question: "Which wood burns quickly?", choices: ["Cedar", "Fir", "Willow", "All of the above"], answer: 3 },
+    { category: "Fire", question: "What are common ways to start a fire?", choices: ["Matches", "Lighter", "Flint and steel", "All of the above"], answer: 3 },
+    { category: "Fire", question: "What is friction used for?", choices: ["Cooking", "Starting a fire", "Cleaning tools", "Heating water"], answer: 1 },
 
-  { category: "Orienteering", question: "Orienteering signs help scouts:", choices: ["Find food", "Follow a path", "Cook", "Hunt"], answer: 1 },
-  { category: "Orienteering", question: "Signs should be placed on which side of the trail?", choices: ["Left", "Right", "Middle", "Anywhere"], answer: 1 },
-  { category: "Orienteering", question: "Orienteering signs should be placed about how far apart?", choices: ["20 steps", "50 steps", "100 steps", "200 steps"], answer: 1 },
-  { category: "Orienteering", question: "Who removes the signs at the end of the trail?", choices: ["Leader", "First follower", "Last follower", "Random scout"], answer: 2 },
-  { category: "Orienteering", question: "Signs should be made from:", choices: ["Chalk", "Leaves", "Branches", "All of the above"], answer: 3 },
+    { category: "Camp Cooking", question: "How do you stabilize a tripod over a fire?", choices: ["Tie rope", "Place rocks or wet dirt around the legs", "Use sticks", "Dig a hole"], answer: 1 },
 
-  { category: "Nutrition", question: "Nutrition helps support:", choices: ["Active life", "Health", "Energy", "All of the above"], answer: 3 },
-  { category: "Nutrition", question: "Eating too much food can cause:", choices: ["Strength", "Weakness", "Faster growth", "None"], answer: 1 },
-  { category: "Nutrition", question: "Not eating enough food can cause:", choices: ["Health", "Weakness", "Strength", "Energy"], answer: 1 },
-  { category: "Nutrition", question: "Which vitamin strengthens blood vessels?", choices: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin K"], answer: 3 },
+    { category: "Orienteering", question: "Orienteering signs help scouts:", choices: ["Find food", "Follow a path", "Cook", "Hunt"], answer: 1 },
+    { category: "Orienteering", question: "Signs should be placed on which side of the trail?", choices: ["Left", "Right", "Middle", "Anywhere"], answer: 1 },
+    { category: "Orienteering", question: "Orienteering signs should be placed about how far apart?", choices: ["20 steps", "50 steps", "100 steps", "200 steps"], answer: 1 },
+    { category: "Orienteering", question: "Who removes the signs at the end of the trail?", choices: ["Leader", "First follower", "Last follower", "Random scout"], answer: 2 },
+    { category: "Orienteering", question: "Signs should be made from:", choices: ["Chalk", "Leaves", "Branches", "All of the above"], answer: 3 },
 
-  { category: "Vitamins", question: "Which food contains Vitamin A?", choices: ["Carrots", "Milk", "Butter", "All of the above"], answer: 3 },
-  { category: "Vitamins", question: "Which food contains Vitamin C?", choices: ["Oranges", "Tomatoes", "Strawberries", "All of the above"], answer: 3 },
+    { category: "Nutrition", question: "Nutrition helps support:", choices: ["Active life", "Health", "Energy", "All of the above"], answer: 3 },
+    { category: "Nutrition", question: "Eating too much food can cause:", choices: ["Strength", "Weakness", "Faster growth", "None"], answer: 1 },
+    { category: "Nutrition", question: "Not eating enough food can cause:", choices: ["Health", "Weakness", "Strength", "Energy"], answer: 1 },
+    { category: "Nutrition", question: "Which vitamin strengthens blood vessels?", choices: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin K"], answer: 3 },
 
-  { category: "Health", question: "Heat stroke occurs when:", choices: ["The body overheats", "Too much water", "Too much sleep", "Too much exercise"], answer: 0 },
-  { category: "Health", question: "Heat stroke can be caused by:", choices: ["Sun exposure", "Lack of water", "Heat", "All of the above"], answer: 3 },
+    { category: "Vitamins", question: "Which food contains Vitamin A?", choices: ["Carrots", "Milk", "Butter", "All of the above"], answer: 3 },
+    { category: "Vitamins", question: "Which food contains Vitamin C?", choices: ["Oranges", "Tomatoes", "Strawberries", "All of the above"], answer: 3 },
 
-  { category: "First Aid", question: "When treating a cut you should:", choices: ["Wash it", "Cover with sterile cloth", "Bandage it", "All of the above"], answer: 3 },
-  { category: "First Aid", question: "What is the first step when removing dirt from an eye?", choices: ["Rub it", "Wash hands", "Close eye", "Blow air"], answer: 1 },
-  { category: "First Aid", question: "If dirt remains in the eye you should:", choices: ["Wash with water", "Rub it", "Ignore it", "Sleep"], answer: 0 },
-  { category: "First Aid", question: "If the object stays in the eye what should you do?", choices: ["Ignore it", "See a doctor", "Wash again", "Rub eye"], answer: 1 },
+    { category: "Health", question: "Heat stroke occurs when:", choices: ["The body overheats", "Too much water", "Too much sleep", "Too much exercise"], answer: 0 },
+    { category: "Health", question: "Heat stroke can be caused by:", choices: ["Sun exposure", "Lack of water", "Heat", "All of the above"], answer: 3 },
 
-  { category: "First Aid", question: "When someone has a nosebleed they should:", choices: ["Lie down", "Sit up and lean forward", "Tilt head back", "Run"], answer: 1 },
-  { category: "First Aid", question: "How long should you pinch the nose?", choices: ["2 minutes", "5 minutes", "10–15 minutes", "30 minutes"], answer: 2 },
-  { category: "First Aid", question: "If bleeding continues after two attempts you should:", choices: ["Ignore it", "Sleep", "Seek medical help", "Drink water"], answer: 2 },
+    { category: "First Aid", question: "When treating a cut you should:", choices: ["Wash it", "Cover with sterile cloth", "Bandage it", "All of the above"], answer: 3 },
+    { category: "First Aid", question: "What is the first step when removing dirt from an eye?", choices: ["Rub it", "Wash hands", "Close eye", "Blow air"], answer: 1 },
+    { category: "First Aid", question: "If dirt remains in the eye you should:", choices: ["Wash with water", "Rub it", "Ignore it", "Sleep"], answer: 0 },
+    { category: "First Aid", question: "If the object stays in the eye what should you do?", choices: ["Ignore it", "See a doctor", "Wash again", "Rub eye"], answer: 1 },
 
-  { category: "Signals", question: "Morse code is used for:", choices: ["Cooking", "Communication", "Navigation", "Building"], answer: 1 },
-  { category: "Signals", question: "What command means 'Prepare'?", choices: ["Badrasd", "Hankisd", "Kayl Arach", "Gather"], answer: 0 },
-  { category: "Signals", question: "What command means 'Rest'?", choices: ["Hankisd", "Badrasd", "Gather", "Scatter"], answer: 0 },
-  { category: "Signals", question: "What command means 'Move forward'?", choices: ["Gather", "Kayl Arach", "Scatter", "Bed Time"], answer: 1 },
+    { category: "First Aid", question: "When someone has a nosebleed they should:", choices: ["Lie down", "Sit up and lean forward", "Tilt head back", "Run"], answer: 1 },
+    { category: "First Aid", question: "How long should you pinch the nose?", choices: ["2 minutes", "5 minutes", "10–15 minutes", "30 minutes"], answer: 2 },
+    { category: "First Aid", question: "If bleeding continues after two attempts you should:", choices: ["Ignore it", "Sleep", "Seek medical help", "Drink water"], answer: 2 },
 
-  { category: "Camp Security", question: "What is a Parolla?", choices: ["Camp password", "Tent", "Fire", "Tool"], answer: 0 },
-  { category: "Camp Security", question: "Who assigns the parolla?", choices: ["Khmpabed", "Hertabah", "Leader", "Cook"], answer: 1 },
-  { category: "Camp Security", question: "Why is a parolla used?", choices: ["To protect camp security", "To organize food", "To start fires", "To assign duties"], answer: 0 },
-  { category: "Camp Security", question: "During night games the stolen flags must be returned:", choices: ["Immediately", "Before morning ceremony", "After lunch", "Next day"], answer: 1 },
+    { category: "Signals", question: "Morse code is used for:", choices: ["Cooking", "Communication", "Navigation", "Building"], answer: 1 },
+    { category: "Signals", question: "What command means 'Prepare'?", choices: ["Badrasd", "Hankisd", "Kayl Arach", "Gather"], answer: 0 },
+    { category: "Signals", question: "What command means 'Rest'?", choices: ["Hankisd", "Badrasd", "Gather", "Scatter"], answer: 0 },
+    { category: "Signals", question: "What command means 'Move forward'?", choices: ["Gather", "Kayl Arach", "Scatter", "Bed Time"], answer: 1 },
 
-  { category: "Values", question: "What does scouting teach about cooperation?", choices: ["Work alone", "Work as a team", "Compete always", "Ignore others"], answer: 1 },
-  { category: "Values", question: "What quality should scouts develop?", choices: ["Responsibility", "Honor", "Service", "All of the above"], answer: 3 },
-  { category: "Values", question: "Scouting helps improve:", choices: ["Physical strength", "Mental ability", "Character", "All of the above"], answer: 3 },
-  { category: "Values", question: "What is the purpose of scouting activities?", choices: ["Build leaders", "Serve the community", "Strengthen character", "All of the above"], answer: 3 },
-  { category: "Values", question: "Scouts should always show respect to:", choices: ["Leaders", "Fellow scouts", "Nature", "All of the above"], answer: 3 },
-  { category: "Values", question: "What does Homenetmen aim to cultivate?", choices: ["Faithful Armenians", "Strong character", "Service to the nation", "All of the above"], answer: 3 },
-  { category: "Purpose", question: "The ultimate goal of Homenetmen scouting is to:", choices: ["Win competitions", "Train soldiers", "Build strong Armenian citizens", "Travel"], answer: 2 }
-];
+    { category: "Camp Security", question: "What is a Parolla?", choices: ["Camp password", "Tent", "Fire", "Tool"], answer: 0 },
+    { category: "Camp Security", question: "Who assigns the parolla?", choices: ["Khmpabed", "Hertabah", "Leader", "Cook"], answer: 1 },
+    { category: "Camp Security", question: "Why is a parolla used?", choices: ["To protect camp security", "To organize food", "To start fires", "To assign duties"], answer: 0 },
+    { category: "Camp Security", question: "During night games the stolen flags must be returned:", choices: ["Immediately", "Before morning ceremony", "After lunch", "Next day"], answer: 1 },
+
+    { category: "Values", question: "What does scouting teach about cooperation?", choices: ["Work alone", "Work as a team", "Compete always", "Ignore others"], answer: 1 },
+    { category: "Values", question: "What quality should scouts develop?", choices: ["Responsibility", "Honor", "Service", "All of the above"], answer: 3 },
+    { category: "Values", question: "Scouting helps improve:", choices: ["Physical strength", "Mental ability", "Character", "All of the above"], answer: 3 },
+    { category: "Values", question: "What is the purpose of scouting activities?", choices: ["Build leaders", "Serve the community", "Strengthen character", "All of the above"], answer: 3 },
+    { category: "Values", question: "Scouts should always show respect to:", choices: ["Leaders", "Fellow scouts", "Nature", "All of the above"], answer: 3 },
+    { category: "Values", question: "What does Homenetmen aim to cultivate?", choices: ["Faithful Armenians", "Strong character", "Service to the nation", "All of the above"], answer: 3 },
+    { category: "Purpose", question: "The ultimate goal of Homenetmen scouting is to:", choices: ["Win competitions", "Train soldiers", "Build strong Armenian citizens", "Travel"], answer: 2 }
+  ];
+
   const TEST_LENGTH = 20;
 
- const startNorendzaTestBtn = document.getElementById("startNorendzaTestBtn");
-const startPenGarkTestBtn = document.getElementById("startPenGarkTestBtn");
-const testStartArea = document.getElementById("testStartArea");
+  const startNorendzaTestBtn = document.getElementById("startNorendzaTestBtn");
+  const startPenGarkTestBtn = document.getElementById("startPenGarkTestBtn");
+  const testStartArea = document.getElementById("testStartArea");
   const restartTestTop = document.getElementById("restartTestTop");
   const restartTestBtn = document.getElementById("restartTestBtn");
+  const backToTestHomeTopBtn = document.getElementById("backToTestHomeTopBtn");
+  const backToTestHomeBtn = document.getElementById("backToTestHomeBtn");
 
   const testApp = document.getElementById("testApp");
   const resultsCard = document.getElementById("resultsCard");
@@ -365,11 +365,11 @@ const testStartArea = document.getElementById("testStartArea");
   const scoreText = document.getElementById("scoreText");
   const resultsBreakdown = document.getElementById("resultsBreakdown");
 
-let currentBank = [];
-let currentTestTitle = "";
-let activeQuestions = [];
-let userAnswers = [];
-let currentQuestionIndex = 0;
+  let currentBank = [];
+  let currentTestTitle = "";
+  let activeQuestions = [];
+  let userAnswers = [];
+  let currentQuestionIndex = 0;
 
   function shuffleArray(array) {
     const copy = [...array];
@@ -380,19 +380,25 @@ let currentQuestionIndex = 0;
     return copy;
   }
 
-function startNewTest(bank, title) {
-  currentBank = bank;
-  currentTestTitle = title;
-  activeQuestions = shuffleArray(currentBank).slice(0, TEST_LENGTH);
-  userAnswers = new Array(activeQuestions.length).fill(null);
-  currentQuestionIndex = 0;
+  function startNewTest(bank, title) {
+    currentBank = bank;
+    currentTestTitle = title;
+    activeQuestions = shuffleArray(currentBank).slice(0, TEST_LENGTH);
+    userAnswers = new Array(activeQuestions.length).fill(null);
+    currentQuestionIndex = 0;
 
-  testStartArea.classList.add("hidden");
-  resultsCard.classList.add("hidden");
-  testApp.classList.remove("hidden");
+    testStartArea.classList.add("hidden");
+    resultsCard.classList.add("hidden");
+    testApp.classList.remove("hidden");
 
-  renderQuestion();
-}
+    renderQuestion();
+  }
+
+  function goToTestHome() {
+    testApp.classList.add("hidden");
+    resultsCard.classList.add("hidden");
+    testStartArea.classList.remove("hidden");
+  }
 
   function renderQuestion() {
     const q = activeQuestions[currentQuestionIndex];
@@ -462,15 +468,18 @@ function startNewTest(bank, title) {
     testApp.classList.add("hidden");
     resultsCard.classList.remove("hidden");
 
-scoreHeading.textContent = `${currentTestTitle} Score: ${score} / ${activeQuestions.length}`;
-scoreText.textContent = `You scored ${percentage}%. Review the questions below, then take another randomized test.`;
+    scoreHeading.textContent = `${currentTestTitle} Score: ${score} / ${activeQuestions.length}`;
+    scoreText.textContent = `You scored ${percentage}%. Review the questions below, then take another randomized test.`;
   }
 
-startNorendzaTestBtn.addEventListener("click", () => startNewTest(norendzaTestBank, "Norendza"));
-startPenGarkTestBtn.addEventListener("click", () => startNewTest(penGarkTestBank, "Pen Gark"));
+  startNorendzaTestBtn.addEventListener("click", () => startNewTest(norendzaTestBank, "Norendza"));
+  startPenGarkTestBtn.addEventListener("click", () => startNewTest(penGarkTestBank, "Pen Gark"));
 
-restartTestTop.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
-restartTestBtn.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
+  restartTestTop.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
+  restartTestBtn.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
+
+  backToTestHomeTopBtn.addEventListener("click", goToTestHome);
+  backToTestHomeBtn.addEventListener("click", goToTestHome);
 
   prevQuestionBtn.addEventListener("click", () => {
     if (currentQuestionIndex > 0) {
