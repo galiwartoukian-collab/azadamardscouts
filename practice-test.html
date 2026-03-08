@@ -129,9 +129,13 @@
 
       <div id="testApp" class="test-app hidden">
         <div class="test-topbar">
-          <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
-          <div id="questionCounter" class="card-counter">Question 1 / 20</div>
-        </div>
+  <div class="test-topbar-actions">
+    <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
+    <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
+  </div>
+
+  <div id="questionCounter" class="card-counter">Question 1 / 20</div>
+</div>
 
         <div class="test-card">
           <span id="questionCategory" class="card-tag">Category</span>
@@ -139,11 +143,14 @@
 
           <div id="answerOptions" class="answer-options"></div>
 
-          <div class="test-actions">
-            <button id="prevQuestionBtn" class="study-btn ghost" type="button">Previous</button>
-            <button id="nextQuestionBtn" class="study-btn primary" type="button">Next</button>
-            <button id="submitTestBtn" class="study-btn primary hidden" type="button">Submit Test</button>
-          </div>
+         <div class="test-topbar">
+  <div class="test-topbar-actions">
+    <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
+    <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
+  </div>
+
+  <div id="questionCounter" class="card-counter">Question 1 / 20</div>
+</div>
         </div>
       </div>
 
@@ -155,8 +162,9 @@
         <div id="resultsBreakdown" class="results-breakdown"></div>
 
         <div class="test-actions">
-          <button id="restartTestBtn" class="study-btn primary" type="button">Take Another Test</button>
-        </div>
+  <button id="restartTestBtn" class="study-btn primary" type="button">Take Another Test</button>
+  <button id="backToTestHomeBtn" class="study-btn ghost" type="button">Test Home</button>
+</div>
       </div>
 
     </div>
