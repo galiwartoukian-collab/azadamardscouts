@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice Tests | Azadamard Scouting</title>
+  <meta
+    name="description"
+    content="Practice tests for Homenetmen Pasadena Azadamard Scouting."
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html#top">
+      <img src="images/brand/logo.webp" class="logo" alt="Homenetmen Scouts Logo" />
+      <span class="brand-text">
+        <span class="brand-kicker">Homenetmen Pasadena</span>
+        <span class="brand-title">Azadamard Scouting</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <div class="nav-item has-dropdown">
+        <a href="index.html#join" class="nav-link">Join Us</a>
+        <div class="dropdown">
+          <a href="index.html#join">Request Info</a>
+          <a href="index.html#contact">Contact</a>
+          <a
+            href="https://chat.whatsapp.com/IBsD6ijPqfcJSOv74SOTvt"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp Channel
+          </a>
+          <a
+            href="https://mailchi.mp/6f8df3b61e7a/sms-signup"
+            target="_blank"
+            rel="noopener"
+          >
+            Email &amp; Text Announcements
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-item has-dropdown">
+        <a href="index.html#about" class="nav-link">About</a>
+        <div class="dropdown">
+          <a href="index.html#about">About Us</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <div class="nav-item has-dropdown">
+        <a href="resources.html" class="nav-link">Scouting Program</a>
+        <div class="dropdown">
+          <a href="resources.html">Resources</a>
+          <a href="study.html">Study</a>
+          <a href="practice-test.html">Practice Tests</a>
+          <a href="leaders.html">Meet the Leaders</a>
+          <a href="uniforms.html">Uniforms</a>
+          <a href="calendar.html">Calendar</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="study-hero">
+    <div class="container">
+      <p class="study-kicker">Scouting Program</p>
+      <h1>Practice Tests</h1>
+      <p class="study-subtitle">
+        Start with a Norendza practice test. Each test pulls 20 randomized questions from the question bank.
+      </p>
+    </div>
+  </section>
+
+  <section class="study-section">
+    <div class="container">
+
+      <div id="testStartCard" class="test-card">
+        <span class="card-tag">Norendza</span>
+        <h2>Norendza Practice Test</h2>
+        <p class="test-copy">
+          20 random multiple-choice questions. Score yourself at the end and review what you missed.
+        </p>
+
+        <div class="test-meta">
+          <div><strong>Question Bank:</strong> 60 questions</div>
+          <div><strong>Test Length:</strong> 20 questions</div>
+        </div>
+
+        <button id="startTestBtn" class="study-btn primary" type="button">Start Test</button>
+      </div>
+
+      <div id="testApp" class="test-app hidden">
+        <div class="test-topbar">
+          <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
+          <div id="questionCounter" class="card-counter">Question 1 / 20</div>
+        </div>
+
+        <div class="test-card">
+          <span id="questionCategory" class="card-tag">Category</span>
+          <h2 id="questionText">Question text goes here</h2>
+
+          <div id="answerOptions" class="answer-options"></div>
+
+          <div class="test-actions">
+            <button id="prevQuestionBtn" class="study-btn ghost" type="button">Previous</button>
+            <button id="nextQuestionBtn" class="study-btn primary" type="button">Next</button>
+            <button id="submitTestBtn" class="study-btn primary hidden" type="button">Submit Test</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultsCard" class="test-card hidden">
+        <span class="card-tag">Results</span>
+        <h2 id="scoreHeading">Your Score</h2>
+        <p id="scoreText" class="test-copy"></p>
+
+        <div id="resultsBreakdown" class="results-breakdown"></div>
+
+        <div class="test-actions">
+          <button id="restartTestBtn" class="study-btn primary" type="button">Take Another Test</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script>
+  const norendzaTestBank = [
+    { category: "Homenetmen", question: "When was Homenetmen founded?", choices: ["1905", "1918", "1925", "1931"], answer: 1 },
+    { category: "Homenetmen", question: "Where was Homenetmen founded?", choices: ["Yerevan", "Beirut", "Constantinople (Istanbul)", "Athens"], answer: 2 },
+    { category: "Homenetmen", question: "Who are the three founders of Homenetmen?", choices: ["Andranik, Dro, Nzhdeh", "Shavarsh Kristian, Hovhannes Hintlian, Krikor Hagopian", "Aram Manoukian, Dro, Nazarbekian", "Komitas, Toumanian, Nalbandian"], answer: 1 },
+    { category: "Homenetmen", question: "What does H.M.E.M. stand for?", choices: ["Hye Marmnagrtagan Entanour Miyootyoon", "Hye Miatsyal Erkri Mioutyun", "Hayastani Mets Erkri Mioutyun", "Hye Meknutyan Enthanur Miutyan"], answer: 0 },
+    { category: "Homenetmen", question: "What is the motto of Homenetmen?", choices: ["Always Ready", "Elevate Yourself and Others With You", "Unity Makes Strength", "Strength and Honor"], answer: 1 },
+    { category: "Homenetmen", question: "What is the scouting motto?", choices: ["Be Prepared", "Always Prepared", "Always Ready", "Be Strong"], answer: 1 },
+
+    { category: "Symbols", question: "What is the symbol used by Homenetmen scouts?", choices: ["Eagle", "Shoushanatsagheeg", "Ararat", "Sword"], answer: 1 },
+    { category: "Symbols", question: "What is the symbol used for all of Homenetmen?", choices: ["Vahan", "Lion", "Cross", "Torch"], answer: 0 },
+    { category: "Identity", question: "Why do scouts call each other 'Yeghpayr' and 'Kouyr'?", choices: ["To follow tradition", "To show family and unity", "To identify rank", "To follow ceremony rules"], answer: 1 },
+
+    { category: "Structure", question: "What is an astijan?", choices: ["Temporary leadership role", "Permanent rank", "Camp duty", "A ceremony"], answer: 1 },
+    { category: "Structure", question: "What is a bashdon?", choices: ["Temporary role", "Permanent rank", "Scout badge", "A camp"], answer: 0 },
+    { category: "Structure", question: "What is the highest astijan a scout can obtain?", choices: ["Arachnort", "Khmpabed", "Vareech Arachnort", "Masnajoughi"], answer: 1 },
+    { category: "Structure", question: "Which rank helps the Arachnort lead the group?", choices: ["Pogh Arachnort", "Khmpabed", "Miavori", "Masnajoughi"], answer: 0 },
+
+    { category: "Etiquette", question: "Which hand is used when greeting another scout?", choices: ["Right", "Left", "Both", "Either"], answer: 1 },
+    { category: "Etiquette", question: "What salute uses the scout staff?", choices: ["Bashdonagan Parev", "Kavazaov Parev", "Klookhi Parev", "Vodkov Parev"], answer: 1 },
+    { category: "Uniform", question: "What is the official scout uniform called?", choices: ["Gark", "Daraz", "Vahan", "Khorhrd"], answer: 1 },
+    { category: "Uniform", question: "Where is the Norendza badge worn?", choices: ["Left sleeve", "Left pocket area", "Right sleeve", "Collar"], answer: 1 },
+
+    { category: "Armenia", question: "Which country borders Armenia to the north?", choices: ["Iran", "Turkey", "Georgia", "Syria"], answer: 2 },
+    { category: "Armenia", question: "Which country borders Armenia to the south?", choices: ["Iran", "Russia", "Greece", "Iraq"], answer: 0 },
+    { category: "Armenia", question: "Which country borders Armenia to the east?", choices: ["Turkey", "Azerbaijan", "Iran", "Syria"], answer: 1 },
+    { category: "Armenia", question: "Which country borders Armenia to the west?", choices: ["Azerbaijan", "Turkey", "Russia", "Iran"], answer: 1 },
+    { category: "Armenia", question: "About how many people live in Armenia?", choices: ["1 million", "3 million", "10 million", "20 million"], answer: 1 },
+    { category: "Diaspora", question: "About how many Armenians live in the diaspora?", choices: ["2 million", "4 million", "8 million", "12 million"], answer: 2 },
+    { category: "Diaspora", question: "What does 'Diaspora' mean?", choices: ["Homeland", "People living outside their homeland", "Armenian government", "Armenian language"], answer: 1 },
+    { category: "Armenia", question: "Which mountain is located in present-day Armenia?", choices: ["Ararat", "Sis", "Arakadz", "Massis"], answer: 2 },
+
+    { category: "Compass", question: "How many main compass directions are there?", choices: ["4", "6", "8", "12"], answer: 2 },
+    { category: "Compass", question: "What direction is opposite East?", choices: ["North", "South", "West", "Northeast"], answer: 2 },
+    { category: "Compass", question: "Which of these is NOT a compass direction?", choices: ["Northeast", "Northwest", "Downwest", "Southeast"], answer: 2 },
+    { category: "Compass", question: "Arevelk means what direction?", choices: ["West", "East", "North", "South"], answer: 1 },
+    { category: "Compass", question: "Arevmoodk means what direction?", choices: ["East", "West", "South", "North"], answer: 1 },
+
+    { category: "Scouting", question: "What does 'hedakhoozel' mean?", choices: ["To camp", "To track or trail", "To cook", "To salute"], answer: 1 },
+    { category: "Scouting", question: "What is the purpose of scouting?", choices: ["To build strong leaders and responsible citizens", "To train soldiers", "To teach sports", "To travel"], answer: 0 },
+    { category: "Scouting", question: "Scouts should always show:", choices: ["Laziness", "Discipline and respect", "Fear", "Silence"], answer: 1 },
+    { category: "Scouting", question: "A scout should always be:", choices: ["Prepared", "Quiet", "Fast", "Strong"], answer: 0 },
+
+    { category: "Identity", question: "What does 'Hayrenik' mean?", choices: ["Country or homeland", "Family", "Church", "Village"], answer: 0 },
+    { category: "Identity", question: "What does 'Azk' refer to?", choices: ["Government", "Armenian nation and identity", "A leader", "A uniform"], answer: 1 },
+
+    { category: "Ceremonies", question: "What ceremony gathers scouts together in the morning?", choices: ["Troshagee", "Medz Ganch", "Bahag", "Arshav"], answer: 1 },
+    { category: "Ceremonies", question: "What ceremony raises or lowers the flag?", choices: ["Flag ceremony", "Medz Ganch", "Gark ceremony", "Transfer ceremony"], answer: 0 },
+    { category: "Ceremonies", question: "When is the scout salute used for the flag?", choices: ["During flag raising and lowering", "Only during camp", "Only during meetings", "Only during parades"], answer: 0 },
+
+    { category: "Leadership Colors", question: "What color shoulder loops does a Khmpabed wear?", choices: ["Blue", "Green", "Red", "Yellow"], answer: 1 },
+    { category: "Leadership Colors", question: "What color shoulder loops does a Miavori Khmpabed wear?", choices: ["Orange", "Green", "Blue", "White"], answer: 0 },
+    { category: "Leadership Colors", question: "What color shoulder loops does a Shrchanayin Khmpabed wear?", choices: ["Yellow", "Blue", "Purple", "Red"], answer: 1 },
+
+    { category: "Culture", question: "What is the Armenian national anthem called?", choices: ["Hayastan", "Mer Hayrenik", "Yeraz", "Hayastani"], answer: 1 },
+    { category: "Culture", question: "Who wrote the Armenian national anthem poem?", choices: ["Hovhannes Toumanian", "Mikael Nalbandian", "Komitas", "Yeghishe Charents"], answer: 1 },
+
+    { category: "Skills", question: "What is the purpose of scouting activities?", choices: ["Learning leadership and teamwork", "Winning competitions", "Practicing sports only", "Traveling"], answer: 0 },
+    { category: "Values", question: "What should scouts show toward nature?", choices: ["Respect and protection", "Indifference", "Fear", "Avoidance"], answer: 0 },
+    { category: "Leadership", question: "What is the role of a Khmpabed?", choices: ["Lead the group", "Clean the camp", "Cook food", "Carry equipment"], answer: 0 },
+
+    { category: "Geography", question: "Armenia is located in which region?", choices: ["Western Asia", "Africa", "South America", "East Asia"], answer: 0 },
+    { category: "Geography", question: "Armenia is known as a land of:", choices: ["Rivers", "Mountains", "Forests", "Oceans"], answer: 1 },
+    { category: "Identity", question: "What is the Armenian word for homeland?", choices: ["Azk", "Hayrenik", "Spyurk", "Gark"], answer: 1 },
+
+    { category: "Behavior", question: "Scouts should help:", choices: ["Only friends", "Only leaders", "Everyone in need", "No one"], answer: 2 },
+    { category: "Behavior", question: "Scouts should respect:", choices: ["Only elders", "Only leaders", "Everyone", "Only friends"], answer: 2 },
+    { category: "Behavior", question: "Scouts must follow:", choices: ["Discipline", "Only rules they like", "Only leader orders", "No rules"], answer: 0 },
+
+    { category: "Community", question: "What does Homenetmen focus on developing?", choices: ["Physical strength only", "Character and leadership", "Wealth", "Fame"], answer: 1 },
+    { category: "Community", question: "Scouts learn to become:", choices: ["Good citizens", "Soldiers", "Politicians", "Athletes only"], answer: 0 },
+
+    { category: "Progression", question: "What does 'gark' represent?", choices: ["A rank level or progression", "A uniform", "A badge", "A ceremony"], answer: 0 },
+    { category: "Progression", question: "Which gark comes first?", choices: ["Ayp Gark", "Pen Gark", "Norendza", "Araratian"], answer: 2 },
+    { category: "Progression", question: "What comes after Norendza?", choices: ["Pen Gark", "Ayp Gark", "Vgayal", "Araratian"], answer: 0 },
+    { category: "Representation", question: "Scouts should represent their chapter with:", choices: ["Pride and respect", "Competition", "Silence", "Fear"], answer: 0 },
+    { category: "Purpose", question: "The purpose of scouting is ultimately to:", choices: ["Serve the Armenian nation and community", "Travel", "Win competitions", "Become famous"], answer: 0 }
+  ];
+
+  const TEST_LENGTH = 20;
+
+  const startTestBtn = document.getElementById("startTestBtn");
+  const restartTestTop = document.getElementById("restartTestTop");
+  const restartTestBtn = document.getElementById("restartTestBtn");
+
+  const testStartCard = document.getElementById("testStartCard");
+  const testApp = document.getElementById("testApp");
+  const resultsCard = document.getElementById("resultsCard");
+
+  const questionCounter = document.getElementById("questionCounter");
+  const questionCategory = document.getElementById("questionCategory");
+  const questionText = document.getElementById("questionText");
+  const answerOptions = document.getElementById("answerOptions");
+
+  const prevQuestionBtn = document.getElementById("prevQuestionBtn");
+  const nextQuestionBtn = document.getElementById("nextQuestionBtn");
+  const submitTestBtn = document.getElementById("submitTestBtn");
+
+  const scoreHeading = document.getElementById("scoreHeading");
+  const scoreText = document.getElementById("scoreText");
+  const resultsBreakdown = document.getElementById("resultsBreakdown");
+
+  let activeQuestions = [];
+  let userAnswers = [];
+  let currentQuestionIndex = 0;
+
+  function shuffleArray(array) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function startNewTest() {
+    activeQuestions = shuffleArray(norendzaTestBank).slice(0, TEST_LENGTH);
+    userAnswers = new Array(activeQuestions.length).fill(null);
+    currentQuestionIndex = 0;
+
+    testStartCard.classList.add("hidden");
+    resultsCard.classList.add("hidden");
+    testApp.classList.remove("hidden");
+
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = activeQuestions[currentQuestionIndex];
+
+    questionCounter.textContent = `Question ${currentQuestionIndex + 1} / ${activeQuestions.length}`;
+    questionCategory.textContent = q.category;
+    questionText.textContent = q.question;
+
+    answerOptions.innerHTML = "";
+
+    q.choices.forEach((choice, index) => {
+      const label = document.createElement("label");
+      label.className = "answer-option";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "currentQuestion";
+      input.value = index;
+      input.checked = userAnswers[currentQuestionIndex] === index;
+
+      input.addEventListener("change", () => {
+        userAnswers[currentQuestionIndex] = index;
+      });
+
+      const span = document.createElement("span");
+      span.textContent = choice;
+
+      label.appendChild(input);
+      label.appendChild(span);
+      answerOptions.appendChild(label);
+    });
+
+    prevQuestionBtn.disabled = currentQuestionIndex === 0;
+
+    const lastQuestion = currentQuestionIndex === activeQuestions.length - 1;
+    nextQuestionBtn.classList.toggle("hidden", lastQuestion);
+    submitTestBtn.classList.toggle("hidden", !lastQuestion);
+  }
+
+  function showResults() {
+    let score = 0;
+    resultsBreakdown.innerHTML = "";
+
+    activeQuestions.forEach((q, index) => {
+      const correct = userAnswers[index] === q.answer;
+      if (correct) score++;
+
+      const item = document.createElement("div");
+      item.className = "result-item";
+
+      const status = correct ? "Correct" : "Incorrect";
+      const userChoice = userAnswers[index] !== null ? q.choices[userAnswers[index]] : "No answer";
+      const correctChoice = q.choices[q.answer];
+
+      item.innerHTML = `
+        <div class="result-status ${correct ? 'is-correct' : 'is-wrong'}">${status}</div>
+        <div class="result-question">${index + 1}. ${q.question}</div>
+        <div class="result-meta"><strong>Your answer:</strong> ${userChoice}</div>
+        <div class="result-meta"><strong>Correct answer:</strong> ${correctChoice}</div>
+      `;
+
+      resultsBreakdown.appendChild(item);
+    });
+
+    const percentage = Math.round((score / activeQuestions.length) * 100);
+
+    testApp.classList.add("hidden");
+    resultsCard.classList.remove("hidden");
+
+    scoreHeading.textContent = `Score: ${score} / ${activeQuestions.length}`;
+    scoreText.textContent = `You scored ${percentage}%. Review the questions below, then take another randomized test.`;
+  }
+
+  startTestBtn.addEventListener("click", startNewTest);
+  restartTestTop.addEventListener("click", startNewTest);
+  restartTestBtn.addEventListener("click", startNewTest);
+
+  prevQuestionBtn.addEventListener("click", () => {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      renderQuestion();
+    }
+  });
+
+  nextQuestionBtn.addEventListener("click", () => {
+    if (currentQuestionIndex < activeQuestions.length - 1) {
+      currentQuestionIndex++;
+      renderQuestion();
+    }
+  });
+
+  submitTestBtn.addEventListener("click", showResults);
+</script>
+
+</body>
+</html>

@@ -1926,3 +1926,137 @@ a:hover{
   background:#ffd84a;
   transform:translateY(-1px);
 }
+/* =========================
+   PRACTICE TEST PAGE
+========================= */
+
+.test-card{
+  max-width:760px;
+  margin:0 auto;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.12);
+  color:#fff;
+  box-shadow:0 20px 45px rgba(0,0,0,0.28);
+}
+
+.test-copy{
+  margin:14px 0 0;
+  color:rgba(255,255,255,0.72);
+  line-height:1.7;
+}
+
+.test-meta{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin:18px 0 22px;
+  color:rgba(255,255,255,0.8);
+}
+
+.test-app{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.test-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.answer-options{
+  display:grid;
+  gap:12px;
+  margin-top:22px;
+}
+
+.answer-option{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;
+}
+
+.answer-option:hover{
+  background:rgba(255,255,255,0.07);
+}
+
+.answer-option input{
+  margin-top:4px;
+}
+
+.answer-option span{
+  line-height:1.5;
+}
+
+.test-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.results-breakdown{
+  display:grid;
+  gap:14px;
+  margin-top:22px;
+}
+
+.result-item{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.result-status{
+  display:inline-block;
+  margin-bottom:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+.result-status.is-correct{
+  background:rgba(90, 200, 120, 0.16);
+  color:#8ee0a2;
+}
+
+.result-status.is-wrong{
+  background:rgba(255, 100, 100, 0.16);
+  color:#ff9c9c;
+}
+
+.result-question{
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:8px;
+}
+
+.result-meta{
+  color:rgba(255,255,255,0.75);
+  line-height:1.5;
+}
+
+@media (max-width: 700px){
+  .test-meta{
+    grid-template-columns:1fr;
+  }
+
+  .test-topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
