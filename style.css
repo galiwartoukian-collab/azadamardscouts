@@ -1591,7 +1591,7 @@ a:hover{
   }
 }
 /* =========================
-   STUDY PAGE
+   STUDY PAGE / DECK VIEW
 ========================= */
 
 .study-hero {
@@ -1600,7 +1600,8 @@ a:hover{
   color: #000;
 }
 
-.study-hero .container {
+.study-hero .container,
+.study-section .container {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
 }
@@ -1627,43 +1628,160 @@ a:hover{
 }
 
 .study-section {
-  padding: 40px 0 70px;
+  padding: 42px 0 80px;
   background: #0b0b0c;
 }
 
-.study-section .container {
-  width: min(1200px, calc(100% - 32px));
+.hidden {
+  display: none !important;
+}
+
+/* deck selection */
+.deck-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+}
+
+.deck-stack {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.deck-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  display: block;
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.28);
+}
+
+.deck-layer-3 {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(18px) rotate(-4deg);
+}
+
+.deck-layer-2 {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(10px) rotate(2deg);
+}
+
+.deck-layer-1 {
+  background: linear-gradient(180deg, rgba(255,192,0,0.18), rgba(255,192,0,0.08));
+  border: 1px solid rgba(255,192,0,0.28);
+  transform: rotate(-1deg);
+}
+
+.deck-label {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+  color: #fff;
+}
+
+.deck-kicker {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+
+.deck-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.deck-count {
+  font-size: 1rem;
+  color: #ffc000;
+  font-weight: 700;
+}
+
+.deck-stack:hover .deck-layer-1 {
+  transform: rotate(-2deg) translateY(-3px);
+}
+
+.deck-stack:hover .deck-layer-2 {
+  transform: translateY(8px) rotate(3deg);
+}
+
+.deck-stack:hover .deck-layer-3 {
+  transform: translateY(16px) rotate(-5deg);
+}
+
+/* study viewer */
+.study-viewer {
+  max-width: 760px;
   margin: 0 auto;
 }
 
-.study-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+.study-viewer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
-.flashcard {
+.study-plain-btn {
+  border: none;
+  background: transparent;
+  color: #ffc000;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.card-counter {
+  color: rgba(255,255,255,0.75);
+  font-weight: 700;
+}
+
+.single-card-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.single-flashcard {
+  width: 100%;
+  max-width: 720px;
   perspective: 1200px;
   cursor: pointer;
 }
 
-.flashcard-inner {
+.single-flashcard-inner {
   position: relative;
   width: 100%;
-  min-height: 260px;
+  min-height: 360px;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
 }
 
-.flashcard.is-flipped .flashcard-inner {
+.single-flashcard.is-flipped .single-flashcard-inner {
   transform: rotateY(180deg);
 }
 
-.flashcard-face {
+.single-flashcard-face {
   position: absolute;
   inset: 0;
-  border-radius: 24px;
-  padding: 24px;
+  border-radius: 26px;
+  padding: 28px;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -1671,13 +1789,13 @@ a:hover{
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
 }
 
-.flashcard-front {
+.single-flashcard-front {
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
   border: 1px solid rgba(255,255,255,0.12);
   color: #fff;
 }
 
-.flashcard-back {
+.single-flashcard-back {
   background: linear-gradient(180deg, rgba(255,192,0,0.18), rgba(255,192,0,0.08));
   border: 1px solid rgba(255,192,0,0.28);
   color: #fff;
@@ -1697,34 +1815,66 @@ a:hover{
   letter-spacing: 0.05em;
 }
 
-.flashcard h3 {
-  margin: 18px 0 12px;
-  font-size: 1.2rem;
-  line-height: 1.45;
+.single-flashcard h2 {
+  margin: 18px 0 16px;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.4;
 }
 
-.flashcard p {
+.single-flashcard p {
   margin: 0;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.98rem;
 }
 
-@media (max-width: 980px) {
-  .study-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.study-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 640px) {
-  .study-grid {
-    grid-template-columns: 1fr;
+.study-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.98rem;
+}
+
+.study-btn.primary {
+  background: #ffc000;
+  color: #111;
+}
+
+.study-btn.ghost {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (max-width: 700px) {
+  .deck-stack {
+    width: 280px;
+    height: 200px;
   }
 
-  .flashcard-inner {
-    min-height: 230px;
+  .single-flashcard-inner {
+    min-height: 320px;
   }
 
-  .study-hero {
-    padding: 38px 0 18px;
+  .study-viewer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .study-controls {
+    justify-content: stretch;
+  }
+
+  .study-btn {
+    flex: 1 1 calc(33.333% - 8px);
+    text-align: center;
   }
 }
