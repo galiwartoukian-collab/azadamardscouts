@@ -7,7 +7,7 @@
   <title>Study Cards | Azadamard Scouting</title>
   <meta
     name="description"
-    content="Norendza study cards for Homenetmen Pasadena Azadamard Scouting."
+    content="Study cards for Homenetmen Pasadena Azadamard Scouting."
   />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -75,7 +75,7 @@
       <p class="study-kicker">Scouting Program</p>
       <h1>Study Cards</h1>
       <p class="study-subtitle">
-        Choose a rank deck and study one card at a time.
+        Choose a rank deck and study one flash card at a time.
       </p>
     </div>
   </section>
@@ -83,8 +83,8 @@
   <section class="study-section">
     <div class="container">
 
-      <!-- DECK SELECTION -->
       <div id="deckSelection" class="deck-selection">
+
         <button class="deck-stack" id="openNorendzaDeck" type="button" aria-label="Open Norendza deck">
           <span class="deck-layer deck-layer-3"></span>
           <span class="deck-layer deck-layer-2"></span>
@@ -95,12 +95,24 @@
             <span class="deck-count">30 Study Cards</span>
           </span>
         </button>
+
+        <button class="deck-stack" id="openPenGarkDeck" type="button" aria-label="Open Pen Gark deck">
+          <span class="deck-layer deck-layer-3"></span>
+          <span class="deck-layer deck-layer-2"></span>
+          <span class="deck-layer deck-layer-1"></span>
+          <span class="deck-label">
+            <span class="deck-kicker">Ari / Arenoush</span>
+            <span class="deck-title">Pen Gark</span>
+            <span class="deck-count">30 Study Cards</span>
+          </span>
+        </button>
+
       </div>
 
-      <!-- STUDY VIEWER -->
       <div id="studyViewer" class="study-viewer hidden">
         <div class="study-viewer-top">
           <button id="backToDecks" class="study-plain-btn" type="button">← Back to Decks</button>
+          <div id="deckName" class="deck-name-label">Norendza</div>
           <div id="cardCounter" class="card-counter">1 / 30</div>
         </div>
 
@@ -138,27 +150,21 @@
     { category: "Homenetmen", question: "When was Homenetmen established?", answer: "1918." },
     { category: "Homenetmen", question: "Where was Homenetmen established?", answer: "Istanbul, Turkey." },
     { category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintlian, and Krikor Hagopian." },
-    { category: "Homenetmen", question: "Why do we call each other 'kouyr' and 'yeghpayr'?", answer: "To strengthen the sense of family within Homenetmen, especially after the genocide when many orphans joined the organization." },
-
+    { category: "Homenetmen", question: "Why do we call each other 'kouyr' and 'yeghpayr'?", answer: "To strengthen the feeling of family within Homenetmen." },
     { category: "Structure", question: "What is the difference between a bashdon and an asdijan?", answer: "A bashdon is temporary. An asdijan is permanent." },
     { category: "Structure", question: "What is the highest asdijan a scout can obtain?", answer: "Khmpabed." },
     { category: "Structure", question: "What is the highest bashdon a scout can obtain?", answer: "Shrchanayin Entanour Khmpabed." },
-    { category: "Structure", question: "Is passing the Norendza test considered a gark, asdijan, or bashdon?", answer: "Gark." },
-    { category: "Structure", question: "Write the ranks in descending order from highest to lowest: Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort.", answer: "Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort." },
-
+    { category: "Structure", question: "Passing this test counts as what: gark, asdijan, or bashdon?", answer: "Gark." },
+    { category: "Structure", question: "Put these in descending order: Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort.", answer: "Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort." },
     { category: "Symbols", question: "What is the name of the symbol used for Homenetmen scouts?", answer: "Shoushanatsagheeg." },
     { category: "Symbols", question: "What is the name of the symbol used for all of Homenetmen?", answer: "Vahan." },
-
-    { category: "Uniform", question: "Where does the Norendza badge go on the daraz?", answer: "Left Chest Pocket." },
-    { category: "Uniform", question: "Where does the Pen Gark / Yegrort Gark badge go on the daraz?", answer: "Left Sleeve under all other patches." },
-
+    { category: "Uniform", question: "Where does the Norendza badge go on the daraz?", answer: "On its assigned Norendza badge placement spot on the uniform." },
+    { category: "Uniform", question: "Where does the Pen Gark / Yegrort Gark badge go on the daraz?", answer: "On its assigned Second Rank badge placement spot on the uniform." },
     { category: "Salute", question: "Which of these is not a scout salute: Bashdonagan Parev, Klookhi Parev, Kavazaov Parev, Vodkov Parev?", answer: "Vodkov Parev." },
-    { category: "Salute", question: "When greeting a scout with a handshake, do you use your right hand?", answer: "No. False. You use your left hand." },
-
+    { category: "Salute", question: "When greeting a scout with a handshake, do you use your right hand?", answer: "No. You use your left hand." },
     { category: "Leadership Colors", question: "What color are a Miavori Khmpabed's shoulder loops?", answer: "Orange." },
     { category: "Leadership Colors", question: "What color are a Shrchanayin Khmpabed's shoulder loops?", answer: "Baby blue." },
     { category: "Leadership Colors", question: "What color are a Khmpabed's shoulder loops?", answer: "Green." },
-
     { category: "Armenia", question: "Which country borders Armenia to the north?", answer: "Georgia." },
     { category: "Armenia", question: "Which country borders Armenia to the south?", answer: "Iran." },
     { category: "Armenia", question: "Which country borders Armenia to the east?", answer: "Azerbaijan." },
@@ -167,17 +173,60 @@
     { category: "Diaspora", question: "About how many Armenians live in the Diaspora?", answer: "About 8,000,000." },
     { category: "Diaspora", question: "What does 'Spyurk' or 'Diaspora' mean?", answer: "People who live outside of their homeland." },
     { category: "Armenia", question: "Which of these mountains is in present-day Armenia: Ararat, Massis, Arakadz, or Sis?", answer: "Arakadz." },
-
     { category: "Compass", question: "What are the eight directions of the compass?", answer: "North, Northeast, East, Southeast, South, Southwest, West, Northwest." },
     { category: "Compass", question: "Complete the analogy: Arevelk is to East as ______ is to West.", answer: "Arevmoodk." },
-
-    { category: "Tracking", question: "What does 'hedakhoozel' mean?", answer: 'To track or to trail.' }
+    { category: "Tracking", question: "What does 'hedakhoozel' mean?", answer: "To track or to trail." }
   ];
 
+  const penGarkCards = [
+    { category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Krikor Hagopian, Shavarsh Kristian, and Hovhanes Hintilian." },
+    { category: "Homenetmen", question: "What is the purpose of Homenetmen Scouting?", answer: "To cultivate faithful Armenians of strong character and moral virtue, dedicated to serving the nation and becoming model citizens." },
+    { category: "Homenetmen", question: "Name three objectives of Homenetmen.", answer: "Examples: physical well-being, mental strength, duty and responsibility, honor and sacrifice, cooperation and friendship." },
+    { category: "Scouting", question: "Who began the scouting movement in the early 1900s?", answer: "Robert Baden-Powell." },
+    { category: "Scouting", question: "In what year was the first experimental scout camp held?", answer: "1907." },
+    { category: "Scouting", question: "Where was Baden-Powell's first experimental camp held?", answer: "Brownsea Island, United Kingdom." },
+    { category: "Scouting", question: "Name the five key factors Baden-Powell stressed.", answer: "Practical experience, mutual trust, importance of the patrol bond, hands-on learning, and valuing each scout's uniqueness." },
+
+    { category: "Anthem", question: "Who wrote the Armenian National Anthem?", answer: "Mikael Nalbandian." },
+    { category: "Anthem", question: "In what year was the Armenian National Anthem written?", answer: "1859." },
+    { category: "Anthem", question: "What is the name of the Armenian National Anthem?", answer: "Mer Hayrenik." },
+
+    { category: "History", question: "Which treaty gave Kars, Ardahan, and Batum to the Ottoman Empire?", answer: "The Treaty of Brest-Litovsk." },
+    { category: "History", question: "On what date was the Treaty of Brest-Litovsk signed?", answer: "March 3, 1918." },
+    { category: "History", question: "Which three battles did Armenians win against the Turks in 1918?", answer: "Sardarabad, Gharakilise, and Bash Abaran." },
+    { category: "History", question: "When is Armenia's Independence Day from the First Republic period?", answer: "May 28." },
+    { category: "History", question: "Who formed the first government of the Republic of Armenia?", answer: "Hovhanes Kajaznooni." },
+    { category: "History", question: "Who signed the Treaty of Sèvres on behalf of Armenia?", answer: "Avetis Aharonian." },
+
+    { category: "Geography", question: "Name four of the six historic Armenian mountain ranges.", answer: "Examples: Pokr Govgus, Hyegagan Davros, Lazistani Lerner, Haygagan Bar, Arsian Metzrats and Godoor Zagrosh, Sharian Tzaghgants and Mndzoor Buyragnian." },
+    { category: "Geography", question: "How high is Medz Massis?", answer: "5156 meters." },
+    { category: "Geography", question: "How high is Pokr Massis?", answer: "3965 meters." },
+    { category: "Geography", question: "What are the three main lakes of Armenia?", answer: "Lake Urmia, Lake Van, and Lake Sevan." },
+    { category: "Geography", question: "Which lake is inside the current boundaries of Armenia?", answer: "Lake Sevan." },
+    { category: "Geography", question: "What is Armenia's main river?", answer: "The Arax River." },
+    { category: "Geography", question: "What other names does the Arax River have?", answer: "Araz and Yeraskh." },
+    { category: "Geography", question: "What was the population of Armenia in the study guide?", answer: "About 2.8 million." },
+    { category: "Diaspora", question: "What was the diaspora population in the study guide?", answer: "About 8 million." },
+
+    { category: "Church", question: "Why has the seat of the Armenian Catholicos changed places throughout history?", answer: "Because of changing political conditions and the location of Armenian political power." },
+    { category: "Church", question: "What are the two Catholicosates of the Armenian Church?", answer: "The Catholicosate of Etchmiadzin and the Catholicosate of the Great House of Cilicia." },
+    { category: "Church", question: "True or False: The patriarchal seat has always remained in the same city.", answer: "False." },
+
+    { category: "Camp", question: "What is a parolla and why is it important during bahag?", answer: "It is a password used between the Hertabah and Bahags to prevent intruders and make sure scouts do not leave their post." },
+    { category: "Camp", question: "If the opposing group steals the flags during the night game, what must they do?", answer: "They must keep the flags until the opening flag ceremony and return them before the ceremony." }
+  ];
+
+  const decks = {
+    Norendza: norendzaCards,
+    "Pen Gark": penGarkCards
+  };
+
   const openNorendzaDeck = document.getElementById("openNorendzaDeck");
+  const openPenGarkDeck = document.getElementById("openPenGarkDeck");
   const deckSelection = document.getElementById("deckSelection");
   const studyViewer = document.getElementById("studyViewer");
   const backToDecks = document.getElementById("backToDecks");
+  const deckName = document.getElementById("deckName");
   const cardCounter = document.getElementById("cardCounter");
   const singleFlashcard = document.getElementById("singleFlashcard");
   const flipCardBtn = document.getElementById("flipCardBtn");
@@ -201,9 +250,10 @@
     singleFlashcard.classList.remove("is-flipped");
   }
 
-  function openDeck(deck) {
-    currentDeck = deck;
+  function openDeck(deckTitle) {
+    currentDeck = decks[deckTitle];
     currentIndex = 0;
+    deckName.textContent = deckTitle;
     deckSelection.classList.add("hidden");
     studyViewer.classList.remove("hidden");
     renderCard();
@@ -223,7 +273,9 @@
     }
   }
 
-  openNorendzaDeck.addEventListener("click", () => openDeck(norendzaCards));
+  openNorendzaDeck.addEventListener("click", () => openDeck("Norendza"));
+  openPenGarkDeck.addEventListener("click", () => openDeck("Pen Gark"));
+
   backToDecks.addEventListener("click", () => {
     studyViewer.classList.add("hidden");
     deckSelection.classList.remove("hidden");
