@@ -1601,9 +1601,11 @@ a:hover{
 }
 
 .study-hero .container,
-.study-section .container {
+.study-section .container,
+.study-page-actions {
   width: min(1200px, calc(100% - 32px));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .study-kicker {
@@ -1627,8 +1629,19 @@ a:hover{
   max-width: 760px;
 }
 
+.study-page-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 52px;
+  padding-bottom: 12px;
+}
+
+.study-test-btn {
+  margin: 0;
+}
+
 .study-section {
-  padding: 72px 0 80px;
+  padding: 40px 0 80px;
   background: #0b0b0c;
 }
 
@@ -1857,11 +1870,34 @@ a:hover{
   color: #111;
 }
 
-
 .study-btn.ghost {
   background: rgba(255,255,255,0.08);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.12);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #FFC000;
+  color: #111;
+}
+
+.btn.primary:hover {
+  background: #ffd84a;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {
@@ -1900,32 +1936,11 @@ a:hover{
     flex: 1 1 calc(33.333% - 8px);
     text-align: center;
   }
-}
-.library-study-btn{
-  margin-top:40px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:12px 20px;
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
-  transition:all .2s ease;
-  border:none;
-  cursor:pointer;
-}
 
-.btn.primary{
-  background:#FFC000;
-  color:#111;
-}
-
-.btn.primary:hover{
-  background:#ffd84a;
-  transform:translateY(-1px);
+  .study-page-actions {
+    padding-top: 40px;
+    padding-bottom: 8px;
+  }
 }
 /* =========================
    PRACTICE TEST PAGE
