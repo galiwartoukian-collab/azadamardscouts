@@ -17,8 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let touchStartX = 0;
   let touchEndX = 0;
+  let isAnimating = false;
 
-  function showImage(index) {
+  function updateCounter() {
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+  }
+
+  function openLightbox(index) {
     if (
       !images.length ||
       !lightbox ||
@@ -31,39 +38,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     currentIndex = index;
+    lightboxImage.classList.remove("is-pressing");
     lightboxImage.classList.remove("is-visible");
 
+    lightboxImage.src = images[currentIndex].src;
+    lightboxImage.alt = images[currentIndex].alt || "";
+    updateCounter();
+    lightbox.classList.add("active");
+
+    requestAnimationFrame(() => {
+      lightboxImage.classList.add("is-visible");
+    });
+  }
+
+  function swapImage(nextIndex) {
+    if (!images.length || isAnimating) return;
+
+    isAnimating = true;
+    lightboxImage.classList.add("is-pressing");
+
     setTimeout(() => {
-      lightboxImage.src = images[currentIndex].src;
-      lightboxImage.alt = images[currentIndex].alt || "";
+      currentIndex = nextIndex;
+      lightboxImage.classList.remove("is-visible");
 
-      if (lightboxCounter) {
-        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-      }
+      const newSrc = images[currentIndex].src;
+      const newAlt = images[currentIndex].alt || "";
 
-      lightbox.classList.add("active");
+      lightboxImage.onload = () => {
+        updateCounter();
 
-      requestAnimationFrame(() => {
-        lightboxImage.classList.add("is-visible");
-      });
+        requestAnimationFrame(() => {
+          lightboxImage.classList.add("is-visible");
+          lightboxImage.classList.remove("is-pressing");
+          isAnimating = false;
+        });
+      };
+
+      lightboxImage.src = newSrc;
+      lightboxImage.alt = newAlt;
     }, 120);
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove("active");
+    lightboxImage.classList.remove("is-pressing");
+    lightboxImage.classList.remove("is-visible");
+    isAnimating = false;
   }
 
   function showPrevImage() {
     if (!images.length) return;
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    swapImage(prevIndex);
   }
 
   function showNextImage() {
     if (!images.length) return;
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+    const nextIndex = (currentIndex + 1) % images.length;
+    swapImage(nextIndex);
   }
 
   if (
@@ -76,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
     images.forEach((img, index) => {
       img.addEventListener("click", () => {
-        showImage(index);
+        openLightbox(index);
       });
     });
 
