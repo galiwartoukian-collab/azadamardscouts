@@ -1857,9 +1857,6 @@ a:hover{
   color: #111;
 }
 
-.study-btn{
-  margin-top:40px;
-}
 
 .study-btn.ghost {
   background: rgba(255,255,255,0.08);
@@ -1966,7 +1963,7 @@ a:hover{
 }
 
 .test-start-grid .test-meta{
-  margin-top:auto;
+  margin-top:18px;
 }
 
 .test-card{
@@ -1993,7 +1990,9 @@ a:hover{
   margin:18px 0 22px;
   color:rgba(255,255,255,0.8);
 }
-
+.test-start-grid .test-card > .study-btn{
+  margin-top:18px;
+}
 .test-app{
   max-width:760px;
   margin:0 auto;
