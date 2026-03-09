@@ -14,22 +14,6 @@
 
 <body>
 
- <!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Azadamard Scouting | Homenetmen Pasadena</title>
-  <meta
-    name="description"
-    content="Homenetmen Pasadena Azadamard Scouting Division. Building leaders since 1977."
-  />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html#top">
@@ -85,15 +69,23 @@
   </div>
 </header>
 
-  <main class="section">
+<main>
+  <section class="page-hero">
     <div class="container">
-      <div class="page-head">
-        <div>
-          <h1 style="margin:0 0 6px;">Events</h1>
-          <div class="breadcrumb">
-            <a href="index.html">Home</a> / <a href="gallery.html">Gallery</a> / Events
-          </div>
-        </div>
+      <div class="page-breadcrumb">
+        <a href="index.html">Home</a> / <a href="gallery.html">Gallery</a> / Events
+      </div>
+      <p class="page-kicker">Scouting Program</p>
+      <h1>Events</h1>
+      <p class="page-subtitle">
+        Celebrating community events, gatherings, and special moments with our scouts.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-row" style="justify-content:flex-start; margin:0 0 18px;">
         <a class="btn ghost" href="gallery.html">Back to Gallery</a>
       </div>
 
@@ -131,20 +123,21 @@
         <img src="images/events/e31.jpg" class="gallery-img" alt="Event photo 31" loading="lazy" />
       </div>
     </div>
-  </main>
+  </section>
+</main>
 
-  <div id="lightbox" class="lightbox">
-    <button id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
-    <button id="lightboxPrev" class="lightbox-prev" aria-label="Previous">&#10094;</button>
+<div id="lightbox" class="lightbox">
+  <button id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
+  <button id="lightboxPrev" class="lightbox-prev" aria-label="Previous">&#10094;</button>
 
-    <img id="lightboxImage" src="" alt="Expanded gallery image" />
+  <img id="lightboxImage" src="" alt="Expanded gallery image" />
 
-    <button id="lightboxNext" class="lightbox-next" aria-label="Next">&#10095;</button>
+  <button id="lightboxNext" class="lightbox-next" aria-label="Next">&#10095;</button>
 
-    <div id="lightboxCounter" class="lightbox-counter">1 / 1</div>
-  </div>
+  <div id="lightboxCounter" class="lightbox-counter">1 / 1</div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
