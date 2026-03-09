@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -80,7 +79,7 @@
       <p class="study-kicker">Scouting Program</p>
       <h1>Practice Tests</h1>
       <p class="study-subtitle">
-        Choose a practice test. Each test pulls 20 randomized questions from its question bank.
+        Choose a practice test. Multiple-choice tests use randomized questions, and Tavananks Recall uses typed active recall with gradual word removal.
       </p>
     </div>
   </section>
@@ -123,23 +122,40 @@
             Start Pen Gark Test
           </button>
         </div>
-        
-<div class="test-card">
-  <span class="card-tag">Ayp Gark</span>
-  <h2>Ayp Gark Practice Test</h2>
-  <p class="test-copy">
-    20 random multiple-choice questions from the Ayp Gark question bank.
-  </p>
 
-  <div class="test-meta">
-    <div><strong>Question Bank:</strong> 90 questions</div>
-    <div><strong>Test Length:</strong> 20 questions</div>
-  </div>
+        <div class="test-card">
+          <span class="card-tag">Ayp Gark</span>
+          <h2>Ayp Gark Practice Test</h2>
+          <p class="test-copy">
+            20 random multiple-choice questions from the Ayp Gark question bank.
+          </p>
 
-  <button id="startAypGarkTestBtn" class="study-btn primary" type="button">
-    Start Ayp Gark Test
-  </button>
-</div>
+          <div class="test-meta">
+            <div><strong>Question Bank:</strong> 90 questions</div>
+            <div><strong>Test Length:</strong> 20 questions</div>
+          </div>
+
+          <button id="startAypGarkTestBtn" class="study-btn primary" type="button">
+            Start Ayp Gark Test
+          </button>
+        </div>
+
+        <div class="test-card">
+          <span class="card-tag">Tavananks</span>
+          <h2>Tavananks Recall</h2>
+          <p class="test-copy">
+            Type the missing word or words using active recall. Difficulty increases the number of removed words.
+          </p>
+
+          <div class="test-meta">
+            <div><strong>Question Bank:</strong> 12 laws</div>
+            <div><strong>Mode:</strong> Typed recall</div>
+          </div>
+
+          <button id="startTavananksTestBtn" class="study-btn primary" type="button">
+            Start Tavananks Recall
+          </button>
+        </div>
 
       </div>
 
@@ -148,6 +164,15 @@
           <div class="test-topbar-actions">
             <button id="restartTestTop" class="study-btn ghost" type="button">New Test</button>
             <button id="backToTestHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
+          </div>
+
+          <div id="typedDifficultyWrap" class="typed-difficulty-wrap hidden">
+            <label for="typedDifficultySelect">Difficulty</label>
+            <select id="typedDifficultySelect">
+              <option value="easy">Easy · 1 blank</option>
+              <option value="medium" selected>Medium · 2 blanks</option>
+              <option value="hard">Hard · 3 blanks</option>
+            </select>
           </div>
 
           <div id="questionCounter" class="card-counter">Question 1 / 20</div>
@@ -159,8 +184,14 @@
 
           <div id="answerOptions" class="answer-options"></div>
 
+          <div id="typedAnswerWrap" class="typed-answer-wrap hidden">
+            <div id="typedInputs" class="typed-inputs"></div>
+            <div id="typedAnswerFeedback" class="typed-answer-feedback"></div>
+          </div>
+
           <div class="test-actions">
             <button id="prevQuestionBtn" class="study-btn ghost" type="button">Previous</button>
+            <button id="checkTypedAnswerBtn" class="study-btn ghost hidden" type="button">Check Answer</button>
             <button id="nextQuestionBtn" class="study-btn primary" type="button">Next</button>
             <button id="submitTestBtn" class="study-btn primary hidden" type="button">Submit Test</button>
           </div>
@@ -456,13 +487,71 @@
   { category: "Ropes", question: "Which of the following helps extend the life of a rope?", choices: ["drying it in a humid place", "washing it in hot water", "tying the ends and drying it in shade", "leaving it in the sun for long periods"], answer: 2 },
   { category: "Camp", question: "Which campsite choice is best?", choices: ["near a swamp with soft ground", "humid low ground near standing water", "dry ground with shade, away from swamps", "directly beside another campground"], answer: 2 }
 ];
+  const tavananksTestBank = [
+    {
+      category: "Tavananks",
+      text: "Scout keeps promises and is trustworthy because of it."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout listens to parents, teachers, leaders, elders and obeys them."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is always faithful and honest."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout always helps others."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is friends with everyone and all fellow scouts."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is polite."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout speaks clean Armenian with everyone everywhere and every time."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout loves and protects animals and plants."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is always cheerful and enthusiastic."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is hard working and clever."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout takes care of his or her stuff does not spend more money than needed and tries to help parents by saving money."
+    },
+    {
+      category: "Tavananks",
+      text: "Scout is clean in thoughts speech and actions."
+    }
+  ];
 
   const TEST_LENGTH = 20;
 
+  const stopWords = new Set([
+    "a","an","and","are","as","at","be","because","by","for","from","her","his","in",
+    "is","it","of","on","or","that","the","their","them","they","this","to","with",
+    "always","all","every","everyone","does","not","more","than","she","he","we","you"
+  ]);
+
   const startNorendzaTestBtn = document.getElementById("startNorendzaTestBtn");
-const startPenGarkTestBtn = document.getElementById("startPenGarkTestBtn");
-const startAypGarkTestBtn = document.getElementById("startAypGarkTestBtn");
-const testStartArea = document.getElementById("testStartArea");
+  const startPenGarkTestBtn = document.getElementById("startPenGarkTestBtn");
+  const startAypGarkTestBtn = document.getElementById("startAypGarkTestBtn");
+  const startTavananksTestBtn = document.getElementById("startTavananksTestBtn");
+
+  const testStartArea = document.getElementById("testStartArea");
   const restartTestTop = document.getElementById("restartTestTop");
   const restartTestBtn = document.getElementById("restartTestBtn");
   const backToTestHomeTopBtn = document.getElementById("backToTestHomeTopBtn");
@@ -476,6 +565,13 @@ const testStartArea = document.getElementById("testStartArea");
   const questionText = document.getElementById("questionText");
   const answerOptions = document.getElementById("answerOptions");
 
+  const typedAnswerWrap = document.getElementById("typedAnswerWrap");
+  const typedInputs = document.getElementById("typedInputs");
+  const typedAnswerFeedback = document.getElementById("typedAnswerFeedback");
+  const checkTypedAnswerBtn = document.getElementById("checkTypedAnswerBtn");
+  const typedDifficultyWrap = document.getElementById("typedDifficultyWrap");
+  const typedDifficultySelect = document.getElementById("typedDifficultySelect");
+
   const prevQuestionBtn = document.getElementById("prevQuestionBtn");
   const nextQuestionBtn = document.getElementById("nextQuestionBtn");
   const submitTestBtn = document.getElementById("submitTestBtn");
@@ -486,7 +582,10 @@ const testStartArea = document.getElementById("testStartArea");
 
   let currentBank = [];
   let currentTestTitle = "";
+  let currentMode = "multiple-choice";
+  let currentDifficulty = "medium";
   let activeQuestions = [];
+  let activeTypedPrompts = [];
   let userAnswers = [];
   let currentQuestionIndex = 0;
 
@@ -499,12 +598,104 @@ const testStartArea = document.getElementById("testStartArea");
     return copy;
   }
 
-  function startNewTest(bank, title) {
+  function normalizeAnswer(value) {
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[.,!?;:]/g, "")
+      .replace(/\s+/g, " ");
+  }
+
+  function getBlankCountFromDifficulty(difficulty) {
+    if (difficulty === "easy") return 1;
+    if (difficulty === "hard") return 3;
+    return 2;
+  }
+
+  function splitSentenceIntoTokens(sentence) {
+    return sentence.match(/[A-Za-z']+|[.,!?;:]/g) || [];
+  }
+
+  function getCandidateIndexes(tokens) {
+    return tokens
+      .map((token, index) => ({ token, index }))
+      .filter(({ token }) => /^[A-Za-z']+$/.test(token))
+      .filter(({ token }) => {
+        const normalized = token.toLowerCase();
+        return normalized.length > 3 && !stopWords.has(normalized);
+      })
+      .map(({ index }) => index);
+  }
+
+  function chooseBlankIndexes(tokens, difficulty) {
+    const candidates = getCandidateIndexes(tokens);
+    const desiredCount = getBlankCountFromDifficulty(difficulty);
+
+    if (candidates.length === 0) {
+      return [0];
+    }
+
+    const shuffled = shuffleArray(candidates);
+    const chosen = shuffled.slice(0, Math.min(desiredCount, candidates.length));
+    return chosen.sort((a, b) => a - b);
+  }
+
+  function buildTypedPrompt(question, difficulty) {
+    const tokens = splitSentenceIntoTokens(question.text);
+    const blankIndexes = chooseBlankIndexes(tokens, difficulty);
+    const answers = blankIndexes.map(index => tokens[index]);
+
+    return {
+      originalText: question.text,
+      category: question.category,
+      tokens,
+      blankIndexes,
+      answers
+    };
+  }
+
+  function buildAllTypedPrompts(questions, difficulty) {
+    return questions.map(question => buildTypedPrompt(question, difficulty));
+  }
+
+  function renderPromptHtml(promptData) {
+    return promptData.tokens
+      .map((token, index) => {
+        if (promptData.blankIndexes.includes(index)) {
+          return `<span class="blank-word">_____</span>`;
+        }
+
+        const isPunctuation = /^[.,!?;:]$/.test(token);
+        return isPunctuation ? token : token;
+      })
+      .reduce((acc, token, index, arr) => {
+        const current = token;
+        const next = arr[index + 1];
+
+        if (index === arr.length - 1) return acc + current;
+
+        const nextIsPunctuation = typeof next === "string" && /^[.,!?;:]$/.test(next);
+        return acc + current + (nextIsPunctuation ? "" : " ");
+      }, "");
+  }
+
+  function startNewTest(bank, title, mode = "multiple-choice", difficulty = "medium") {
     currentBank = bank;
     currentTestTitle = title;
-    activeQuestions = shuffleArray(currentBank).slice(0, TEST_LENGTH);
-    userAnswers = new Array(activeQuestions.length).fill(null);
+    currentMode = mode;
+    currentDifficulty = difficulty;
+
+    activeQuestions = shuffleArray(currentBank).slice(0, Math.min(TEST_LENGTH, currentBank.length));
     currentQuestionIndex = 0;
+
+    if (currentMode === "typed") {
+      activeTypedPrompts = buildAllTypedPrompts(activeQuestions, currentDifficulty);
+      userAnswers = Array.from({ length: activeQuestions.length }, () => []);
+      typedDifficultySelect.value = currentDifficulty;
+    } else {
+      activeTypedPrompts = [];
+      userAnswers = new Array(activeQuestions.length).fill(null);
+    }
 
     testStartArea.classList.add("hidden");
     resultsCard.classList.add("hidden");
@@ -520,13 +711,68 @@ const testStartArea = document.getElementById("testStartArea");
   }
 
   function renderQuestion() {
-    const q = activeQuestions[currentQuestionIndex];
-
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} / ${activeQuestions.length}`;
+    typedAnswerFeedback.textContent = "";
+    typedAnswerFeedback.className = "typed-answer-feedback";
+
+    answerOptions.innerHTML = "";
+    typedInputs.innerHTML = "";
+
+    prevQuestionBtn.disabled = currentQuestionIndex === 0;
+
+    const lastQuestion = currentQuestionIndex === activeQuestions.length - 1;
+    nextQuestionBtn.classList.toggle("hidden", lastQuestion);
+    submitTestBtn.classList.toggle("hidden", !lastQuestion);
+
+    if (currentMode === "typed") {
+      const promptData = activeTypedPrompts[currentQuestionIndex];
+
+      questionCategory.textContent = "Tavananks Recall";
+      questionText.innerHTML = renderPromptHtml(promptData);
+
+      answerOptions.classList.add("hidden");
+      typedAnswerWrap.classList.remove("hidden");
+      checkTypedAnswerBtn.classList.remove("hidden");
+      typedDifficultyWrap.classList.remove("hidden");
+
+      const savedAnswers = userAnswers[currentQuestionIndex] || [];
+
+      promptData.answers.forEach((_, blankIndex) => {
+        const fieldWrap = document.createElement("div");
+        fieldWrap.className = "typed-input-field";
+
+        const label = document.createElement("label");
+        label.textContent = `Missing word ${blankIndex + 1}`;
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.className = "typed-answer-input";
+        input.autocomplete = "off";
+        input.value = savedAnswers[blankIndex] || "";
+
+        input.addEventListener("input", () => {
+          if (!Array.isArray(userAnswers[currentQuestionIndex])) {
+            userAnswers[currentQuestionIndex] = [];
+          }
+          userAnswers[currentQuestionIndex][blankIndex] = input.value;
+        });
+
+        fieldWrap.appendChild(label);
+        fieldWrap.appendChild(input);
+        typedInputs.appendChild(fieldWrap);
+      });
+
+      return;
+    }
+
+    const q = activeQuestions[currentQuestionIndex];
     questionCategory.textContent = q.category;
     questionText.textContent = q.question;
 
-    answerOptions.innerHTML = "";
+    answerOptions.classList.remove("hidden");
+    typedAnswerWrap.classList.add("hidden");
+    checkTypedAnswerBtn.classList.add("hidden");
+    typedDifficultyWrap.classList.add("hidden");
 
     q.choices.forEach((choice, index) => {
       const label = document.createElement("label");
@@ -549,12 +795,23 @@ const testStartArea = document.getElementById("testStartArea");
       label.appendChild(span);
       answerOptions.appendChild(label);
     });
+  }
 
-    prevQuestionBtn.disabled = currentQuestionIndex === 0;
+  function checkTypedAnswer() {
+    const promptData = activeTypedPrompts[currentQuestionIndex];
+    const enteredAnswers = userAnswers[currentQuestionIndex] || [];
 
-    const lastQuestion = currentQuestionIndex === activeQuestions.length - 1;
-    nextQuestionBtn.classList.toggle("hidden", lastQuestion);
-    submitTestBtn.classList.toggle("hidden", !lastQuestion);
+    const allCorrect = promptData.answers.every((answer, index) => {
+      return normalizeAnswer(enteredAnswers[index]) === normalizeAnswer(answer);
+    });
+
+    if (allCorrect) {
+      typedAnswerFeedback.textContent = "Correct.";
+      typedAnswerFeedback.className = "typed-answer-feedback is-correct";
+    } else {
+      typedAnswerFeedback.textContent = `Not quite. Correct answer${promptData.answers.length > 1 ? "s" : ""}: ${promptData.answers.join(", ")}`;
+      typedAnswerFeedback.className = "typed-answer-feedback is-wrong";
+    }
   }
 
   function showResults() {
@@ -562,19 +819,37 @@ const testStartArea = document.getElementById("testStartArea");
     resultsBreakdown.innerHTML = "";
 
     activeQuestions.forEach((q, index) => {
-      const correct = userAnswers[index] === q.answer;
+      let correct = false;
+      let userChoice = "";
+      let correctChoice = "";
+      let questionLabel = "";
+
+      if (currentMode === "typed") {
+        const promptData = activeTypedPrompts[index];
+        const enteredAnswers = userAnswers[index] || [];
+
+        correct = promptData.answers.every((answer, answerIndex) => {
+          return normalizeAnswer(enteredAnswers[answerIndex]) === normalizeAnswer(answer);
+        });
+
+        questionLabel = renderPromptHtml(promptData);
+        userChoice = enteredAnswers.length ? enteredAnswers.join(", ") : "No answer";
+        correctChoice = promptData.answers.join(", ");
+      } else {
+        correct = userAnswers[index] === q.answer;
+        questionLabel = q.question;
+        userChoice = userAnswers[index] !== null ? q.choices[userAnswers[index]] : "No answer";
+        correctChoice = q.choices[q.answer];
+      }
+
       if (correct) score++;
 
       const item = document.createElement("div");
       item.className = "result-item";
 
-      const status = correct ? "Correct" : "Incorrect";
-      const userChoice = userAnswers[index] !== null ? q.choices[userAnswers[index]] : "No answer";
-      const correctChoice = q.choices[q.answer];
-
       item.innerHTML = `
-        <div class="result-status ${correct ? 'is-correct' : 'is-wrong'}">${status}</div>
-        <div class="result-question">${index + 1}. ${q.question}</div>
+        <div class="result-status ${correct ? "is-correct" : "is-wrong"}">${correct ? "Correct" : "Incorrect"}</div>
+        <div class="result-question">${index + 1}. ${questionLabel}</div>
         <div class="result-meta"><strong>Your answer:</strong> ${userChoice}</div>
         <div class="result-meta"><strong>Correct answer:</strong> ${correctChoice}</div>
       `;
@@ -591,12 +866,29 @@ const testStartArea = document.getElementById("testStartArea");
     scoreText.textContent = `You scored ${percentage}%. Review the questions below, then take another randomized test.`;
   }
 
-  startNorendzaTestBtn.addEventListener("click", () => startNewTest(norendzaTestBank, "Norendza"));
-startPenGarkTestBtn.addEventListener("click", () => startNewTest(penGarkTestBank, "Pen Gark"));
-startAypGarkTestBtn.addEventListener("click", () => startNewTest(aypGarkTestBank, "Ayp Gark"));
+  startNorendzaTestBtn.addEventListener("click", () => {
+    startNewTest(norendzaTestBank, "Norendza");
+  });
 
-  restartTestTop.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
-  restartTestBtn.addEventListener("click", () => startNewTest(currentBank, currentTestTitle));
+  startPenGarkTestBtn.addEventListener("click", () => {
+    startNewTest(penGarkTestBank, "Pen Gark");
+  });
+
+  startAypGarkTestBtn.addEventListener("click", () => {
+    startNewTest(aypGarkTestBank, "Ayp Gark");
+  });
+
+  startTavananksTestBtn.addEventListener("click", () => {
+    startNewTest(tavananksTestBank, "Tavananks Recall", "typed", typedDifficultySelect.value || "medium");
+  });
+
+  restartTestTop.addEventListener("click", () => {
+    startNewTest(currentBank, currentTestTitle, currentMode, currentDifficulty);
+  });
+
+  restartTestBtn.addEventListener("click", () => {
+    startNewTest(currentBank, currentTestTitle, currentMode, currentDifficulty);
+  });
 
   backToTestHomeTopBtn.addEventListener("click", goToTestHome);
   backToTestHomeBtn.addEventListener("click", goToTestHome);
@@ -616,6 +908,17 @@ startAypGarkTestBtn.addEventListener("click", () => startNewTest(aypGarkTestBank
   });
 
   submitTestBtn.addEventListener("click", showResults);
+  checkTypedAnswerBtn.addEventListener("click", checkTypedAnswer);
+
+  typedDifficultySelect.addEventListener("change", () => {
+    if (currentMode !== "typed") return;
+
+    currentDifficulty = typedDifficultySelect.value;
+    activeTypedPrompts = buildAllTypedPrompts(activeQuestions, currentDifficulty);
+    userAnswers = Array.from({ length: activeQuestions.length }, () => []);
+    currentQuestionIndex = 0;
+    renderQuestion();
+  });
 </script>
 
 </body>
