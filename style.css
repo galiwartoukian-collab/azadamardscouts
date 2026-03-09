@@ -1857,6 +1857,10 @@ a:hover{
   color: #111;
 }
 
+.study-btn{
+  margin-top:40px;
+}
+
 .study-btn.ghost {
   background: rgba(255,255,255,0.08);
   color: #fff;
