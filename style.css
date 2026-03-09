@@ -2269,3 +2269,28 @@ a:hover{
     max-width:260px;
   }
 }
+/* =========================
+   YELLOW GALLERY CARDS
+========================= */
+
+.gallery-card{
+  border:1px solid rgba(255,192,0,0.45);
+}
+
+.gallery-card-body{
+  background:#FFC000;
+  color:#000;
+}
+
+.gallery-card-title{
+  color:#000;
+}
+
+.gallery-card-sub{
+  color:rgba(0,0,0,0.75);
+}
+
+.gallery-card:hover{
+  border-color:#FFC000;
+  box-shadow:0 16px 40px rgba(255,192,0,0.25);
+}
