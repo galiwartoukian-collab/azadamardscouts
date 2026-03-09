@@ -173,138 +173,251 @@
 </main>
 
 <script>
-  const norendzaCards = [
-    { category: "Homenetmen", question: "What do the letters H.M.E.M. stand for?", answer: "Hye Marmnagrtagan Entanour Miyootyoon." },
-    { category: "Homenetmen", question: "When was Homenetmen established?", answer: "1918." },
-    { category: "Homenetmen", question: "Where was Homenetmen established?", answer: "Istanbul, Turkey." },
-    { category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintlian, and Krikor Hagopian." },
-    { category: "Homenetmen", question: "Why do we call each other 'kouyr' and 'yeghpayr'?", answer: "To strengthen the feeling of family within Homenetmen." },
+ const norendzaCards = [
 
-    { category: "Structure", question: "What is the difference between a bashdon and an asdijan?", answer: "A bashdon is temporary. An asdijan is permanent." },
-    { category: "Structure", question: "What is the highest asdijan a scout can obtain?", answer: "Khmpabed." },
-    { category: "Structure", question: "What is the highest bashdon a scout can obtain?", answer: "Shrchanayin Entanour Khmpabed." },
-    { category: "Structure", question: "Passing this test counts as what: gark, asdijan, or bashdon?", answer: "Gark." },
-    { category: "Structure", question: "Put these in descending order: Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort.", answer: "Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort." },
+{ category: "Homenetmen", question: "What do the letters H.M.E.M. stand for?", answer: "Hye Marmnagrtagan Entanour Miyootyoon." },
+{ category: "Homenetmen", question: "In what year was Homenetmen founded?", answer: "1918." },
+{ category: "Homenetmen", question: "Where was Homenetmen founded?", answer: "Constantinople (Istanbul)." },
+{ category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintlian, and Krikor Hagopian." },
+{ category: "Homenetmen", question: "What is the mission of Homenetmen scouting?", answer: "To educate Armenian youth physically, morally, and nationally." },
+{ category: "Homenetmen", question: "Why do members of Homenetmen address each other as 'kouyr' and 'yeghpayr'?", answer: "To reinforce the spirit of brotherhood and family within the organization." },
 
-    { category: "Symbols", question: "What is the name of the symbol used for Homenetmen scouts?", answer: "Shoushanatsagheeg." },
-    { category: "Symbols", question: "What is the name of the symbol used for all of Homenetmen?", answer: "Vahan." },
+{ category: "Structure", question: "What is the difference between a bashdon and an asdijan?", answer: "A bashdon is a temporary leadership position, while an asdijan is a permanent rank." },
+{ category: "Structure", question: "What is the highest asdijan a scout may achieve?", answer: "Khmpabed." },
+{ category: "Structure", question: "What is the highest bashdon within the scouting structure?", answer: "Shrchanayin Entanour Khmpabed." },
+{ category: "Structure", question: "Passing the Norendza examination grants which classification: gark, asdijan, or bashdon?", answer: "Gark." },
+{ category: "Structure", question: "What is the role of a Khmpabed?", answer: "The Khmpabed is responsible for leading and organizing a scouting group." },
+{ category: "Structure", question: "What is the responsibility of a Miavori Khmpabed?", answer: "To oversee the leadership of several scouting groups." },
+{ category: "Structure", question: "Arrange the following in descending order: Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort.", answer: "Shrchanayin Entanour Khmpabed, Shrchanayin Khmpabed, Masnajoughi Khmpabed, Miavori Khmpabed, Khmpabed, Pokh Khmpabed, Vareech Arachnort, Arachnort, Pokh Arachnort." },
 
-    { category: "Uniform", question: "Where does the Norendza badge go on the daraz?", answer: "On its assigned Norendza badge placement spot on the uniform." },
-    { category: "Uniform", question: "Where does the Pen Gark / Yegrort Gark badge go on the daraz?", answer: "On its assigned Second Rank badge placement spot on the uniform." },
+{ category: "Symbols", question: "What is the official scouting emblem used by Homenetmen scouts?", answer: "Shoushanatsagheeg." },
+{ category: "Symbols", question: "What is the emblem representing all of Homenetmen?", answer: "Vahan." },
+{ category: "Symbols", question: "What does the Shoushanatsagheeg symbolize?", answer: "The ideals and identity of Homenetmen scouting." },
 
-    { category: "Salute", question: "Which of these is not a scout salute: Bashdonagan Parev, Klookhi Parev, Kavazaov Parev, Vodkov Parev?", answer: "Vodkov Parev." },
-    { category: "Salute", question: "When greeting a scout with a handshake, do you use your right hand?", answer: "No. You use your left hand." },
+{ category: "Uniform", question: "Why is the scouting uniform important?", answer: "It promotes unity, discipline, and equality among scouts." },
+{ category: "Uniform", question: "Where does the Norendza badge belong on the daraz?", answer: "On the designated Norendza badge placement area of the uniform." },
+{ category: "Uniform", question: "Where does the Pen Gark / Yegrort Gark badge belong on the daraz?", answer: "On the assigned Second Rank badge placement spot on the uniform." },
 
-    { category: "Leadership Colors", question: "What color are a Miavori Khmpabed's shoulder loops?", answer: "Orange." },
-    { category: "Leadership Colors", question: "What color are a Shrchanayin Khmpabed's shoulder loops?", answer: "Baby blue." },
-    { category: "Leadership Colors", question: "What color are a Khmpabed's shoulder loops?", answer: "Green." },
+{ category: "Salute", question: "Which of the following is NOT a scout salute: Bashdonagan Parev, Klookhi Parev, Kavazaov Parev, Vodkov Parev?", answer: "Vodkov Parev." },
+{ category: "Salute", question: "Which hand is used when greeting a fellow scout with a handshake?", answer: "The left hand." },
+{ category: "Salute", question: "Why do scouts shake with the left hand?", answer: "It symbolizes trust and friendship." },
 
-    { category: "Armenia", question: "Which country borders Armenia to the north?", answer: "Georgia." },
-    { category: "Armenia", question: "Which country borders Armenia to the south?", answer: "Iran." },
-    { category: "Armenia", question: "Which country borders Armenia to the east?", answer: "Azerbaijan." },
-    { category: "Armenia", question: "Which country borders Armenia to the west?", answer: "Turkey." },
-    { category: "Armenia", question: "About how many people live in Armenia?", answer: "About 3,000,000." },
-    { category: "Diaspora", question: "About how many Armenians live in the Diaspora?", answer: "About 8,000,000." },
-    { category: "Diaspora", question: "What does 'Spyurk' or 'Diaspora' mean?", answer: "People who live outside of their homeland." },
-    { category: "Armenia", question: "Which of these mountains is in present-day Armenia: Ararat, Massis, Arakadz, or Sis?", answer: "Arakadz." },
+{ category: "Leadership Colors", question: "What color shoulder loops does a Miavori Khmpabed wear?", answer: "Orange." },
+{ category: "Leadership Colors", question: "What color shoulder loops does a Shrchanayin Khmpabed wear?", answer: "Baby blue." },
+{ category: "Leadership Colors", question: "What color shoulder loops does a Khmpabed wear?", answer: "Green." },
 
-    { category: "Compass", question: "What are the eight directions of the compass?", answer: "North, Northeast, East, Southeast, South, Southwest, West, Northwest." },
-    { category: "Compass", question: "Complete the analogy: Arevelk is to East as ______ is to West.", answer: "Arevmoodk." },
+{ category: "Armenia", question: "Which country borders Armenia to the north?", answer: "Georgia." },
+{ category: "Armenia", question: "Which country borders Armenia to the south?", answer: "Iran." },
+{ category: "Armenia", question: "Which country borders Armenia to the east?", answer: "Azerbaijan." },
+{ category: "Armenia", question: "Which country borders Armenia to the west?", answer: "Turkey." },
+{ category: "Armenia", question: "Approximately how many people live in Armenia?", answer: "Around 3 million." },
+{ category: "Armenia", question: "Which of the following mountains is located within present-day Armenia: Ararat, Massis, Arakadz, or Sis?", answer: "Arakadz." },
+{ category: "Armenia", question: "What is the capital of Armenia?", answer: "Yerevan." },
 
-    { category: "Tracking", question: "What does 'hedakhoozel' mean?", answer: "To track or to trail." }
-  ];
+{ category: "Diaspora", question: "Approximately how many Armenians live in the Diaspora?", answer: "Around 8 million." },
+{ category: "Diaspora", question: "What does the word 'Spyurk' (Diaspora) mean?", answer: "Armenians living outside of their homeland." },
 
-  const penGarkCards = [
-    { category: "Homenetmen", question: "Who were the three founders of Homenetmen?", answer: "Krikor Hagopian, Shavarsh Kristian, and Hovhanes Hintilian." },
-    { category: "Homenetmen", question: "What is the purpose of Homenetmen Scouting?", answer: "To cultivate faithful Armenians of strong character and moral virtue, dedicated to serving the nation and becoming model citizens." },
-    { category: "Homenetmen", question: "Name three objectives of Homenetmen.", answer: "Examples: physical well-being, mental strength, duty and responsibility, honor and sacrifice, cooperation and friendship." },
-    { category: "Scouting", question: "Who began the scouting movement in the early 1900s?", answer: "Robert Baden-Powell." },
-    { category: "Scouting", question: "In what year was the first experimental scout camp held?", answer: "1907." },
-    { category: "Scouting", question: "Where was Baden-Powell's first experimental camp held?", answer: "Brownsea Island, United Kingdom." },
-    { category: "Scouting", question: "Name the five key factors Baden-Powell stressed.", answer: "Practical experience, mutual trust, importance of the patrol bond, hands-on learning, and valuing each scout's uniqueness." },
+{ category: "Compass", question: "What are the eight principal directions of a compass?", answer: "North, Northeast, East, Southeast, South, Southwest, West, Northwest." },
+{ category: "Compass", question: "Complete the analogy: Arevelk is to East as ______ is to West.", answer: "Arevmoodk." },
 
-    { category: "Anthem", question: "Who wrote the Armenian National Anthem?", answer: "Mikael Nalbandian." },
-    { category: "Anthem", question: "In what year was the Armenian National Anthem written?", answer: "1859." },
-    { category: "Anthem", question: "What is the name of the Armenian National Anthem?", answer: "Mer Hayrenik." },
+{ category: "Tracking", question: "What does the Armenian scouting term 'hedakhoozel' mean?", answer: "To track or follow a trail." },
+{ category: "Tracking", question: "What are scouting trail signs used for?", answer: "To guide other scouts along a path or communicate information." },
 
-    { category: "History", question: "Which treaty gave Kars, Ardahan, and Batum to the Ottoman Empire?", answer: "The Treaty of Brest-Litovsk." },
-    { category: "History", question: "On what date was the Treaty of Brest-Litovsk signed?", answer: "March 3, 1918." },
-    { category: "History", question: "Which three battles did Armenians win against the Turks in 1918?", answer: "Sardarabad, Gharakilise, and Bash Abaran." },
-    { category: "History", question: "When is Armenia's Independence Day from the First Republic period?", answer: "May 28." },
-    { category: "History", question: "Who formed the first government of the Republic of Armenia?", answer: "Hovhanes Kajaznooni." },
-    { category: "History", question: "Who signed the Treaty of Sèvres on behalf of Armenia?", answer: "Avetis Aharonian." },
+{ category: "Scouting", question: "Who founded the worldwide scouting movement?", answer: "Lord Robert Baden-Powell." },
+{ category: "Scouting", question: "In what year was the first scouting camp organized?", answer: "1907." },
+{ category: "Scouting", question: "What is the primary purpose of the scouting movement?", answer: "To develop responsible, disciplined, and service-minded youth." },
+{ category: "Scouting", question: "What qualities does scouting aim to develop?", answer: "Leadership, discipline, responsibility, and service." },
 
-    { category: "Geography", question: "Name four of the six historic Armenian mountain ranges.", answer: "Examples: Pokr Govgus, Hyegagan Davros, Lazistani Lerner, Haygagan Bar, Arsian Metzrats and Godoor Zagrosh, Sharian Tzaghgants and Mndzoor Buyragnian." },
-    { category: "Geography", question: "How high is Medz Massis?", answer: "5156 meters." },
-    { category: "Geography", question: "How high is Pokr Massis?", answer: "3965 meters." },
-    { category: "Geography", question: "What are the three main lakes of Armenia?", answer: "Lake Urmia, Lake Van, and Lake Sevan." },
-    { category: "Geography", question: "Which lake is inside the current boundaries of Armenia?", answer: "Lake Sevan." },
-    { category: "Geography", question: "What is Armenia's main river?", answer: "The Arax River." },
-    { category: "Geography", question: "What other names does the Arax River have?", answer: "Araz and Yeraskh." },
-    { category: "Geography", question: "What was the population of Armenia in the study guide?", answer: "About 2.8 million." },
-    { category: "Diaspora", question: "What was the diaspora population in the study guide?", answer: "About 8 million." },
+{ category: "Skills", question: "Why are knots taught in scouting?", answer: "To secure equipment, construct camp structures, and ensure safety." },
+{ category: "Skills", question: "Name a basic knot used in scouting.", answer: "Square knot." },
+{ category: "Skills", question: "Why are hikes an important scouting activity?", answer: "They develop endurance, observation, and navigation skills." },
+{ category: "Skills", question: "What tool is commonly used for navigation during hikes?", answer: "A compass." },
 
-    { category: "Church", question: "Why has the seat of the Armenian Catholicos changed places throughout history?", answer: "Because of changing political conditions and the location of Armenian political power." },
-    { category: "Church", question: "What are the two Catholicosates of the Armenian Church?", answer: "The Catholicosate of Etchmiadzin and the Catholicosate of the Great House of Cilicia." },
-    { category: "Church", question: "True or False: The patriarchal seat has always remained in the same city.", answer: "False." },
+{ category: "Values", question: "What does loyalty mean in scouting?", answer: "Remaining faithful to one's duties, values, and community." },
+{ category: "Values", question: "What does service mean in the scouting context?", answer: "Helping others and contributing positively to society." },
+{ category: "Values", question: "What is the scouting motto?", answer: "Be Prepared." },
+{ category: "Values", question: "Why is discipline important in scouting?", answer: "It ensures order, responsibility, and effective teamwork." }
 
-    { category: "Camp", question: "What is a parolla and why is it important during bahag?", answer: "It is a password used between the Hertabah and Bahags to prevent intruders and make sure scouts do not leave their post." },
-    { category: "Camp", question: "If the opposing group steals the flags during the night game, what must they do?", answer: "They must keep the flags until the opening flag ceremony and return them before the ceremony." }
-  ];
+];
 
-  const aypGarkCards = [
-    { category: "Garks", question: "What are the five garks in order for Ari/Arenoush scouts?", answer: "Norendza, Pen Gark, Ayp Gark, Vgayal, Araratian." },
-    { category: "Garks", question: "Where is the Norendza badge worn on the daraz?", answer: "On the left pocket." },
-    { category: "Garks", question: "Where is the Pen Gark badge worn on the daraz?", answer: "On the left sleeve under the chapter patches." },
-    { category: "Garks", question: "Where is the Ayp Gark badge worn on the daraz?", answer: "On the left side above the pocket." },
-    { category: "Garks", question: "What is the Vgayal gark and where is it worn?", answer: "It is a regional leadership gark and is worn as a star pin on the left pocket flap." },
-    { category: "Garks", question: "What is the Araratian gark and who runs that program?", answer: "It is the highest gark, run by Central / Getronagan, and connected to the four-year jamboree." },
+  const pengarkCards = [
 
-    { category: "History", question: "Who were the three founders of Homenetmen?", answer: "Shavarsh Kristian, Hovhannes Hintilian, and Krikor Hagopian." },
-    { category: "History", question: "On what date was Homenetmen founded?", answer: "November 16, 1918." },
-    { category: "History", question: "In what city was the founding meeting of Homenetmen held?", answer: "Constantinople / Istanbul." },
-    { category: "History", question: "What dream of Shavarsh Kristian helped inspire the founding of Homenetmen?", answer: "To unite Armenian athletic teams under one umbrella organization and create an Armenian Olympics." },
+{ category:"Homenetmen", question:"What year was Homenetmen officially founded?", answer:"1918." },
+{ category:"Homenetmen", question:"In which city was Homenetmen founded?", answer:"Constantinople (Istanbul)." },
+{ category:"Homenetmen", question:"Who were the three founders of Homenetmen?", answer:"Shavarsh Kristian, Hovhannes Hintlian, and Krikor Hagopian." },
+{ category:"Homenetmen", question:"What does the word 'Homenetmen' represent?", answer:"The Armenian General Athletic and Scouting Union." },
+{ category:"Homenetmen", question:"What are the two main divisions of Homenetmen?", answer:"Scouting and Athletics." },
+{ category:"Homenetmen", question:"What is the primary mission of Homenetmen scouting?", answer:"To educate Armenian youth physically, morally, and nationally." },
+{ category:"Homenetmen", question:"What Armenian political organization founded Homenetmen?", answer:"The Armenian Revolutionary Federation (ARF)." },
+{ category:"Homenetmen", question:"What values does Homenetmen emphasize?", answer:"Discipline, leadership, service, and Armenian identity." },
 
-    { category: "Mottos", question: "What is the Homenetmen motto?", answer: "Elevate yourself and others with you." },
-    { category: "Mottos", question: "What is the scouting motto?", answer: "Always prepared." },
-    { category: "Identity", question: "What is the difference between Azk and Hayrenik?", answer: "Hayrenik is our homeland / country where we live. Azk is us and our culture." },
+{ category:"Structure", question:"What is the difference between a gark and an asdijan?", answer:"A gark is a scouting rank while an asdijan is a permanent leadership rank." },
+{ category:"Structure", question:"What is the purpose of leadership bashdonner within scouting?", answer:"To organize and guide the scouting groups." },
+{ category:"Structure", question:"What is the responsibility of a Khmpabed?", answer:"To lead and organize a scouting group." },
+{ category:"Structure", question:"What is the responsibility of a Miavori Khmpabed?", answer:"To oversee multiple scouting groups." },
+{ category:"Structure", question:"What is the responsibility of a Shrchanayin Khmpabed?", answer:"To supervise scouting activities within a region." },
+{ category:"Structure", question:"What is the highest leadership bashdon in the region?", answer:"Shrchanayin Entanour Khmpabed." },
+{ category:"Structure", question:"What does Arachnort mean in scouting leadership?", answer:"Guide or leader." },
 
-    { category: "Ceremonies", question: "Name five of the thirteen scout ceremonies.", answer: "Examples: Medz Ganch, Kayleegee Khosdoum, Yertoum, Bahagoutyan Transfer, Hertabah Transfer, Troshagee Ceremony, Badges and Gark Awarding Ceremony." },
-    { category: "Ceremonies", question: "What is the purpose of Medz Ganch?", answer: "To bring scouts together in the morning and welcome the Akella while teaching respect and listening to leaders." },
-    { category: "Ceremonies", question: "What happens during the Vohmagee Khoump Transfer ceremony?", answer: "When Kayleegs/Ardzvigs turn 11 they transfer to Ari/Arenoush, often symbolized by jumping over a rope during a flag ceremony." },
-    { category: "Ceremonies", question: "What happens during a Bahagoutyan transfer?", answer: "The scout on duty and the incoming scout salute, pass the stick, and salute again to confirm the shift change." },
-    { category: "Ceremonies", question: "What happens during a Hertabah transfer?", answer: "The new Hertabah salutes the Kerakouyn Gazm, then salutes the current Hertabah, switches positions, and salutes again to confirm the new role." },
+{ category:"Symbols", question:"What is the official scouting emblem used by Homenetmen scouts?", answer:"Shoushanatsagheeg." },
+{ category:"Symbols", question:"What symbol represents the entire Homenetmen organization?", answer:"Vahan." },
+{ category:"Symbols", question:"What does the Shoushanatsagheeg represent?", answer:"The ideals and spirit of Armenian scouting." },
 
-    { category: "Flag", question: "What do the colors of the Armenian flag represent?", answer: "Red is our blood, blue is our waters, and orange is our wheat." },
-    { category: "Flag", question: "How does a scout salute the flag, and when?", answer: "During flag ceremony while the flag is going up, coming down, and being folded. K/A use 2 fingers and A/A use 3 fingers." },
-    { category: "Flag", question: "Who may salute the flag during a flag ceremony?", answer: "Only a scout in full uniform. Otherwise the person stands in badrasd." },
-    { category: "Flag", question: "What happens to the flag when someone passes away?", answer: "It is first raised all the way, then lowered to half-mast." },
-    { category: "Flag", question: "If all flagpoles are the same height, what is the correct order of flags?", answer: "The country you are in first, then other nations alphabetically, then state flags, and lastly the organization flag." },
+{ category:"Uniform", question:"Why is the scouting uniform important?", answer:"It represents unity, equality, and discipline." },
+{ category:"Uniform", question:"What does the scout scarf represent?", answer:"Belonging to the scouting brotherhood." },
+{ category:"Uniform", question:"Why must scouts wear their uniform correctly?", answer:"To maintain discipline and respect for the organization." },
 
-    { category: "Agenda", question: "What two things should every agenda begin with?", answer: "A goal and a purpose." },
-    { category: "Agenda", question: "In your group hierarchy, what is the order for sending and approving an agenda?", answer: "Arachnorts prepare it, send to Pogh Khmpabed, then Khmpabed, then Kerakouyn Gazm, then corrections are made and finalized." },
+{ category:"Salute", question:"Which hand do scouts use when greeting each other?", answer:"The left hand." },
+{ category:"Salute", question:"What does the three-finger scout salute symbolize?", answer:"The three duties of the scout." },
+{ category:"Salute", question:"What are the three duties of a scout?", answer:"Duty to God, duty to country, and duty to others." },
 
-    { category: "Leadership", question: "What are the duties of a Pogh Arachnort?", answer: "Help with meetings and agendas, teach the group, handle educationals, be an example, help lead the group, and make calls if needed." },
-    { category: "Leadership", question: "What are the duties of an Arachnort?", answer: "Lead group meetings, pass along information, prepare agendas with Pogh Arachnorts, protect the group's badeev, be fair, and help scouts grow." },
-    { category: "Leadership", question: "What are the duties of a Vareech Arachnort?", answer: "Watch over multiple groups, make sure Arachnorts and Pogh Arachnorts do their jobs, help with agendas, and support scouts fairly." },
-    { category: "Leadership", question: "What are the duties of a Pogh Khmpabed / Khmpabed?", answer: "Set an example, plan camps and events, protect scouts, attend meetings, pass along information, know the scouts well, and prepare them to one day take over." },
+{ category:"Armenia", question:"What is the capital of Armenia?", answer:"Yerevan." },
+{ category:"Armenia", question:"Which countries border Armenia?", answer:"Turkey, Georgia, Azerbaijan, and Iran." },
+{ category:"Armenia", question:"Which Armenian mountain is located within present-day Armenia?", answer:"Mount Aragats." },
+{ category:"Armenia", question:"Which historic Armenian mountain lies outside present-day Armenia?", answer:"Mount Ararat." },
+{ category:"Armenia", question:"Approximately how many people live in Armenia?", answer:"Around 3 million." },
 
-    { category: "Reports", question: "What are the five sections of a summary report (deghegakeer)?", answer: "Marzagan, Garkabahagan, Entanour, Haraperagan, Engeragan." },
+{ category:"Diaspora", question:"What does the word 'Spyurk' mean?", answer:"The Armenian diaspora." },
+{ category:"Diaspora", question:"Approximately how many Armenians live in the diaspora?", answer:"Around 8 million." },
+{ category:"Diaspora", question:"Why is the diaspora important for Armenians?", answer:"It preserves Armenian culture and identity worldwide." },
 
-    { category: "Requirements", question: "What are the requirements to earn Ayp Gark?", answer: "Have Pen Gark for 6 months, be at least 14 years old, be known as a model scout, know Pen Gark material, and have attended at least 10 days of camp." },
-    { category: "Leadership Structure", question: "What are the two types of ranks in Homenetmen leadership?", answer: "Astijan and Bashdon." },
-    { category: "Leadership Structure", question: "Which positions are astijan and which are bashdon?", answer: "Astijan: Pogh Arachnort, Arachnort, Vareech Arachnort, Pogh Khmpabed, Khmpabed. Bashdon: Miavori, Pogh Masnajoughi Khmpabed, Masnajoughi Khmpabed, Shrchanayin Pogh Khmpabed, Shrchanayin Khmpabed, Shrchanayin Entanour Khmpabed." },
-    { category: "Arshav", question: "What should you do if you get lost on an arshav?", answer: "Stay calm, do not leave your spot, yell or whistle or make a fire signal, and leave signs or notes if needed." },
-    { category: "Arshav", question: "What should the group do first if a scout is separated?", answer: "The group should not split up, should work together, and go to the highest point to look around for signals." },
-    { category: "Compass", question: "What is the difference between true north and magnetic north?", answer: "True north is north according to the earth's axis. Magnetic north is where a compass points based on the earth's magnetic field." },
-    { category: "Compass", question: "How many degrees difference is there between true north and magnetic north?", answer: "About 10 to 15 degrees." },
-    { category: "Exercise", question: "Describe the scoutagan kayl.", answer: "It consists of 20 walking steps and 20 running steps, repeated during morning exercise before breakfast." },
-    { category: "Camp", question: "How do you purify water in camp?", answer: "Let dirt settle, pour into another container, then boil for 15 minutes. You can also use purifying tablets or a water purifier." },
-    { category: "Camp", question: "What are the main camp-selection rules?", answer: "Use dry land, avoid humid areas and swamps, choose a shady place, and stay away from other campgrounds." },
-    { category: "Ropes", question: "What are the main rules for caring for ropes?", answer: "Wash in cold water, tie the ends, and dry under shade in a non-humid place." },
-    { category: "Ropes", question: "How much stronger is manila rope than sisal rope?", answer: "About 2 times stronger." },
-    { category: "Ropes", question: "Name three materials ropes can be made from.", answer: "Examples: cotton, paper, leaves, plastic, manila, sisal, metal." }
-  ];
+{ category:"History", question:"In what year did Armenia declare independence from the Soviet Union?", answer:"1991." },
+{ category:"History", question:"What tragic event occurred to Armenians in 1915?", answer:"The Armenian Genocide." },
+{ category:"History", question:"Why is April 24 important to Armenians?", answer:"It commemorates the victims of the Armenian Genocide." },
+
+{ category:"Scouting", question:"Who founded the worldwide scouting movement?", answer:"Lord Robert Baden-Powell." },
+{ category:"Scouting", question:"In what year was the first scouting camp held?", answer:"1907." },
+{ category:"Scouting", question:"Where was the first scouting camp held?", answer:"Brownsea Island in England." },
+{ category:"Scouting", question:"What is the motto of the scouting movement?", answer:"Be Prepared." },
+{ category:"Scouting", question:"What is the main goal of scouting?", answer:"To develop responsible and capable citizens." },
+
+{ category:"Skills", question:"What tool is used to determine direction during a hike?", answer:"A compass." },
+{ category:"Skills", question:"What are the eight directions of the compass?", answer:"North, Northeast, East, Southeast, South, Southwest, West, Northwest." },
+{ category:"Skills", question:"Why are knots important in scouting?", answer:"They are used for safety, building structures, and securing equipment." },
+{ category:"Skills", question:"Name one common scouting knot.", answer:"Square knot." },
+{ category:"Skills", question:"Why are hikes important in scouting?", answer:"They develop endurance, navigation, and observation skills." },
+{ category:"Skills", question:"What does tracking mean in scouting?", answer:"Following signs or trails left by others." },
+
+{ category:"Camping", question:"What is the purpose of scouting camps?", answer:"To develop independence, teamwork, and outdoor skills." },
+{ category:"Camping", question:"What should a scout always bring on a hike?", answer:"Water, proper clothing, and basic supplies." },
+{ category:"Camping", question:"Why is teamwork important during camp activities?", answer:"It allows scouts to accomplish tasks safely and efficiently." },
+
+{ category:"Leadership", question:"What qualities define a good scout leader?", answer:"Responsibility, discipline, and leading by example." },
+{ category:"Leadership", question:"Why is leadership training important in scouting?", answer:"It prepares youth to guide others and serve their community." },
+{ category:"Leadership", question:"What is the responsibility of a patrol leader?", answer:"To organize and guide the patrol." },
+
+{ category:"Values", question:"What does honesty mean in scouting?", answer:"Always telling the truth and acting with integrity." },
+{ category:"Values", question:"What does loyalty mean in scouting?", answer:"Being faithful to one's group, values, and nation." },
+{ category:"Values", question:"What does service mean?", answer:"Helping others and contributing to society." },
+{ category:"Values", question:"What does perseverance mean?", answer:"Continuing to work despite difficulty." },
+{ category:"Values", question:"Why is respect important in scouting?", answer:"It strengthens discipline and cooperation." },
+
+{ category:"Nature", question:"Why should scouts respect nature?", answer:"Because protecting the environment is everyone's responsibility." },
+{ category:"Nature", question:"What can scouts learn from observing nature?", answer:"Awareness, patience, and understanding of the environment." },
+
+{ category:"Teamwork", question:"Why is teamwork essential in scouting?", answer:"Because success depends on cooperation and mutual support." },
+{ category:"Teamwork", question:"How does scouting strengthen friendships?", answer:"Through shared experiences and challenges." },
+
+{ category:"Traditions", question:"Why are scouting traditions important?", answer:"They preserve the history and values of the movement." },
+{ category:"Traditions", question:"What does the scouting brotherhood represent?", answer:"Unity among scouts worldwide." },
+
+{ category:"Character", question:"What is courage?", answer:"Facing challenges with determination." },
+{ category:"Character", question:"What is responsibility?", answer:"Being accountable for one's actions." },
+{ category:"Character", question:"What should every scout strive to become?", answer:"A disciplined leader who serves society and the nation." }
+
+];
+
+const aypGarkCards = [
+
+{ category:"Leadership", question:"What is the primary responsibility of a Khmpabed during scouting activities?", answer:"To guide the group, maintain discipline, and ensure activities are organized and safe." },
+{ category:"Leadership", question:"Why must a leader lead by example?", answer:"Because scouts model their behavior after their leaders." },
+{ category:"Leadership", question:"What is the role of older scouts within a group?", answer:"To mentor and support younger scouts." },
+{ category:"Leadership", question:"Why must leaders remain calm in difficult situations?", answer:"To maintain control and guide the group effectively." },
+{ category:"Leadership", question:"What is the purpose of leadership training in scouting?", answer:"To prepare scouts to guide others and take responsibility." },
+{ category:"Leadership", question:"What should a leader do before beginning an activity?", answer:"Explain the objective, rules, and safety guidelines." },
+{ category:"Leadership", question:"Why is fairness important in leadership?", answer:"It builds trust and unity within the group." },
+{ category:"Leadership", question:"What should a leader do when conflicts arise between scouts?", answer:"Resolve the issue calmly and fairly." },
+{ category:"Leadership", question:"Why must leaders encourage participation from all scouts?", answer:"To build confidence and teamwork." },
+{ category:"Leadership", question:"What is the purpose of assigning responsibilities to scouts?", answer:"To build leadership and accountability." },
+
+{ category:"Activity Planning", question:"What is the first step in organizing a scouting activity?", answer:"Defining the objective of the activity." },
+{ category:"Activity Planning", question:"Why must safety be considered when planning activities?", answer:"To prevent accidents and injuries." },
+{ category:"Activity Planning", question:"What should leaders consider when planning a hike?", answer:"Distance, terrain, weather, and group ability." },
+{ category:"Activity Planning", question:"Why must leaders prepare equipment before activities?", answer:"To ensure the activity runs smoothly." },
+{ category:"Activity Planning", question:"What should leaders do after completing an activity?", answer:"Review the activity and discuss lessons learned." },
+{ category:"Activity Planning", question:"Why should activities include teamwork?", answer:"To strengthen cooperation among scouts." },
+{ category:"Activity Planning", question:"Why must leaders give clear instructions?", answer:"To prevent confusion and ensure safety." },
+{ category:"Activity Planning", question:"Why should activities challenge scouts?", answer:"To develop resilience and confidence." },
+
+{ category:"Camping", question:"What is the first step in setting up a campsite?", answer:"Selecting a safe and suitable location." },
+{ category:"Camping", question:"Why must campsites be organized?", answer:"To ensure safety and efficiency." },
+{ category:"Camping", question:"Why should cooking areas be separated from sleeping areas?", answer:"To maintain hygiene and safety." },
+{ category:"Camping", question:"Why must fires be controlled carefully?", answer:"To prevent accidents and forest fires." },
+{ category:"Camping", question:"Why should scouts leave a campsite clean?", answer:"To respect nature and other visitors." },
+{ category:"Camping", question:"What is the purpose of assigning camp duties?", answer:"To ensure tasks are completed efficiently." },
+{ category:"Camping", question:"Why must scouts follow camp discipline?", answer:"To maintain order and safety." },
+{ category:"Camping", question:"What should be done before leaving camp?", answer:"Inspect the area and remove all waste." },
+
+{ category:"Navigation", question:"What tool is most commonly used to determine direction?", answer:"A compass." },
+{ category:"Navigation", question:"What are the four cardinal directions?", answer:"North, East, South, West." },
+{ category:"Navigation", question:"Why is map reading important for scouts?", answer:"It helps them understand terrain and navigate safely." },
+{ category:"Navigation", question:"What should scouts do if they lose the trail?", answer:"Stop, regroup, and determine direction." },
+{ category:"Navigation", question:"Why is observation important during navigation?", answer:"To identify landmarks and stay oriented." },
+{ category:"Navigation", question:"Why should scouts stay together during hikes?", answer:"For safety and teamwork." },
+{ category:"Navigation", question:"Why must leaders explain the route before a hike?", answer:"So scouts understand the path and objectives." },
+
+{ category:"First Aid", question:"What is the purpose of first aid?", answer:"To provide immediate care until professional help arrives." },
+{ category:"First Aid", question:"What is the first step when responding to an injury?", answer:"Assess the situation and ensure safety." },
+{ category:"First Aid", question:"Why should scouts remain calm during emergencies?", answer:"To think clearly and respond effectively." },
+{ category:"First Aid", question:"Why must injuries be reported immediately?", answer:"To ensure proper treatment." },
+{ category:"First Aid", question:"What should be done for minor cuts?", answer:"Clean and bandage the wound." },
+{ category:"First Aid", question:"Why should injured individuals avoid unnecessary movement?", answer:"To prevent further injury." },
+
+{ category:"Flag Ceremony", question:"What does the Armenian flag symbolize?", answer:"The Armenian nation and its values." },
+{ category:"Flag Ceremony", question:"Why must scouts show respect during flag ceremonies?", answer:"To honor the nation and its heritage." },
+{ category:"Flag Ceremony", question:"When should scouts salute the flag?", answer:"During the raising and lowering of the flag." },
+{ category:"Flag Ceremony", question:"Why must the flag be handled carefully?", answer:"It represents national identity and dignity." },
+{ category:"Flag Ceremony", question:"What should scouts do during the national anthem?", answer:"Stand respectfully and salute if in uniform." },
+
+{ category:"Nature", question:"Why must scouts protect nature?", answer:"Because environmental protection is everyone's responsibility." },
+{ category:"Nature", question:"Why should scouts avoid damaging plants?", answer:"To preserve ecosystems." },
+{ category:"Nature", question:"Why should scouts avoid leaving trash outdoors?", answer:"To protect wildlife and the environment." },
+{ category:"Nature", question:"What can scouts learn from observing nature?", answer:"Awareness and environmental understanding." },
+
+{ category:"Teamwork", question:"Why is teamwork important in scouting?", answer:"Because many tasks require cooperation." },
+{ category:"Teamwork", question:"How does teamwork strengthen a group?", answer:"It builds trust and mutual support." },
+{ category:"Teamwork", question:"Why should scouts support one another?", answer:"To ensure the success of the group." },
+{ category:"Teamwork", question:"Why must scouts respect each other?", answer:"Respect strengthens unity and discipline." },
+
+{ category:"Character", question:"What does honesty mean in scouting?", answer:"Telling the truth and acting with integrity." },
+{ category:"Character", question:"What does loyalty mean?", answer:"Being faithful to one's duties and values." },
+{ category:"Character", question:"What does responsibility mean?", answer:"Being accountable for one's actions." },
+{ category:"Character", question:"What does perseverance mean?", answer:"Continuing despite difficulties." },
+{ category:"Character", question:"Why must scouts demonstrate discipline?", answer:"To maintain order and respect." },
+
+{ category:"Armenia", question:"What is the capital of Armenia?", answer:"Yerevan." },
+{ category:"Armenia", question:"Which countries border Armenia?", answer:"Turkey, Georgia, Azerbaijan, and Iran." },
+{ category:"Armenia", question:"Which mountain lies within modern Armenia?", answer:"Mount Aragats." },
+{ category:"Armenia", question:"What is Armenia's approximate population?", answer:"About 3 million." },
+
+{ category:"Diaspora", question:"What does 'Spyurk' mean?", answer:"Armenians living outside their homeland." },
+{ category:"Diaspora", question:"Why is the Armenian diaspora important?", answer:"It preserves Armenian culture worldwide." },
+
+{ category:"History", question:"What tragedy occurred to Armenians in 1915?", answer:"The Armenian Genocide." },
+{ category:"History", question:"Why is April 24 commemorated each year?", answer:"To remember the victims of the Armenian Genocide." },
+{ category:"History", question:"In what year did Armenia regain independence?", answer:"1991." },
+
+{ category:"Scouting", question:"Who founded the worldwide scouting movement?", answer:"Robert Baden-Powell." },
+{ category:"Scouting", question:"In what year was the first scouting camp held?", answer:"1907." },
+{ category:"Scouting", question:"Where was the first scouting camp held?", answer:"Brownsea Island." },
+{ category:"Scouting", question:"What is the scouting motto?", answer:"Be Prepared." },
+
+{ category:"Traditions", question:"What does the scouting brotherhood represent?", answer:"Unity among scouts worldwide." },
+{ category:"Traditions", question:"Why are scouting traditions important?", answer:"They preserve the values and history of the movement." },
+
+{ category:"Final", question:"What should every Ayp Gark scout strive to become?", answer:"A disciplined leader who serves the Armenian nation and community." }
+
+];
 
   const weatherCards = [
     { category: "Fog", question: "What is radiation fog?", answer: "Fog formed when land cools at night and the air above it condenses." },
