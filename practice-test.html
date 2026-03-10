@@ -9,6 +9,189 @@
     content="Practice tests for Homenetmen Pasadena Azadamard Scouting."
   />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .hidden {
+      display: none !important;
+    }
+
+    .symbol-test-app {
+      margin-top: 2rem;
+    }
+
+    .symbol-intro {
+      margin-bottom: 1rem;
+    }
+
+    .symbol-quiz-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .symbol-board {
+      position: relative;
+      background: #f7f7f7;
+      border-radius: 18px;
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .symbol-image-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      aspect-ratio: 1675 / 854;
+    }
+
+    .symbol-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .dropzone {
+      position: absolute;
+      border: 2px dashed rgba(0,0,0,0.28);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      transition: 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem;
+      text-align: center;
+      min-height: 48px;
+    }
+
+    .dropzone.is-over {
+      background: rgba(255, 214, 10, 0.22);
+      border-color: rgba(0,0,0,0.45);
+    }
+
+    .dropzone.is-correct {
+      border-color: #188038;
+      background: rgba(24, 128, 56, 0.12);
+    }
+
+    .dropzone.is-wrong {
+      border-color: #c62828;
+      background: rgba(198, 40, 40, 0.12);
+    }
+
+    .dropzone .draggable-chip {
+      width: 100%;
+      cursor: grab;
+    }
+
+    .label-bank-wrap {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .label-bank-title {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .label-bank {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-height: 120px;
+    }
+
+    .draggable-chip {
+      background: #f4f1e8;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 999px;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      line-height: 1.2;
+      user-select: none;
+      cursor: grab;
+      text-align: center;
+    }
+
+    .draggable-chip:active {
+      cursor: grabbing;
+    }
+
+    .symbol-help {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .symbol-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .symbol-feedback {
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+
+    .symbol-feedback.is-correct {
+      color: #188038;
+    }
+
+    .symbol-feedback.is-wrong {
+      color: #c62828;
+    }
+
+    /* Approximate drop zones on the image */
+    .zone-oath {
+      top: 5%;
+      left: 39%;
+      width: 26%;
+      height: 15%;
+    }
+
+    .zone-rays {
+      top: 26%;
+      left: 44%;
+      width: 14%;
+      height: 11%;
+    }
+
+    .zone-eyes {
+      top: 18%;
+      left: 14%;
+      width: 24%;
+      height: 12%;
+    }
+
+    .zone-smile {
+      top: 52%;
+      left: 12%;
+      width: 24%;
+      height: 12%;
+    }
+
+    .zone-tongue {
+      top: 42%;
+      right: 10%;
+      width: 22%;
+      height: 12%;
+    }
+
+    @media (max-width: 900px) {
+      .symbol-quiz-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -79,7 +262,7 @@
       <p class="study-kicker">Scouting Program</p>
       <h1>Practice Tests</h1>
       <p class="study-subtitle">
-        Choose a practice test. Multiple-choice tests use randomized questions, and Tavananks Recall uses typed active recall with gradual word removal.
+        Choose a practice test. Multiple-choice tests use randomized questions, Tavananks Recall uses typed active recall, and Sushanadzaghig uses drag-and-drop labeling on the scouting symbol.
       </p>
     </div>
   </section>
@@ -157,6 +340,23 @@
           </button>
         </div>
 
+        <div class="test-card">
+          <span class="card-tag">Sushanadzaghig</span>
+          <h2>Sushanadzaghig Test</h2>
+          <p class="test-copy">
+            Drag each label onto the correct part of the scouting symbol and check your score instantly.
+          </p>
+
+          <div class="test-meta">
+            <div><strong>Mode:</strong> Drag and drop</div>
+            <div><strong>Labels:</strong> 5 parts</div>
+          </div>
+
+          <button id="startSymbolTestBtn" class="study-btn primary" type="button">
+            Start Sushanadzaghig Test
+          </button>
+        </div>
+
       </div>
 
       <div id="testApp" class="test-app hidden">
@@ -196,6 +396,51 @@
             <button id="submitTestBtn" class="study-btn primary hidden" type="button">Submit Test</button>
           </div>
         </div>
+      </div>
+
+      <div id="symbolTestApp" class="test-card symbol-test-app hidden">
+        <div class="test-topbar">
+          <div class="test-topbar-actions">
+            <button id="restartSymbolTestTopBtn" class="study-btn ghost" type="button">Reset Activity</button>
+            <button id="backToSymbolHomeTopBtn" class="study-btn ghost" type="button">Test Home</button>
+          </div>
+          <div class="card-counter">Interactive Activity</div>
+        </div>
+
+        <span class="card-tag">Sushanadzaghig</span>
+        <h2>Label the Scouting Symbol</h2>
+        <p class="symbol-intro">
+          Drag each label onto the correct part of the symbol, then press <strong>Check Answers</strong>.
+        </p>
+
+        <div class="symbol-quiz-layout">
+          <div class="symbol-board">
+            <div class="symbol-image-wrap">
+              <img src="images/brand/logo.webp" alt="Scouting symbol" />
+
+              <div class="dropzone zone-oath" data-answer="Three parts of the oath"></div>
+              <div class="dropzone zone-rays" data-answer="12 sun rays"></div>
+              <div class="dropzone zone-eyes" data-answer="Scout's eyes"></div>
+              <div class="dropzone zone-smile" data-answer="Scout's smile"></div>
+              <div class="dropzone zone-tongue" data-answer="Clean tongue"></div>
+            </div>
+          </div>
+
+          <div class="label-bank-wrap">
+            <h3 class="label-bank-title">Labels</h3>
+            <div id="labelBank" class="label-bank"></div>
+            <p class="symbol-help">
+              Tip: the drop zones are intentionally larger than the exact symbol parts so the activity feels fair instead of pixel-sniper cruel.
+            </p>
+          </div>
+        </div>
+
+        <div class="symbol-actions">
+          <button id="checkSymbolAnswersBtn" class="study-btn primary" type="button">Check Answers</button>
+          <button id="resetSymbolAnswersBtn" class="study-btn ghost" type="button">Reset</button>
+        </div>
+
+        <div id="symbolFeedback" class="symbol-feedback"></div>
       </div>
 
       <div id="resultsCard" class="test-card hidden">
@@ -578,6 +823,16 @@ const penGarkTestBank = [
 
   const TEST_LENGTH = 20;
 
+    const symbolLabels = [
+    "Three parts of the oath",
+    "12 sun rays",
+    "Scout's eyes",
+    "Scout's smile",
+    "Clean tongue"
+  ];
+
+  const TEST_LENGTH = 20;
+
   const stopWords = new Set([
     "a","an","and","are","as","at","be","because","by","for","from","her","his","in",
     "is","it","of","on","or","that","the","their","them","they","this","to","with",
@@ -588,6 +843,7 @@ const penGarkTestBank = [
   const startPenGarkTestBtn = document.getElementById("startPenGarkTestBtn");
   const startAypGarkTestBtn = document.getElementById("startAypGarkTestBtn");
   const startTavananksTestBtn = document.getElementById("startTavananksTestBtn");
+  const startSymbolTestBtn = document.getElementById("startSymbolTestBtn");
 
   const testStartArea = document.getElementById("testStartArea");
   const restartTestTop = document.getElementById("restartTestTop");
@@ -596,6 +852,7 @@ const penGarkTestBank = [
   const backToTestHomeBtn = document.getElementById("backToTestHomeBtn");
 
   const testApp = document.getElementById("testApp");
+  const symbolTestApp = document.getElementById("symbolTestApp");
   const resultsCard = document.getElementById("resultsCard");
 
   const questionCounter = document.getElementById("questionCounter");
@@ -618,6 +875,14 @@ const penGarkTestBank = [
   const scoreText = document.getElementById("scoreText");
   const resultsBreakdown = document.getElementById("resultsBreakdown");
 
+  const labelBank = document.getElementById("labelBank");
+  const dropzones = document.querySelectorAll(".dropzone");
+  const checkSymbolAnswersBtn = document.getElementById("checkSymbolAnswersBtn");
+  const resetSymbolAnswersBtn = document.getElementById("resetSymbolAnswersBtn");
+  const restartSymbolTestTopBtn = document.getElementById("restartSymbolTestTopBtn");
+  const backToSymbolHomeTopBtn = document.getElementById("backToSymbolHomeTopBtn");
+  const symbolFeedback = document.getElementById("symbolFeedback");
+
   let currentBank = [];
   let currentTestTitle = "";
   let currentMode = "multiple-choice";
@@ -626,6 +891,7 @@ const penGarkTestBank = [
   let activeTypedPrompts = [];
   let userAnswers = [];
   let currentQuestionIndex = 0;
+  let draggedItem = null;
 
   function shuffleArray(array) {
     const copy = [...array];
@@ -707,14 +973,18 @@ const penGarkTestBank = [
         return isPunctuation ? token : token;
       })
       .reduce((acc, token, index, arr) => {
-        const current = token;
         const next = arr[index + 1];
-
-        if (index === arr.length - 1) return acc + current;
-
+        if (index === arr.length - 1) return acc + token;
         const nextIsPunctuation = typeof next === "string" && /^[.,!?;:]$/.test(next);
-        return acc + current + (nextIsPunctuation ? "" : " ");
+        return acc + token + (nextIsPunctuation ? "" : " ");
       }, "");
+  }
+
+  function hideAllViews() {
+    testStartArea.classList.add("hidden");
+    testApp.classList.add("hidden");
+    symbolTestApp.classList.add("hidden");
+    resultsCard.classList.add("hidden");
   }
 
   function startNewTest(bank, title, mode = "multiple-choice", difficulty = "medium") {
@@ -735,16 +1005,13 @@ const penGarkTestBank = [
       userAnswers = new Array(activeQuestions.length).fill(null);
     }
 
-    testStartArea.classList.add("hidden");
-    resultsCard.classList.add("hidden");
+    hideAllViews();
     testApp.classList.remove("hidden");
-
     renderQuestion();
   }
 
   function goToTestHome() {
-    testApp.classList.add("hidden");
-    resultsCard.classList.add("hidden");
+    hideAllViews();
     testStartArea.classList.remove("hidden");
   }
 
@@ -897,12 +1164,108 @@ const penGarkTestBank = [
 
     const percentage = Math.round((score / activeQuestions.length) * 100);
 
-    testApp.classList.add("hidden");
+    hideAllViews();
     resultsCard.classList.remove("hidden");
 
     scoreHeading.textContent = `${currentTestTitle} Score: ${score} / ${activeQuestions.length}`;
     scoreText.textContent = `You scored ${percentage}%. Review the questions below, then take another randomized test.`;
   }
+
+  function createSymbolChip(labelText) {
+    const chip = document.createElement("div");
+    chip.className = "draggable-chip";
+    chip.draggable = true;
+    chip.dataset.label = labelText;
+    chip.textContent = labelText;
+
+    chip.addEventListener("dragstart", () => {
+      draggedItem = chip;
+    });
+
+    chip.addEventListener("dragend", () => {
+      draggedItem = null;
+    });
+
+    return chip;
+  }
+
+  function resetSymbolTest() {
+    symbolFeedback.textContent = "";
+    symbolFeedback.className = "symbol-feedback";
+
+    labelBank.innerHTML = "";
+    const shuffled = shuffleArray(symbolLabels);
+
+    shuffled.forEach(label => {
+      labelBank.appendChild(createSymbolChip(label));
+    });
+
+    dropzones.forEach(zone => {
+      zone.innerHTML = "";
+      zone.classList.remove("is-correct", "is-wrong", "is-over");
+    });
+  }
+
+  function startSymbolTest() {
+    hideAllViews();
+    symbolTestApp.classList.remove("hidden");
+    resetSymbolTest();
+  }
+
+  function checkSymbolAnswers() {
+    let correct = 0;
+
+    dropzones.forEach(zone => {
+      zone.classList.remove("is-correct", "is-wrong");
+
+      const placed = zone.querySelector(".draggable-chip");
+      if (placed && placed.dataset.label === zone.dataset.answer) {
+        correct++;
+        zone.classList.add("is-correct");
+      } else {
+        zone.classList.add("is-wrong");
+      }
+    });
+
+    symbolFeedback.textContent = `You got ${correct} out of ${dropzones.length} correct.`;
+    symbolFeedback.className = `symbol-feedback ${correct === dropzones.length ? "is-correct" : "is-wrong"}`;
+  }
+
+  dropzones.forEach(zone => {
+    zone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      zone.classList.add("is-over");
+    });
+
+    zone.addEventListener("dragleave", () => {
+      zone.classList.remove("is-over");
+    });
+
+    zone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      zone.classList.remove("is-over");
+
+      if (!draggedItem) return;
+
+      const existingChip = zone.querySelector(".draggable-chip");
+      if (existingChip) {
+        labelBank.appendChild(existingChip);
+      }
+
+      zone.innerHTML = "";
+      zone.appendChild(draggedItem);
+    });
+  });
+
+  labelBank.addEventListener("dragover", (e) => {
+    e.preventDefault();
+  });
+
+  labelBank.addEventListener("drop", (e) => {
+    e.preventDefault();
+    if (!draggedItem) return;
+    labelBank.appendChild(draggedItem);
+  });
 
   startNorendzaTestBtn.addEventListener("click", () => {
     startNewTest(norendzaTestBank, "Norendza");
@@ -920,6 +1283,8 @@ const penGarkTestBank = [
     startNewTest(tavananksTestBank, "Tavananks Recall", "typed", typedDifficultySelect.value || "medium");
   });
 
+  startSymbolTestBtn.addEventListener("click", startSymbolTest);
+
   restartTestTop.addEventListener("click", () => {
     startNewTest(currentBank, currentTestTitle, currentMode, currentDifficulty);
   });
@@ -930,6 +1295,11 @@ const penGarkTestBank = [
 
   backToTestHomeTopBtn.addEventListener("click", goToTestHome);
   backToTestHomeBtn.addEventListener("click", goToTestHome);
+
+  restartSymbolTestTopBtn.addEventListener("click", resetSymbolTest);
+  resetSymbolAnswersBtn.addEventListener("click", resetSymbolTest);
+  backToSymbolHomeTopBtn.addEventListener("click", goToTestHome);
+  checkSymbolAnswersBtn.addEventListener("click", checkSymbolAnswers);
 
   prevQuestionBtn.addEventListener("click", () => {
     if (currentQuestionIndex > 0) {
