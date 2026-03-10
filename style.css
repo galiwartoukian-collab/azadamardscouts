@@ -2293,167 +2293,302 @@ a:hover{
   display: none !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .symbol-test-app {
   margin-top: 2rem;
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 204, 0, 0.18);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.symbol-test-app .card-tag {
+  background: rgba(255, 204, 0, 0.14);
+  color: #f5c400;
+  border: 1px solid rgba(255, 204, 0, 0.25);
+}
+
+.symbol-test-app h2 {
+  color: #f5f5f5;
+  margin-bottom: 0.75rem;
+}
+
+.symbol-intro {
+  color: #d2d2d2;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.symbol-intro strong {
+  color: #ffd54a;
 }
 
 .symbol-quiz-layout {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr);
   gap: 1.5rem;
+  align-items: start;
 }
 
 .symbol-board {
-  width: 100%;
-  background: #f7f7f7;
-  border-radius: 18px;
+  background: #111111;
+  border: 1px solid rgba(255, 204, 0, 0.12);
+  border-radius: 22px;
   padding: 1rem;
-  border: 1px solid rgba(0,0,0,0.08);
 }
 
 .symbol-image-wrap {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  aspect-ratio: 1675 / 854;
+  min-height: 520px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 204, 0, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .symbol-image-wrap img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 2rem;
   display: block;
-  border-radius: 12px;
 }
 
 .label-bank-wrap {
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 18px;
+  background: #111111;
+  border: 1px solid rgba(255, 204, 0, 0.12);
+  border-radius: 22px;
   padding: 1rem;
+}
+
+.label-bank-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5c400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .label-bank {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  min-height: 90px;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 200px;
 }
 
 .draggable-chip {
-  background: #f4f1e8;
-  border: 1px solid rgba(0,0,0,0.12);
+  background: #191919;
+  color: #ffd54a;
+  border: 1px solid rgba(255, 204, 0, 0.22);
   border-radius: 999px;
-  padding: 0.75rem 1rem;
-  font-weight: 600;
+  padding: 0.95rem 1rem;
+  font-weight: 700;
   line-height: 1.2;
   user-select: none;
   cursor: grab;
   text-align: center;
+  transition: 0.2s ease;
+}
+
+.draggable-chip:hover {
+  background: #222222;
+  border-color: rgba(255, 204, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.draggable-chip:active {
+  cursor: grabbing;
 }
 
 .dropzone {
   position: absolute;
-  border: 2px dashed rgba(0,0,0,0.28);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.15);
+  border: 2px dashed rgba(255, 204, 0, 0.32);
+  border-radius: 16px;
+  background: rgba(255, 204, 0, 0.06);
+  color: #ffe082;
   transition: 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.35rem;
   text-align: center;
-  min-height: 52px;
+  min-height: 56px;
+  font-weight: 700;
 }
 
 .dropzone.is-over {
-  background: rgba(255, 214, 10, 0.22);
-  border-color: rgba(0,0,0,0.45);
+  background: rgba(255, 204, 0, 0.14);
+  border-color: rgba(255, 204, 0, 0.65);
 }
 
 .dropzone.is-correct {
-  border-color: #188038;
-  background: rgba(24, 128, 56, 0.12);
+  border-color: #36c26b;
+  background: rgba(54, 194, 107, 0.16);
 }
 
 .dropzone.is-wrong {
-  border-color: #c62828;
-  background: rgba(198, 40, 40, 0.12);
+  border-color: #ff5c5c;
+  background: rgba(255, 92, 92, 0.14);
 }
 
 .dropzone .draggable-chip {
   width: 100%;
+  margin: 0;
 }
 
-/* starter zones, easy to adjust later */
+.symbol-help {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #a8a8a8;
+  line-height: 1.45;
+}
+
+.symbol-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.symbol-feedback {
+  margin-top: 1rem;
+  font-weight: 800;
+  color: #ffd54a;
+}
+
+.symbol-feedback.is-correct {
+  color: #53d786;
+}
+
+.symbol-feedback.is-wrong {
+  color: #ff7a7a;
+}
+
+/* Bigger, more spacious starting drop zones */
 .zone-oath-left {
-  top: 4%;
-  left: 29%;
-  width: 16%;
+  top: 6%;
+  left: 20%;
+  width: 15%;
   height: 12%;
 }
 
 .zone-oath-center {
   top: 2%;
-  left: 42%;
-  width: 16%;
-  height: 12%;
+  left: 41%;
+  width: 17%;
+  height: 13%;
 }
 
 .zone-oath-right {
-  top: 4%;
-  left: 55%;
-  width: 16%;
-  height: 12%;
-}
-
-.zone-rays {
-  top: 25%;
-  left: 43%;
+  top: 6%;
+  right: 20%;
   width: 15%;
   height: 12%;
 }
 
-.zone-eyes-left {
-  top: 17%;
-  left: 13%;
+.zone-rays {
+  top: 19%;
+  left: 42%;
   width: 16%;
-  height: 11%;
+  height: 13%;
+}
+
+.zone-eyes-left {
+  top: 16%;
+  left: 16%;
+  width: 14%;
+  height: 12%;
 }
 
 .zone-eyes-right {
-  top: 17%;
-  left: 30%;
-  width: 16%;
-  height: 11%;
+  top: 16%;
+  right: 16%;
+  width: 14%;
+  height: 12%;
 }
 
 .zone-smile-left {
-  top: 51%;
-  left: 10%;
-  width: 16%;
-  height: 11%;
+  top: 42%;
+  left: 13%;
+  width: 15%;
+  height: 12%;
 }
 
 .zone-smile-center {
-  top: 56%;
-  left: 28%;
-  width: 16%;
-  height: 11%;
+  top: 48%;
+  left: 31%;
+  width: 18%;
+  height: 12%;
 }
 
 .zone-tongue {
   top: 42%;
-  right: 10%;
-  width: 18%;
+  right: 13%;
+  width: 16%;
   height: 12%;
 }
 
 .zone-wing {
-  top: 24%;
+  top: 30%;
   right: 7%;
-  width: 18%;
+  width: 16%;
   height: 12%;
+}
+
+@media (max-width: 1100px) {
+  .symbol-quiz-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .symbol-image-wrap {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 700px) {
+  .symbol-test-app {
+    padding: 1rem;
+  }
+
+  .symbol-image-wrap {
+    min-height: 360px;
+  }
+
+  .draggable-chip {
+    font-size: 0.95rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .dropzone {
+    min-height: 46px;
+    font-size: 0.82rem;
+  }
+}
+.symbol-test-app .study-btn.ghost {
+  background: transparent;
+  color: #ffd54a;
+  border: 1px solid rgba(255, 204, 0, 0.25);
+}
+
+.symbol-test-app .study-btn.ghost:hover {
+  background: rgba(255, 204, 0, 0.08);
+}
+
+.symbol-test-app .study-btn.primary {
+  background: #f5c400;
+  color: #111111;
+  border: 1px solid #f5c400;
+  font-weight: 800;
+}
+
+.symbol-test-app .study-btn.primary:hover {
+  filter: brightness(1.03);
 }
