@@ -284,98 +284,133 @@ const norendzaTestBank = [
 
 ];
 
-  const penGarkTestBank = [
-    { category: "History", question: "Who wrote the Armenian national anthem?", choices: ["Komitas", "Mikael Nalbandian", "Hovhannes Toumanian", "Garegin Nzhdeh"], answer: 1 },
-    { category: "History", question: "In what year was the Armenian national anthem written?", choices: ["1859", "1918", "1875", "1920"], answer: 0 },
-    { category: "History", question: "What is the name of the Armenian national anthem?", choices: ["Hayastan", "Mer Hayrenik", "Yeraz", "Azad Hayastan"], answer: 1 },
-    { category: "History", question: "Which treaty gave Kars, Ardahan, and Batum to the Ottoman Empire?", choices: ["Treaty of Lausanne", "Treaty of Sèvres", "Treaty of Brest-Litovsk", "Treaty of Berlin"], answer: 2 },
-    { category: "History", question: "In what year was the Treaty of Brest-Litovsk signed?", choices: ["1915", "1917", "1918", "1920"], answer: 2 },
-    { category: "History", question: "Which battles helped Armenians defeat the Turks in 1918?", choices: ["Sardarabad, Gharakilise, Bash Aparan", "Van, Kars, Erzurum", "Ararat, Lori, Gyumri", "Ani, Kars, Van"], answer: 0 },
-    { category: "History", question: "When is Armenian Independence Day from the First Republic?", choices: ["April 24", "May 28", "July 5", "September 21"], answer: 1 },
-    { category: "History", question: "Who commanded Armenian forces during the Sardarabad battles?", choices: ["Aram Manoukian", "General Nazarbekian", "Andranik", "Garegin Nzhdeh"], answer: 1 },
-    { category: "History", question: "Who became Armenia’s first prime minister in 1918?", choices: ["Aram Manoukian", "Hovhannes Kajaznuni", "Dro", "Simon Vratsian"], answer: 1 },
-    { category: "History", question: "Which treaty expanded Armenia’s territory to 162,000 square kilometers?", choices: ["Treaty of Lausanne", "Treaty of Berlin", "Treaty of Sèvres", "Treaty of Moscow"], answer: 2 },
+const penGarkTestBank = [
 
-    { category: "Geography", question: "Historic Armenia covered approximately how many square kilometers?", choices: ["100,000", "300,000", "500,000", "800,000"], answer: 1 },
-    { category: "Geography", question: "Armenia is located in which region?", choices: ["Eastern Europe", "Western Asia", "Central Asia", "Middle East"], answer: 1 },
-    { category: "Geography", question: "Armenia is often described as a land of:", choices: ["Forests", "Rivers", "Mountains", "Plains"], answer: 2 },
-    { category: "Geography", question: "Which mountain is the tallest in Historic Armenia?", choices: ["Aragats", "Massis (Ararat)", "Nemrut", "Sipan"], answer: 1 },
-    { category: "Geography", question: "What is the height of Big Massis?", choices: ["4095 m", "4434 m", "5156 m", "3965 m"], answer: 2 },
-    { category: "Geography", question: "What is the height of Small Massis?", choices: ["3965 m", "4095 m", "4434 m", "5156 m"], answer: 0 },
-    { category: "Geography", question: "What is Armenia’s second tallest peak?", choices: ["Aragats", "Sipan", "Nemrut", "Ararat"], answer: 0 },
-    { category: "Geography", question: "What lake is located within present-day Armenia?", choices: ["Urmia", "Van", "Sevan", "Caspian"], answer: 2 },
-    { category: "Geography", question: "Which lake is known for the Ishkhan fish?", choices: ["Urmia", "Van", "Sevan", "Aral"], answer: 2 },
-    { category: "Geography", question: "Which rivers originate in the Armenian highlands?", choices: ["Nile and Congo", "Euphrates and Tigris", "Danube and Rhine", "Amazon and Orinoco"], answer: 1 },
+{ category: "Armenian History", question: "Who wrote the Armenian national anthem 'Mer Hayrenik'?", choices: ["Hovhannes Toumanian", "Mikael Nalbandian", "Komitas", "Yeghishe Charents"], answer: 1 },
 
-    { category: "Scouting", question: "Who began the scouting movement?", choices: ["Lord Baden-Powell", "Winston Churchill", "Ernest Shackleton", "Robert Falcon Scott"], answer: 0 },
-    { category: "Scouting", question: "When was the first scouting camp held?", choices: ["1905", "1907", "1910", "1918"], answer: 1 },
-    { category: "Scouting", question: "Where was the first scouting camp held?", choices: ["Brownsea Island", "London", "Paris", "Dublin"], answer: 0 },
-    { category: "Scouting", question: "Which of these is a key teaching of Baden-Powell?", choices: ["Practical experience", "Isolation", "Competition", "Obedience"], answer: 0 },
-    { category: "Scouting", question: "What does Homenetmen scouting aim to develop?", choices: ["Physical strength only", "Character and service", "Military discipline", "Political leadership"], answer: 1 },
-    { category: "Scouting", question: "What is one goal of Homenetmen scouting?", choices: ["Create model citizens", "Win competitions", "Build wealth", "Train soldiers"], answer: 0 },
+{ category: "Armenian History", question: "The poem that later became the Armenian national anthem was originally written in which year?", choices: ["1859", "1875", "1918", "1920"], answer: 0 },
 
-    { category: "Camp", question: "When pitching a tent, the ground should be:", choices: ["Wet", "Rocky", "Flat and dry", "Sloped"], answer: 2 },
-    { category: "Camp", question: "Before setting up a tent you should:", choices: ["Light a fire", "Clear rocks and thorns", "Add water", "Build a fence"], answer: 1 },
-    { category: "Camp", question: "What should you check for before pitching a tent?", choices: ["Animals or insect nests", "Rivers", "Roads", "Trees"], answer: 0 },
-    { category: "Camp", question: "Why should scouts respect animals and plants?", choices: ["Because of scouting laws", "To protect nature", "Because of camp rules", "All of the above"], answer: 3 },
+{ category: "Armenian Geography", question: "Historic Armenia covered approximately how many square kilometers?", choices: ["150,000", "300,000", "500,000", "1,000,000"], answer: 1 },
 
-    { category: "Tools", question: "What is a small axe mainly used for?", choices: ["Cutting large trees", "Day-to-day camp work", "Digging", "Cooking"], answer: 1 },
-    { category: "Tools", question: "What is a large axe used for?", choices: ["Cooking", "Splitting small sticks", "Cutting large logs", "Carrying wood"], answer: 2 },
-    { category: "Tools", question: "When using a knife, the blade should move:", choices: ["Toward your body", "Away from your body", "Sideways", "Downward"], answer: 1 },
-    { category: "Tools", question: "What should you do after using a knife?", choices: ["Leave it out", "Clean and cover it", "Sharpen it", "Break it"], answer: 1 },
-    { category: "Tools", question: "How should you sharpen a knife?", choices: ["Run both sides along a stone", "Use water only", "Use sand", "Hit it with a hammer"], answer: 0 },
+{ category: "Armenian Geography", question: "Which mountain range runs through the heart of Armenia?", choices: ["Haygagan Bar", "Hyegagan Davros", "Lazistani Lerner", "Zagros"], answer: 0 },
 
-    { category: "Fire", question: "Which wood burns well and lasts long?", choices: ["Oak", "Elm", "Walnut", "All of the above"], answer: 3 },
-    { category: "Fire", question: "Which wood burns quickly?", choices: ["Cedar", "Fir", "Willow", "All of the above"], answer: 3 },
-    { category: "Fire", question: "What are common ways to start a fire?", choices: ["Matches", "Lighter", "Flint and steel", "All of the above"], answer: 3 },
-    { category: "Fire", question: "What is friction used for?", choices: ["Cooking", "Starting a fire", "Cleaning tools", "Heating water"], answer: 1 },
+{ category: "Armenian Geography", question: "Which mountain is the tallest peak associated with Armenia?", choices: ["Aragats", "Massis (Ararat)", "Nemroot", "Sipan"], answer: 1 },
 
-    { category: "Camp Cooking", question: "How do you stabilize a tripod over a fire?", choices: ["Tie rope", "Place rocks or wet dirt around the legs", "Use sticks", "Dig a hole"], answer: 1 },
+{ category: "Armenian Geography", question: "What is the height of Big Massis (Ararat)?", choices: ["4095 m", "5156 m", "4434 m", "3965 m"], answer: 1 },
 
-    { category: "Orienteering", question: "Orienteering signs help scouts:", choices: ["Find food", "Follow a path", "Cook", "Hunt"], answer: 1 },
-    { category: "Orienteering", question: "Signs should be placed on which side of the trail?", choices: ["Left", "Right", "Middle", "Anywhere"], answer: 1 },
-    { category: "Orienteering", question: "Orienteering signs should be placed about how far apart?", choices: ["20 steps", "50 steps", "100 steps", "200 steps"], answer: 1 },
-    { category: "Orienteering", question: "Who removes the signs at the end of the trail?", choices: ["Leader", "First follower", "Last follower", "Random scout"], answer: 2 },
-    { category: "Orienteering", question: "Signs should be made from:", choices: ["Chalk", "Leaves", "Branches", "All of the above"], answer: 3 },
+{ category: "Armenian Geography", question: "Which mountain is the second tallest peak in Armenia?", choices: ["Aragats", "Sipan", "Nemroot", "Ararat"], answer: 0 },
 
-    { category: "Nutrition", question: "Nutrition helps support:", choices: ["Active life", "Health", "Energy", "All of the above"], answer: 3 },
-    { category: "Nutrition", question: "Eating too much food can cause:", choices: ["Strength", "Weakness", "Faster growth", "None"], answer: 1 },
-    { category: "Nutrition", question: "Not eating enough food can cause:", choices: ["Health", "Weakness", "Strength", "Energy"], answer: 1 },
-    { category: "Nutrition", question: "Which vitamin strengthens blood vessels?", choices: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin K"], answer: 3 },
+{ category: "Armenian Geography", question: "Which of the following lakes is part of historic Armenia?", choices: ["Lake Sevan", "Lake Van", "Lake Urmia", "All of the above"], answer: 3 },
 
-    { category: "Vitamins", question: "Which food contains Vitamin A?", choices: ["Carrots", "Milk", "Butter", "All of the above"], answer: 3 },
-    { category: "Vitamins", question: "Which food contains Vitamin C?", choices: ["Oranges", "Tomatoes", "Strawberries", "All of the above"], answer: 3 },
+{ category: "Armenian Geography", question: "Lake Sevan is located in:", choices: ["Historic Armenia only", "Present day Armenia", "Turkey", "Iran"], answer: 1 },
 
-    { category: "Health", question: "Heat stroke occurs when:", choices: ["The body overheats", "Too much water", "Too much sleep", "Too much exercise"], answer: 0 },
-    { category: "Health", question: "Heat stroke can be caused by:", choices: ["Sun exposure", "Lack of water", "Heat", "All of the above"], answer: 3 },
+{ category: "Armenian Geography", question: "Historic Armenia is generally considered part of which region?", choices: ["Central Asia", "Western Asia", "Eastern Europe", "North Africa"], answer: 1 },
 
-    { category: "First Aid", question: "When treating a cut you should:", choices: ["Wash it", "Cover with sterile cloth", "Bandage it", "All of the above"], answer: 3 },
-    { category: "First Aid", question: "What is the first step when removing dirt from an eye?", choices: ["Rub it", "Wash hands", "Close eye", "Blow air"], answer: 1 },
-    { category: "First Aid", question: "If dirt remains in the eye you should:", choices: ["Wash with water", "Rub it", "Ignore it", "Sleep"], answer: 0 },
-    { category: "First Aid", question: "If the object stays in the eye what should you do?", choices: ["Ignore it", "See a doctor", "Wash again", "Rub eye"], answer: 1 },
+{ category: "Armenian History", question: "The Treaty of Brest-Litovsk (1918) transferred which region to the Ottoman Empire?", choices: ["Kars", "Van", "Yerevan", "Gyumri"], answer: 0 },
 
-    { category: "First Aid", question: "When someone has a nosebleed they should:", choices: ["Lie down", "Sit up and lean forward", "Tilt head back", "Run"], answer: 1 },
-    { category: "First Aid", question: "How long should you pinch the nose?", choices: ["2 minutes", "5 minutes", "10–15 minutes", "30 minutes"], answer: 2 },
-    { category: "First Aid", question: "If bleeding continues after two attempts you should:", choices: ["Ignore it", "Sleep", "Seek medical help", "Drink water"], answer: 2 },
+{ category: "Armenian History", question: "Which battle helped secure Armenian survival in 1918?", choices: ["Sardarabad", "Avarayr", "Ani", "Tigranakert"], answer: 0 },
 
-    { category: "Signals", question: "Morse code is used for:", choices: ["Cooking", "Communication", "Navigation", "Building"], answer: 1 },
-    { category: "Signals", question: "What command means 'Prepare'?", choices: ["Badrasd", "Hankisd", "Kayl Arach", "Gather"], answer: 0 },
-    { category: "Signals", question: "What command means 'Rest'?", choices: ["Hankisd", "Badrasd", "Gather", "Scatter"], answer: 0 },
-    { category: "Signals", question: "What command means 'Move forward'?", choices: ["Gather", "Kayl Arach", "Scatter", "Bed Time"], answer: 1 },
+{ category: "Armenian History", question: "Which of these battles was fought in 1918 against the Ottoman army?", choices: ["Pash Abaran", "Mousa Ler", "Avarayr", "Baghesh"], answer: 0 },
 
-    { category: "Camp Security", question: "What is a Parolla?", choices: ["Camp password", "Tent", "Fire", "Tool"], answer: 0 },
-    { category: "Camp Security", question: "Who assigns the parolla?", choices: ["Khmpabed", "Hertabah", "Leader", "Cook"], answer: 1 },
-    { category: "Camp Security", question: "Why is a parolla used?", choices: ["To protect camp security", "To organize food", "To start fires", "To assign duties"], answer: 0 },
-    { category: "Camp Security", question: "During night games the stolen flags must be returned:", choices: ["Immediately", "Before morning ceremony", "After lunch", "Next day"], answer: 1 },
+{ category: "Armenian History", question: "Which Armenian fedayi fought during the Armenian national liberation movement?", choices: ["Andranik", "Tigran Mets", "Aram Khachaturian", "Komitas"], answer: 0 },
 
-    { category: "Values", question: "What does scouting teach about cooperation?", choices: ["Work alone", "Work as a team", "Compete always", "Ignore others"], answer: 1 },
-    { category: "Values", question: "What quality should scouts develop?", choices: ["Responsibility", "Honor", "Service", "All of the above"], answer: 3 },
-    { category: "Values", question: "Scouting helps improve:", choices: ["Physical strength", "Mental ability", "Character", "All of the above"], answer: 3 },
-    { category: "Values", question: "What is the purpose of scouting activities?", choices: ["Build leaders", "Serve the community", "Strengthen character", "All of the above"], answer: 3 },
-    { category: "Values", question: "Scouts should always show respect to:", choices: ["Leaders", "Fellow scouts", "Nature", "All of the above"], answer: 3 },
-    { category: "Values", question: "What does Homenetmen aim to cultivate?", choices: ["Faithful Armenians", "Strong character", "Service to the nation", "All of the above"], answer: 3 },
-    { category: "Purpose", question: "The ultimate goal of Homenetmen scouting is to:", choices: ["Win competitions", "Train soldiers", "Build strong Armenian citizens", "Travel"], answer: 2 }
-  ];
+{ category: "Armenian History", question: "Which Armenian hero was known as a female freedom fighter?", choices: ["Sose Mayrig", "Zabel Yesayan", "Parandzem", "Anahit"], answer: 0 },
+
+{ category: "Armenian History", question: "Which Armenian revolutionary leader was also known as Garegin Nzhdeh?", choices: ["Dro", "Andranik", "Nzhdeh", "Papken Souni"], answer: 2 },
+
+{ category: "Church", question: "The Armenian Church celebrates Christmas on which date?", choices: ["December 25", "January 1", "January 6", "February 1"], answer: 2 },
+
+{ category: "Church", question: "The main seat of the Armenian Apostolic Church is located in:", choices: ["Jerusalem", "Etchmiadzin", "Antelias", "Rome"], answer: 1 },
+
+{ category: "Church", question: "The Armenian Church currently has how many Catholicosates?", choices: ["1", "2", "3", "4"], answer: 1 },
+
+{ category: "Church", question: "Which country is the Catholicosate of Cilicia located in?", choices: ["Armenia", "Lebanon", "Turkey", "Greece"], answer: 1 },
+
+{ category: "Scouting History", question: "Who started the modern scouting movement?", choices: ["Robert Baden-Powell", "Ernest Thompson Seton", "Lord Kitchener", "Napoleon"], answer: 0 },
+
+{ category: "Scouting History", question: "Where did Baden-Powell hold the first experimental scout camp?", choices: ["Brownsea Island", "Malta", "Ireland", "Canada"], answer: 0 },
+
+{ category: "Scouting Principles", question: "Which teaching method did Baden-Powell emphasize?", choices: ["Hands-on learning", "Memorization only", "Classroom lectures", "Written exams"], answer: 0 },
+
+{ category: "Scouting Principles", question: "The patrol system emphasizes:", choices: ["Individual work", "Small team cooperation", "Competition only", "Independent study"], answer: 1 },
+
+{ category: "Homenetmen", question: "What is the main purpose of Homenetmen scouting?", choices: ["Sports competition", "Building character and national spirit", "Travel", "Military training"], answer: 1 },
+
+{ category: "Homenetmen", question: "Which of the following is one goal of Homenetmen?", choices: ["Physical development", "Mental development", "Service to the nation", "All of the above"], answer: 3 },
+
+{ category: "Homenetmen", question: "Homenetmen encourages scouts to become:", choices: ["Professional athletes", "Model citizens", "Political leaders", "Teachers"], answer: 1 },
+
+{ category: "Camping", question: "When pitching a tent, what kind of ground is best?", choices: ["Flat and dry", "Wet soil", "Steep hill", "Rocky ground"], answer: 0 },
+
+{ category: "Camping", question: "Before pitching a tent, what should be removed from the ground?", choices: ["Rocks and thorns", "Leaves", "Grass", "Sand"], answer: 0 },
+
+{ category: "Camping", question: "Why should tents avoid wetlands?", choices: ["More insects", "Flooding risk", "Unstable ground", "All of the above"], answer: 3 },
+
+{ category: "Camping", question: "Which tool is most appropriate for cutting large logs?", choices: ["Knife", "Small ax", "Large ax", "Saw blade"], answer: 2 },
+
+{ category: "Camping", question: "Which tool is most commonly used for campfire preparation?", choices: ["Small ax", "Hammer", "Pickaxe", "Shovel"], answer: 0 },
+
+{ category: "Camping", question: "When using a saw, the motion should be:", choices: ["Forward only", "Back and forth", "Side to side", "Circular"], answer: 1 },
+
+{ category: "Camping", question: "When carving with a knife, the blade should move:", choices: ["Toward your body", "Away from your body", "Sideways", "Upward"], answer: 1 },
+
+{ category: "Fire", question: "Which type of wood burns quickly but does not last long?", choices: ["Oak", "Cedar", "Walnut", "Elm"], answer: 1 },
+
+{ category: "Fire", question: "Which type of wood burns slowly and produces long-lasting heat?", choices: ["Oak", "Willow", "Cedar", "Fir"], answer: 0 },
+
+{ category: "Fire", question: "Which tool can help start a fire without matches?", choices: ["Magnifying glass", "Flint and steel", "Friction", "All of the above"], answer: 3 },
+
+{ category: "Fire", question: "What should be placed under tripod legs to keep them stable?", choices: ["Sand", "Rocks or wet dirt", "Leaves", "Grass"], answer: 1 },
+
+{ category: "Orienteering", question: "Which side of the trail should the follower walk on?", choices: ["Left side", "Right side", "Middle", "Either side"], answer: 1 },
+
+{ category: "Orienteering", question: "Orienteering signs should normally be how far apart?", choices: ["10 steps", "20 steps", "50 steps", "100 steps"], answer: 2 },
+
+{ category: "Orienteering", question: "The last scout following trail signs should:", choices: ["Add more signs", "Erase them", "Move them", "Leave them"], answer: 1 },
+
+{ category: "Orienteering", question: "Orienteering signs should be placed where?", choices: ["Clearly visible", "Hidden completely", "Visible but not obvious", "Inside bags"], answer: 2 },
+
+{ category: "Health", question: "Why is good nutrition important?", choices: ["Provides energy", "Maintains health", "Supports growth", "All of the above"], answer: 3 },
+
+{ category: "Health", question: "Which vitamin strengthens blood vessels?", choices: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"], answer: 2 },
+
+{ category: "Health", question: "Which food contains Vitamin C?", choices: ["Oranges", "Lemons", "Strawberries", "All of the above"], answer: 3 },
+
+{ category: "Health", question: "What condition can happen after long exposure to heat without water?", choices: ["Heat stroke", "Frostbite", "Hypothermia", "Cold shock"], answer: 0 },
+
+{ category: "First Aid", question: "The first step in treating a cut is:", choices: ["Wash the wound", "Bandage immediately", "Call a doctor", "Ignore it"], answer: 0 },
+
+{ category: "First Aid", question: "What should be used to cover a cut after cleaning?", choices: ["Sterile cloth", "Paper towel", "Leaves", "Plastic"], answer: 0 },
+
+{ category: "First Aid", question: "When someone has something in their eye, the first step is:", choices: ["Wash your hands", "Rub the eye", "Close both eyes", "Call emergency"], answer: 0 },
+
+{ category: "First Aid", question: "During a nosebleed, the person should:", choices: ["Lean forward", "Lean back", "Lie down", "Drink water"], answer: 0 },
+
+{ category: "First Aid", question: "How long should you pinch the nose during a nosebleed?", choices: ["1 minute", "5 minutes", "10-15 minutes", "30 minutes"], answer: 2 },
+
+{ category: "Transport", question: "Which item could help build a stretcher?", choices: ["Blanket", "Poles", "Jackets", "All of the above"], answer: 3 },
+
+{ category: "Signals", question: "Why do scouts learn Morse code?", choices: ["Emergency communication", "Fun games", "Music", "Cooking"], answer: 0 },
+
+{ category: "Signals", question: "Which Morse whistle signal means 'gather'?", choices: ["........", "_.", "....", "_._."], answer: 0 },
+
+{ category: "Signals", question: "Which whistle signal means 'scatter'?", choices: ["........", "_______", "._.", "_."], answer: 1 },
+
+{ category: "Signals", question: "Which whistle signal means 'Hankisd'?", choices: ["._", ".", "....", "_."], answer: 0 },
+
+{ category: "Signals", question: "Which whistle signal means 'Badrasd'?", choices: ["._", ".", "_.", "..."], answer: 1 },
+
+{ category: "Knots", question: "Why do scouts learn knots and lashings?", choices: ["Decoration", "Building structures", "Games", "Cooking"], answer: 1 },
+
+{ category: "Knots", question: "Which type of lashing joins two poles at a diagonal angle?", choices: ["Diagonal lashing", "Square knot", "Clove hitch", "Bowline"], answer: 0 },
+
+{ category: "Knots", question: "Which lashing connects two poles end-to-end?", choices: ["End-to-end lashing", "Square lashing", "Clove hitch", "Bowline"], answer: 0 },
+
+{ category: "Leadership", question: "Why is the khmbag structure important?", choices: ["Creates teamwork", "Builds leadership", "Organizes scouts", "All of the above"], answer: 3 },
+
+{ category: "Leadership", question: "Taking responsibility in scouting helps develop:", choices: ["Leadership skills", "Confidence", "Teamwork", "All of the above"], answer: 3 }
+
+];
 
   const aypGarkTestBank = [
   { category: "Garks", question: "Which sequence correctly shows the Ari/Arenoush garks from earliest to latest?", choices: ["Norendza → Pen Gark → Ayp Gark → Vgayal → Araratian", "Norendza → Ayp Gark → Pen Gark → Vgayal → Araratian", "Pen Gark → Norendza → Ayp Gark → Vgayal → Araratian", "Norendza → Pen Gark → Vgayal → Ayp Gark → Araratian"], answer: 0 },
