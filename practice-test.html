@@ -216,83 +216,73 @@
 </main>
 
 <script>
-  const norendzaTestBank = [
-    { category: "Homenetmen", question: "When was Homenetmen founded?", choices: ["1905", "1918", "1925", "1931"], answer: 1 },
-    { category: "Homenetmen", question: "Where was Homenetmen founded?", choices: ["Yerevan", "Beirut", "Constantinople (Istanbul)", "Athens"], answer: 2 },
-    { category: "Homenetmen", question: "Who are the three founders of Homenetmen?", choices: ["Andranik, Dro, Nzhdeh", "Shavarsh Kristian, Hovhannes Hintlian, Krikor Hagopian", "Aram Manoukian, Dro, Nazarbekian", "Komitas, Toumanian, Nalbandian"], answer: 1 },
-    { category: "Homenetmen", question: "What does H.M.E.M. stand for?", choices: ["Hye Marmnagrtagan Entanour Miyootyoon", "Hye Miatsyal Erkri Mioutyun", "Hayastani Mets Erkri Mioutyun", "Hye Meknutyan Enthanur Miutyan"], answer: 0 },
-    { category: "Homenetmen", question: "What is the motto of Homenetmen?", choices: ["Always Ready", "Elevate Yourself and Others With You", "Unity Makes Strength", "Strength and Honor"], answer: 1 },
-    { category: "Homenetmen", question: "What is the scouting motto?", choices: ["Be Prepared", "Always Prepared", "Always Ready", "Be Strong"], answer: 1 },
+const norendzaTestBank = [
 
-    { category: "Symbols", question: "What is the symbol used by Homenetmen scouts?", choices: ["Eagle", "Shoushanatsagheeg", "Ararat", "Sword"], answer: 1 },
-    { category: "Symbols", question: "What is the symbol used for all of Homenetmen?", choices: ["Vahan", "Lion", "Cross", "Torch"], answer: 0 },
-    { category: "Identity", question: "Why do scouts call each other 'Yeghpayr' and 'Kouyr'?", choices: ["To follow tradition", "To show family and unity", "To identify rank", "To follow ceremony rules"], answer: 1 },
+{ category: "Homenetmen", question: "When was Homenetmen founded?", choices: ["1905", "1918", "1925", "1931"], answer: 1 },
+{ category: "Homenetmen", question: "Where was Homenetmen founded?", choices: ["Yerevan", "Beirut", "Constantinople (Istanbul)", "Athens"], answer: 2 },
+{ category: "Homenetmen", question: "Who are the three founders of Homenetmen?", choices: ["Andranik, Dro, Nzhdeh", "Shavarsh Kristian, Hovhannes Hintlian, Krikor Hagopian", "Komitas, Toumanian, Nalbandian", "Aram Manoukian, Dro, Nazarbekian"], answer: 1 },
+{ category: "Homenetmen", question: "What do the letters Ho-Men-Et-Men represent?", choices: ["Hye Marmnagrtagan Entanour Miyootyoon", "Hayots Marzagan Educational Movement", "Haygagan Marmnagrtagan Mission", "Hye Marzagan National Organization"], answer: 0 },
+{ category: "Homenetmen", question: "Why do members call one another 'yeghpayr' and 'kouyr'?", choices: ["To replace names", "To reflect a sense of family", "To show rank", "To identify groups"], answer: 1 },
 
-    { category: "Structure", question: "What is an astijan?", choices: ["Temporary leadership role", "Permanent rank", "Camp duty", "A ceremony"], answer: 1 },
-    { category: "Structure", question: "What is a bashdon?", choices: ["Temporary role", "Permanent rank", "Scout badge", "A camp"], answer: 0 },
-    { category: "Structure", question: "What is the highest astijan a scout can obtain?", choices: ["Arachnort", "Khmpabed", "Vareech Arachnort", "Masnajoughi"], answer: 1 },
-    { category: "Structure", question: "Which rank helps the Arachnort lead the group?", choices: ["Pogh Arachnort", "Khmpabed", "Miavori", "Masnajoughi"], answer: 0 },
+{ category: "Structure", question: "What is the difference between a bashdon and an asdijan?", choices: ["Bashdon is temporary and asdijan is permanent", "Bashdon is permanent and asdijan is temporary", "Both are temporary", "Both are permanent"], answer: 0 },
+{ category: "Structure", question: "Successfully completing a scouting test usually counts as earning a:", choices: ["Bashdon", "Gark", "Parev", "Khmbag"], answer: 1 },
+{ category: "Structure", question: "Which of the following is normally considered a leadership responsibility?", choices: ["Bashdon", "Gark", "Nshan", "Compass"], answer: 0 },
+{ category: "Structure", question: "Which role normally leads a khmbag during scouting activities?", choices: ["Khmpabed", "Arachnort", "Pokh Khmpabed", "Shrchanayin Khmpabed"], answer: 0 },
+{ category: "Structure", question: "Which role generally has responsibility over a larger scouting region?", choices: ["Khmpabed", "Shrchanayin Khmpabed", "Pokh Khmpabed", "Miavori Khmpabed"], answer: 1 },
 
-    { category: "Etiquette", question: "Which hand is used when greeting another scout?", choices: ["Right", "Left", "Both", "Either"], answer: 1 },
-    { category: "Etiquette", question: "What salute uses the scout staff?", choices: ["Bashdonagan Parev", "Kavazaov Parev", "Klookhi Parev", "Vodkov Parev"], answer: 1 },
-    { category: "Uniform", question: "What is the official scout uniform called?", choices: ["Gark", "Daraz", "Vahan", "Khorhrd"], answer: 1 },
-    { category: "Uniform", question: "Where is the Norendza badge worn?", choices: ["Left sleeve", "Left pocket area", "Right sleeve", "Collar"], answer: 1 },
+{ category: "Symbols", question: "What is the name of the symbol used for Homenetmen scouts?", choices: ["Vahan", "Shoushanatsagheeg", "Arev", "Khachkar"], answer: 1 },
+{ category: "Symbols", question: "What is the name of the symbol used to represent all of Homenetmen?", choices: ["Shoushanatsagheeg", "Vahan", "Ardziv", "Arev"], answer: 1 },
+{ category: "Uniform", question: "Which of the following is not considered a scouting salute?", choices: ["Bashdonagan Parev", "Klookhi Parev", "Kavazaov Parev", "Arshav Parev"], answer: 3 },
+{ category: "Uniform", question: "When greeting another scout with a handshake, which hand is normally used?", choices: ["Left", "Right", "Both", "Either"], answer: 1 },
+{ category: "Uniform", question: "What color are a Khmpabed's shoulder loops?", choices: ["Orange", "Green", "Blue", "Red"], answer: 1 },
+{ category: "Uniform", question: "What color are a Miavori Khmpabed's shoulder loops?", choices: ["Orange", "Green", "Baby Blue", "Yellow"], answer: 0 },
+{ category: "Uniform", question: "What color are a Shrchanayin Khmpabed's shoulder loops?", choices: ["Green", "Orange", "Baby Blue", "White"], answer: 2 },
 
-    { category: "Armenia", question: "Which country borders Armenia to the north?", choices: ["Iran", "Turkey", "Georgia", "Syria"], answer: 2 },
-    { category: "Armenia", question: "Which country borders Armenia to the south?", choices: ["Iran", "Russia", "Greece", "Iraq"], answer: 0 },
-    { category: "Armenia", question: "Which country borders Armenia to the east?", choices: ["Turkey", "Azerbaijan", "Iran", "Syria"], answer: 1 },
-    { category: "Armenia", question: "Which country borders Armenia to the west?", choices: ["Azerbaijan", "Turkey", "Russia", "Iran"], answer: 1 },
-    { category: "Armenia", question: "About how many people live in Armenia?", choices: ["1 million", "3 million", "10 million", "20 million"], answer: 1 },
-    { category: "Diaspora", question: "About how many Armenians live in the diaspora?", choices: ["2 million", "4 million", "8 million", "12 million"], answer: 2 },
-    { category: "Diaspora", question: "What does 'Diaspora' mean?", choices: ["Homeland", "People living outside their homeland", "Armenian government", "Armenian language"], answer: 1 },
-    { category: "Armenia", question: "Which mountain is located in present-day Armenia?", choices: ["Ararat", "Sis", "Arakadz", "Massis"], answer: 2 },
+{ category: "Geography", question: "Which country borders Armenia to the north?", choices: ["Turkey", "Georgia", "Iran", "Azerbaijan"], answer: 1 },
+{ category: "Geography", question: "Which country borders Armenia to the south?", choices: ["Georgia", "Iran", "Turkey", "Russia"], answer: 1 },
+{ category: "Geography", question: "Which country borders Armenia to the east?", choices: ["Turkey", "Georgia", "Azerbaijan", "Iran"], answer: 2 },
+{ category: "Geography", question: "Which country borders Armenia to the west?", choices: ["Turkey", "Iran", "Georgia", "Syria"], answer: 0 },
+{ category: "Geography", question: "About how many people live in Armenia today?", choices: ["1 million", "3 million", "6 million", "10 million"], answer: 1 },
+{ category: "Geography", question: "Approximately how many Armenians live in the diaspora?", choices: ["2 million", "4 million", "8 million", "12 million"], answer: 2 },
+{ category: "Geography", question: "What does the word 'diaspora' describe?", choices: ["People living in villages", "People living outside their homeland", "People living near mountains", "People living in cities"], answer: 1 },
+{ category: "Geography", question: "Which mountain is located within present-day Armenia?", choices: ["Ararat", "Sis", "Aragats", "Massis"], answer: 2 },
 
-    { category: "Compass", question: "How many main compass directions are there?", choices: ["4", "6", "8", "12"], answer: 2 },
-    { category: "Compass", question: "What direction is opposite East?", choices: ["North", "South", "West", "Northeast"], answer: 2 },
-    { category: "Compass", question: "Which of these is NOT a compass direction?", choices: ["Northeast", "Northwest", "Downwest", "Southeast"], answer: 2 },
-    { category: "Compass", question: "Arevelk means what direction?", choices: ["West", "East", "North", "South"], answer: 1 },
-    { category: "Compass", question: "Arevmoodk means what direction?", choices: ["East", "West", "South", "North"], answer: 1 },
+{ category: "Compass", question: "Which direction is opposite of East?", choices: ["North", "South", "West", "Northeast"], answer: 2 },
+{ category: "Compass", question: "Which direction lies between North and East?", choices: ["Northwest", "Southeast", "Northeast", "Southwest"], answer: 2 },
+{ category: "Compass", question: "If you are facing South and turn left, which direction are you facing?", choices: ["East", "West", "North", "Southeast"], answer: 0 },
+{ category: "Compass", question: "If you face West and turn around, which direction are you now facing?", choices: ["East", "North", "South", "Northwest"], answer: 0 },
 
-    { category: "Scouting", question: "What does 'hedakhoozel' mean?", choices: ["To camp", "To track or trail", "To cook", "To salute"], answer: 1 },
-    { category: "Scouting", question: "What is the purpose of scouting?", choices: ["To build strong leaders and responsible citizens", "To train soldiers", "To teach sports", "To travel"], answer: 0 },
-    { category: "Scouting", question: "Scouts should always show:", choices: ["Laziness", "Discipline and respect", "Fear", "Silence"], answer: 1 },
-    { category: "Scouting", question: "A scout should always be:", choices: ["Prepared", "Quiet", "Fast", "Strong"], answer: 0 },
+{ category: "Tracking", question: "What does the word 'hedakhoozel' mean?", choices: ["To build", "To track or follow", "To salute", "To camp"], answer: 1 },
+{ category: "Tracking", question: "When are hedakhoozagan signs typically used?", choices: ["During meetings", "During hikes or arshavs", "During ceremonies", "During sports practice"], answer: 1 },
+{ category: "Tracking", question: "What does a 'wrong path' trail sign indicate?", choices: ["Water nearby", "Camp ahead", "Not the correct direction", "Danger ahead"], answer: 2 },
+{ category: "Tracking", question: "After following a trail sign, what should a scout usually do with it?", choices: ["Leave it", "Make it bigger", "Erase or remove it", "Take it home"], answer: 2 },
 
-    { category: "Identity", question: "What does 'Hayrenik' mean?", choices: ["Country or homeland", "Family", "Church", "Village"], answer: 0 },
-    { category: "Identity", question: "What does 'Azk' refer to?", choices: ["Government", "Armenian nation and identity", "A leader", "A uniform"], answer: 1 },
+{ category: "Knots", question: "Why do scouts learn knots?", choices: ["For decoration", "To secure ropes and build structures", "For games only", "To shorten ropes"], answer: 1 },
+{ category: "Knots", question: "Which knot is commonly used to tie two ropes together?", choices: ["Tsgnors", "Karagousi", "Keran", "None"], answer: 1 },
+{ category: "Knots", question: "Which knot is used to tie a rope to a stick or pole?", choices: ["Keran", "Karagousi", "Oghag", "Tsgnors"], answer: 0 },
 
-    { category: "Ceremonies", question: "What ceremony gathers scouts together in the morning?", choices: ["Troshagee", "Medz Ganch", "Bahag", "Arshav"], answer: 1 },
-    { category: "Ceremonies", question: "What ceremony raises or lowers the flag?", choices: ["Flag ceremony", "Medz Ganch", "Gark ceremony", "Transfer ceremony"], answer: 0 },
-    { category: "Ceremonies", question: "When is the scout salute used for the flag?", choices: ["During flag raising and lowering", "Only during camp", "Only during meetings", "Only during parades"], answer: 0 },
+{ category: "Fire", question: "Which of the following is not part of the fire triangle?", choices: ["Heat", "Oxygen", "Fuel", "Water"], answer: 3 },
+{ category: "Fire", question: "Why do scouts gently blow on a small flame?", choices: ["To cool it", "To add oxygen", "To dry the wood", "To remove smoke"], answer: 1 },
+{ category: "Fire", question: "Which action helps a fire continue burning?", choices: ["Adding fuel carefully", "Removing oxygen", "Pouring water", "Covering with dirt"], answer: 0 },
 
-    { category: "Leadership Colors", question: "What color shoulder loops does a Khmpabed wear?", choices: ["Blue", "Green", "Red", "Yellow"], answer: 1 },
-    { category: "Leadership Colors", question: "What color shoulder loops does a Miavori Khmpabed wear?", choices: ["Orange", "Green", "Blue", "White"], answer: 0 },
-    { category: "Leadership Colors", question: "What color shoulder loops does a Shrchanayin Khmpabed wear?", choices: ["Yellow", "Blue", "Purple", "Red"], answer: 1 },
+{ category: "Signals", question: "Why do scouts learn Morse code and whistle signals?", choices: ["To replace talking", "To communicate signals when needed", "To compete with others", "To make camp quieter"], answer: 1 },
+{ category: "Signals", question: "What Morse code signal is commonly used to call scouts to gather?", choices: ["----------", ".........", "_._._._._.", "..--.."], answer: 1 },
 
-    { category: "Culture", question: "What is the Armenian national anthem called?", choices: ["Hayastan", "Mer Hayrenik", "Yeraz", "Hayastani"], answer: 1 },
-    { category: "Culture", question: "Who wrote the Armenian national anthem poem?", choices: ["Hovhannes Toumanian", "Mikael Nalbandian", "Komitas", "Yeghishe Charents"], answer: 1 },
+{ category: "First Aid", question: "What are the five senses?", choices: ["Sight, smell, hearing, taste, touch", "Taste, smell, speed, hearing, touch", "Sight, hearing, strength, smell, taste", "Touch, run, hear, taste, smell"], answer: 0 },
+{ category: "First Aid", question: "What should you do first if someone has a severe cut and is bleeding?", choices: ["Apply pressure to the wound", "Give them water", "Ignore it", "Ask them to sit down"], answer: 0 },
+{ category: "First Aid", question: "Which situation most likely requires calling emergency services?", choices: ["Mosquito bite", "Broken bone", "Small scratch", "Minor bruise"], answer: 1 },
+{ category: "First Aid", question: "Should toothpaste be used to treat a burn?", choices: ["True", "False"], answer: 1 },
 
-    { category: "Skills", question: "What is the purpose of scouting activities?", choices: ["Learning leadership and teamwork", "Winning competitions", "Practicing sports only", "Traveling"], answer: 0 },
-    { category: "Values", question: "What should scouts show toward nature?", choices: ["Respect and protection", "Indifference", "Fear", "Avoidance"], answer: 0 },
-    { category: "Leadership", question: "What is the role of a Khmpabed?", choices: ["Lead the group", "Clean the camp", "Cook food", "Carry equipment"], answer: 0 },
+{ category: "Camp", question: "Which action helps keep a campsite clean?", choices: ["Leaving trash on the ground", "Keeping garbage sealed and disposing of it properly", "Mixing dirty water with clean water", "Leaving food near tents"], answer: 1 },
+{ category: "Camp", question: "Why should dirty water be kept separate from clean water?", choices: ["To keep the campsite healthier", "To make cooking easier", "To attract animals", "To save time"], answer: 0 },
 
-    { category: "Geography", question: "Armenia is located in which region?", choices: ["Western Asia", "Africa", "South America", "East Asia"], answer: 0 },
-    { category: "Geography", question: "Armenia is known as a land of:", choices: ["Rivers", "Mountains", "Forests", "Oceans"], answer: 1 },
-    { category: "Identity", question: "What is the Armenian word for homeland?", choices: ["Azk", "Hayrenik", "Spyurk", "Gark"], answer: 1 },
+{ category: "Scouting", question: "When was scouting first introduced in the world?", choices: ["1890", "1907", "1918", "1925"], answer: 1 },
 
-    { category: "Behavior", question: "Scouts should help:", choices: ["Only friends", "Only leaders", "Everyone in need", "No one"], answer: 2 },
-    { category: "Behavior", question: "Scouts should respect:", choices: ["Only elders", "Only leaders", "Everyone", "Only friends"], answer: 2 },
-    { category: "Behavior", question: "Scouts must follow:", choices: ["Discipline", "Only rules they like", "Only leader orders", "No rules"], answer: 0 },
+{ category: "Values", question: "Which action best shows a scout helping others?", choices: ["Helping carry equipment", "Ignoring younger scouts", "Leaving early", "Taking all the work"], answer: 0 },
+{ category: "Values", question: "Which action shows a scout respecting nature?", choices: ["Breaking branches", "Leaving trash", "Protecting plants and animals", "Polluting water"], answer: 2 },
+{ category: "Values", question: "Which action shows obedience?", choices: ["Ignoring leaders", "Listening to leaders and teachers", "Leaving tasks unfinished", "Changing plans alone"], answer: 1 }
 
-    { category: "Community", question: "What does Homenetmen focus on developing?", choices: ["Physical strength only", "Character and leadership", "Wealth", "Fame"], answer: 1 },
-    { category: "Community", question: "Scouts learn to become:", choices: ["Good citizens", "Soldiers", "Politicians", "Athletes only"], answer: 0 },
-
-    { category: "Progression", question: "What does 'gark' represent?", choices: ["A rank level or progression", "A uniform", "A badge", "A ceremony"], answer: 0 },
-    { category: "Progression", question: "Which gark comes first?", choices: ["Ayp Gark", "Pen Gark", "Norendza", "Araratian"], answer: 2 },
-    { category: "Progression", question: "What comes after Norendza?", choices: ["Pen Gark", "Ayp Gark", "Vgayal", "Araratian"], answer: 0 },
-    { category: "Representation", question: "Scouts should represent their chapter with:", choices: ["Pride and respect", "Competition", "Silence", "Fear"], answer: 0 },
-    { category: "Purpose", question: "The purpose of scouting is ultimately to:", choices: ["Serve the Armenian nation and community", "Travel", "Win competitions", "Become famous"], answer: 0 }
-  ];
+];
 
   const penGarkTestBank = [
     { category: "History", question: "Who wrote the Armenian national anthem?", choices: ["Komitas", "Mikael Nalbandian", "Hovhannes Toumanian", "Garegin Nzhdeh"], answer: 1 },
