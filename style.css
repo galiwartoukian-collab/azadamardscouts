@@ -2432,17 +2432,15 @@ a:hover{
 
 .dropzone {
   position: absolute;
-  border: 2px dashed rgba(255, 204, 0, 0.5);
-  background: rgba(255, 204, 0, 0.07);
-  border-radius: 10px;
+  border: 2px dashed rgba(0, 200, 120, 0.75);
+  background: rgba(0, 140, 80, 0.12);
+  border-radius: 12px;
   min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.2rem;
   text-align: center;
-  color: #ffe082;
-  font-weight: 700;
   transition: 0.2s ease;
 }
 
@@ -2467,69 +2465,67 @@ a:hover{
   box-shadow: none;
 }
 
-/* Positions tuned for larger full-width layout */
-/* Match ptp.png label boxes more closely */
 .zone-oath {
-  top: 23.5%;
-  left: 35.2%;
-  width: 23.8%;
-  height: 6.4%;
+  top: 11.5%;
+  left: 39%;
+  width: 22%;
+  height: 7.2%;
 }
 
 .zone-eye-left {
-  top: 30.3%;
-  left: 13.8%;
-  width: 22.3%;
+  top: 34.5%;
+  left: 13%;
+  width: 22%;
   height: 6.6%;
 }
 
 .zone-eye-right {
-  top: 30.3%;
-  left: 60.8%;
-  width: 22.3%;
+  top: 34.5%;
+  left: 61.5%;
+  width: 22%;
   height: 6.6%;
 }
 
 .zone-tavananks {
-  top: 38.8%;
-  left: 35.3%;
-  width: 23.8%;
-  height: 6.2%;
-}
-
-.zone-smile {
-  top: 48.1%;
-  left: 35.6%;
-  width: 23.0%;
-  height: 6.0%;
-}
-
-.zone-tongue {
-  top: 55.5%;
-  left: 36.0%;
-  width: 23.8%;
+  top: 43.5%;
+  left: 38.5%;
+  width: 21%;
   height: 5.8%;
 }
 
+.zone-tongue {
+  top: 50.8%;
+  left: 39%;
+  width: 21%;
+  height: 5.8%;
+}
+
+.zone-smile {
+  top: 61%;
+  left: 12%;
+  width: 22%;
+  height: 7%;
+}
+
 .zone-motto-left {
-  top: 67.0%;
-  left: 3.0%;
-  width: 28.6%;
-  height: 8.3%;
+  top: 78%;
+  left: 4%;
+  width: 26%;
+  height: 7%;
 }
 
 .zone-motto-right {
-  top: 63.8%;
-  left: 65.9%;
-  width: 30.0%;
-  height: 8.0%;
+  top: 74.5%;
+  left: 66%;
+  width: 26%;
+  height: 7%;
 }
 
 .zone-vahan {
-  top: 70.0%;
-  left: 39.8%;
-  width: 17.3%;
-  height: 7.6%;
+  top: 81%;
+  left: 40.5%;
+  width: 16%;
+  height: 6.5%;
 }
 
 .symbol-help {
