@@ -2297,19 +2297,23 @@ a:hover{
   display: none !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .symbol-test-app {
   margin-top: 2rem;
-  background: #0b0b0b;
-  border: 1px solid rgba(255, 204, 0, 0.18);
+  background: #050505;
+  border: 1px solid rgba(255, 204, 0, 0.16);
   border-radius: 24px;
   padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
 }
 
 .symbol-test-app .card-tag {
-  background: rgba(255, 204, 0, 0.14);
+  background: rgba(255, 204, 0, 0.12);
   color: #f5c400;
-  border: 1px solid rgba(255, 204, 0, 0.25);
+  border: 1px solid rgba(255, 204, 0, 0.22);
 }
 
 .symbol-test-app h2 {
@@ -2318,7 +2322,7 @@ a:hover{
 }
 
 .symbol-intro {
-  color: #d2d2d2;
+  color: #cfcfcf;
   margin-bottom: 1.25rem;
   font-size: 1rem;
 }
@@ -2329,14 +2333,14 @@ a:hover{
 
 .symbol-quiz-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr);
+  grid-template-columns: minmax(0, 1.9fr) minmax(290px, 0.85fr);
   gap: 1.5rem;
   align-items: start;
 }
 
 .symbol-board {
-  background: #111111;
-  border: 1px solid rgba(255, 204, 0, 0.12);
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 204, 0, 0.1);
   border-radius: 22px;
   padding: 1rem;
 }
@@ -2344,8 +2348,8 @@ a:hover{
 .symbol-image-wrap {
   position: relative;
   width: 100%;
-  min-height: 520px;
-  background: #1a1a1a;
+  min-height: 900px;
+  background: #000;
   border: 1px solid rgba(255, 204, 0, 0.08);
   border-radius: 20px;
   overflow: hidden;
@@ -2357,23 +2361,23 @@ a:hover{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 2rem;
   display: block;
 }
 
 .label-bank-wrap {
-  background: #111111;
-  border: 1px solid rgba(255, 204, 0, 0.12);
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 204, 0, 0.1);
   border-radius: 22px;
   padding: 1rem;
+  min-height: 900px;
 }
 
 .label-bank-title {
   margin: 0 0 1rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #f5c400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -2385,11 +2389,11 @@ a:hover{
 }
 
 .draggable-chip {
-  background: #191919;
+  background: #111111;
   color: #ffd54a;
-  border: 1px solid rgba(255, 204, 0, 0.22);
+  border: 1px solid rgba(255, 204, 0, 0.25);
   border-radius: 999px;
-  padding: 0.95rem 1rem;
+  padding: 1rem 1.1rem;
   font-weight: 700;
   line-height: 1.2;
   user-select: none;
@@ -2399,7 +2403,7 @@ a:hover{
 }
 
 .draggable-chip:hover {
-  background: #222222;
+  background: #1a1a1a;
   border-color: rgba(255, 204, 0, 0.45);
   transform: translateY(-1px);
 }
@@ -2410,23 +2414,23 @@ a:hover{
 
 .dropzone {
   position: absolute;
-  border: 2px dashed rgba(255, 204, 0, 0.32);
-  border-radius: 16px;
-  background: rgba(255, 204, 0, 0.06);
-  color: #ffe082;
-  transition: 0.2s ease;
+  border: 2px dashed rgba(255, 204, 0, 0.6);
+  background: rgba(255, 204, 0, 0.08);
+  border-radius: 12px;
+  min-height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.35rem;
   text-align: center;
-  min-height: 56px;
+  color: #ffe082;
   font-weight: 700;
+  transition: 0.2s ease;
 }
 
 .dropzone.is-over {
-  background: rgba(255, 204, 0, 0.14);
-  border-color: rgba(255, 204, 0, 0.65);
+  background: rgba(255, 204, 0, 0.18);
+  border-color: #ffd54a;
 }
 
 .dropzone.is-correct {
@@ -2436,7 +2440,7 @@ a:hover{
 
 .dropzone.is-wrong {
   border-color: #ff5c5c;
-  background: rgba(255, 92, 92, 0.14);
+  background: rgba(255, 92, 92, 0.16);
 }
 
 .dropzone .draggable-chip {
@@ -2444,10 +2448,74 @@ a:hover{
   margin: 0;
 }
 
+/* Drop zone positions for ptp.png */
+.zone-oath {
+  top: 23%;
+  left: 37%;
+  width: 26%;
+  height: 8%;
+}
+
+.zone-eye-left {
+  top: 31%;
+  left: 12%;
+  width: 26%;
+  height: 8%;
+}
+
+.zone-eye-right {
+  top: 31%;
+  right: 12%;
+  width: 26%;
+  height: 8%;
+}
+
+.zone-tavananks {
+  top: 39%;
+  left: 38%;
+  width: 24%;
+  height: 8%;
+}
+
+.zone-smile {
+  top: 49%;
+  left: 38%;
+  width: 24%;
+  height: 8%;
+}
+
+.zone-tongue {
+  top: 58%;
+  left: 38%;
+  width: 25%;
+  height: 8%;
+}
+
+.zone-motto-left {
+  top: 71%;
+  left: 0.5%;
+  width: 31%;
+  height: 8%;
+}
+
+.zone-motto-right {
+  top: 64%;
+  right: 0.5%;
+  width: 31%;
+  height: 8%;
+}
+
+.zone-vahan {
+  top: 70%;
+  left: 43%;
+  width: 17%;
+  height: 8%;
+}
+
 .symbol-help {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: #a8a8a8;
+  color: #9f9f9f;
   line-height: 1.45;
 }
 
@@ -2472,106 +2540,6 @@ a:hover{
   color: #ff7a7a;
 }
 
-/* Bigger, more spacious starting drop zones */
-.zone-oath-left {
-  top: 6%;
-  left: 20%;
-  width: 15%;
-  height: 12%;
-}
-
-.zone-oath-center {
-  top: 2%;
-  left: 41%;
-  width: 17%;
-  height: 13%;
-}
-
-.zone-oath-right {
-  top: 6%;
-  right: 20%;
-  width: 15%;
-  height: 12%;
-}
-
-.zone-rays {
-  top: 19%;
-  left: 42%;
-  width: 16%;
-  height: 13%;
-}
-
-.zone-eyes-left {
-  top: 16%;
-  left: 16%;
-  width: 14%;
-  height: 12%;
-}
-
-.zone-eyes-right {
-  top: 16%;
-  right: 16%;
-  width: 14%;
-  height: 12%;
-}
-
-.zone-smile-left {
-  top: 42%;
-  left: 13%;
-  width: 15%;
-  height: 12%;
-}
-
-.zone-smile-center {
-  top: 48%;
-  left: 31%;
-  width: 18%;
-  height: 12%;
-}
-
-.zone-tongue {
-  top: 42%;
-  right: 13%;
-  width: 16%;
-  height: 12%;
-}
-
-.zone-wing {
-  top: 30%;
-  right: 7%;
-  width: 16%;
-  height: 12%;
-}
-
-@media (max-width: 1100px) {
-  .symbol-quiz-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .symbol-image-wrap {
-    min-height: 460px;
-  }
-}
-
-@media (max-width: 700px) {
-  .symbol-test-app {
-    padding: 1rem;
-  }
-
-  .symbol-image-wrap {
-    min-height: 360px;
-  }
-
-  .draggable-chip {
-    font-size: 0.95rem;
-    padding: 0.8rem 0.9rem;
-  }
-
-  .dropzone {
-    min-height: 46px;
-    font-size: 0.82rem;
-  }
-}
 .symbol-test-app .study-btn.ghost {
   background: transparent;
   color: #ffd54a;
@@ -2591,4 +2559,43 @@ a:hover{
 
 .symbol-test-app .study-btn.primary:hover {
   filter: brightness(1.03);
+}
+
+@media (max-width: 1200px) {
+  .symbol-image-wrap,
+  .label-bank-wrap {
+    min-height: 760px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .symbol-quiz-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .symbol-image-wrap,
+  .label-bank-wrap {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 700px) {
+  .symbol-test-app {
+    padding: 1rem;
+  }
+
+  .symbol-image-wrap,
+  .label-bank-wrap {
+    min-height: 520px;
+  }
+
+  .draggable-chip {
+    font-size: 0.95rem;
+    padding: 0.85rem 0.95rem;
+  }
+
+  .dropzone {
+    font-size: 0.78rem;
+    min-height: 44px;
+  }
 }
